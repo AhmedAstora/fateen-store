@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "157273105183",
+    "project_id": "twnty2-e474b",
+    "storage_bucket": "twnty2-e474b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157273105183:android:72cb7f0570ca35b04b462a",
+        "android_client_info": {
+          "package_name": "com.example.twnty2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157273105183-25p3fnii8l930gmi3tg7q4pl94roj5ai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXVC_fBEsPBEBhJQfoYbJAcJYNZWvTBOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157273105183-25p3fnii8l930gmi3tg7q4pl94roj5ai.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
