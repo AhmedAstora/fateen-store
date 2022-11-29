@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "157273105183",
-    "project_id": "twnty2-e474b",
-    "storage_bucket": "twnty2-e474b.appspot.com"
+    "project_number": "102317668448",
+    "project_id": "fateen-2d977",
+    "storage_bucket": "fateen-2d977.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:157273105183:android:72cb7f0570ca35b04b462a",
+        "mobilesdk_app_id": "1:102317668448:android:ed2fa56ce68808c9566b05",
         "android_client_info": {
-          "package_name": "com.example.twnty2"
+          "package_name": "com.henka.fateen"
         }
       },
       "oauth_client": [
         {
-          "client_id": "157273105183-25p3fnii8l930gmi3tg7q4pl94roj5ai.apps.googleusercontent.com",
+          "client_id": "102317668448-renuvfcsoknjbh0u4fvmqo2qus316mll.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCXVC_fBEsPBEBhJQfoYbJAcJYNZWvTBOU"
+          "current_key": "AIzaSyDixnr2SStQ0rUBKrrAsITfG_sP9M7MhYQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "157273105183-25p3fnii8l930gmi3tg7q4pl94roj5ai.apps.googleusercontent.com",
+              "client_id": "102317668448-renuvfcsoknjbh0u4fvmqo2qus316mll.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

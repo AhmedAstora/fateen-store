@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../Helper/SharedPreferance/shared_preferance.dart';
-import '../../../Utils/constant.dart';
 
 class SplachScreen extends StatefulWidget {
   @override
@@ -35,7 +34,7 @@ class _SplachScreenState extends State<SplachScreen> {
         backgroundColor: Colors.white,
         body: Center(
             child: Text(
-          'Twnty2 Splash',
+          'Fateen Splash',
           style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
         )));
   }

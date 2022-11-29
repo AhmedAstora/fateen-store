@@ -15,7 +15,7 @@ import 'Helper/Providers/auth_provider.dart';
 import 'Helper/Router/router.dart';
 import 'Helper/SharedPreferance/shared_preferance.dart';
 import 'UI/Screens/SplashScreen/splash_screen.dart';
-import 'Utils/constant.dart';
+import 'UI/Utils/constant.dart';
 
 const String groupKey = 'com.android.example.WORK_EMAIL';
 const String groupChannelId = 'grouped channel id';
@@ -120,7 +120,7 @@ class _MyAppsState extends State<MyApps> {
                 channel.id,
                 channel.name,
                 groupAlertBehavior: GroupAlertBehavior.all,
-                color: secondColor,
+                color: mainAppColor,
                 channelDescription: '10',
                 playSound: true,
                 groupKey: '1',
@@ -192,7 +192,7 @@ class _MyAppsState extends State<MyApps> {
       designSize: Size(428, 926),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: () => MaterialApp(
+      builder: (context, widget) => MaterialApp(
         theme: ThemeData(
           fontFamily: "Cairo",
         ),
@@ -202,15 +202,6 @@ class _MyAppsState extends State<MyApps> {
         locale: context.locale,
         debugShowCheckedModeBanner: false,
         home: SplachScreen(),
-        builder: (context, widget) {
-          //add this line
-          ScreenUtil.setContext(context);
-          return MediaQuery(
-            //Setting font does not change with system font size
-            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-            child: widget!,
-          );
-        },
       ),
     );
   }

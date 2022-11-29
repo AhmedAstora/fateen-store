@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 class RouterHelper {
   RouterHelper._();
@@ -8,31 +9,35 @@ class RouterHelper {
 
   routingToSpecificWidget(Widget widget) {
     BuildContext context = routerKey.currentState!.context;
-    routerKey.currentState!
-        .pushReplacement(MaterialPageRoute(builder: (context) {
-      return widget;
-    }));
+    routerKey.currentState!.pushReplacement(PageTransition(
+        child: (widget),
+        type: PageTransitionType.fade,
+        duration: Duration(milliseconds: 0)));
   }
 
   routingToSpecificWidgetWithoutPop(Widget widget) {
     BuildContext context = routerKey.currentState!.context;
-    routerKey.currentState!.push(MaterialPageRoute(builder: (context) {
-      return widget;
-    }));
+    routerKey.currentState!.push(PageTransition(
+        child: (widget),
+        type: PageTransitionType.fade,
+        duration: Duration(milliseconds: 0)));
   }
 
   routingReplacement(Widget widget) {
     BuildContext context = routerKey.currentState!.context;
-    routerKey.currentState!
-        .pushReplacement(MaterialPageRoute(builder: (context) {
-      return widget;
-    }));
+    routerKey.currentState!.pushReplacement(PageTransition(
+        child: (widget),
+        type: PageTransitionType.fade,
+        duration: Duration(milliseconds: 0)));
   }
 
   routingReplacementUntil(Widget widget) {
     BuildContext context = routerKey.currentState!.context;
     routerKey.currentState!.pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => widget),
-        (Route<dynamic> route) => false);
+        PageTransition(
+            child: (widget),
+            type: PageTransitionType.fade,
+            duration: Duration(milliseconds: 0)),
+            (Route<dynamic> route) => false);
   }
 }
