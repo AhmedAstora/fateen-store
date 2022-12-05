@@ -3,7 +3,9 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:twnty2/UI/Screens/ChooseLanguageScreen/choose_language_screen.dart';
 
+import '../../../Helper/Router/router.dart';
 import '../../../Helper/SharedPreferance/shared_preferance.dart';
 
 class SplachScreen extends StatefulWidget {
@@ -16,7 +18,7 @@ class _SplachScreenState extends State<SplachScreen> {
     await Future.delayed(Duration(milliseconds: 2000));
     if (SpHelper.spHelper.getTokenId() != '') {
     } else {
-      //     RouterHelper.routerHelper.routingReplacement(FirstScreen());
+      RouterHelper.routerHelper.routingReplacement(ChooseLanguageScreen());
     }
   }
 
@@ -28,14 +30,25 @@ class _SplachScreenState extends State<SplachScreen> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(statusBarColor: Colors.blueAccent));
     return Scaffold(
+        extendBodyBehindAppBar: true,
+        extendBody: true,
         backgroundColor: Colors.white,
-        body: Center(
-            child: Text(
-          'Fateen Splash',
-          style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
-        )));
+        body: Stack(
+          children: [
+            Image.asset(
+              'assets/images/splash.png',
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              fit: BoxFit.fill,
+            ),
+            Center(
+                child: Image.asset(
+              'assets/images/logo.png',
+              width: 90.w,
+              height: 130.h,
+            )),
+          ],
+        ));
   }
 }

@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../Model/OnBoarding.dart';
+import '../Model/Slide.dart';
 
 class AppProvider extends ChangeNotifier {
   bool isHiden = false;
+  int languageIndex = 0;
 
   changeStatusPasseord() {
     isHiden = !isHiden;
@@ -25,4 +28,5 @@ class AppProvider extends ChangeNotifier {
         title: 'Pay via the mesa',
         body: 'Get paid to provide meeting rooms in your workplace'),
   ];
+
 }

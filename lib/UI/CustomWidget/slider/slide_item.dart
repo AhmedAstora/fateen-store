@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:twnty2/Helper/Providers/app_provider.dart';
+import 'package:twnty2/Helper/Providers/auth_provider.dart';
 import 'package:twnty2/Helper/SharedPreferance/shared_preferance.dart';
 import 'package:twnty2/UI/CustomWidget/custom_image_network.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
@@ -14,45 +15,31 @@ class SlideItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<AppProvider>(builder: (context, provider, _) {
+    return Consumer<AuthProvider>(builder: (context, provider, _) {
       return SingleChildScrollView(
         child: Container(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              SizedBox(
+                height: 50.h,
+              ),
               Container(
-                height: 252.h,
+                height: 200.h,
                 child: Stack(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(
-                          top: index == 1
-                              ? 4.5.h
-                              : index == 2
-                                  ? 1.5.h
-                                  : 0,
-                          right: context.locale.languageCode == "en"
-                              ? index == 2
-                                  ? 61.w
-                                  : 0
-                              : index == 0
-                                  ? 61.w
-                                  : 0,
-                          left: context.locale.languageCode == "en"
-                              ? index == 0
-                                  ? 61.w
-                                  : 0
-                              : index == 2
-                                  ? 61.w
-                                  : 0),
-                      child: Image.asset(
-                        context.locale.languageCode == "ar"
-                            ? provider.onboardingAr![index].image!
-                            : provider.onboardingAr![index].image!,
-                        height: index == 1 ? 253.h : 245.0.h,
-                        width: MediaQuery.of(context).size.width,
-                        fit: BoxFit.fill,
+                      margin: EdgeInsets.symmetric(horizontal: 35.w),
+                      child: Center(
+                        child: Image.asset(
+                          context.locale.languageCode == "ar"
+                              ? provider.slideList_welcome[index].imageUrl
+                              : provider.slideList_welcome[index].imageUrl,
+                          height: index == 1 ? 253.h : 245.0.h,
+                          width: MediaQuery.of(context).size.width,
+                          fit: BoxFit.fill,
+                        ),
                       ),
                       // child: CachedNetworkImage(
                       //   imageUrl: baseUrl + provider.onboarding![index].image!,
@@ -80,28 +67,29 @@ class SlideItem extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 40.h,
+                height: 100.h,
               ),
               Text(
-                "Title",
+                "${provider.slideList_welcome[index].title}",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18.sp,
-                  color: mainAppColor,
+                  color: greyColor,
                   fontWeight: FontWeight.w700,
                 ),
+                maxLines: 1,
               ),
               SizedBox(
-                height: 20.h,
+                height: 25.h,
               ),
               Container(
                 width: 280.w,
                 child: Text(
-                  'Description ',
+                  '${provider.slideList_welcome[index].text}',
                   maxLines: 3,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 13.sp,
+                    fontSize: 14.sp,
                     color: Colors.grey[600],
                   ),
                 ),
