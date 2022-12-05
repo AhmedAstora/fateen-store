@@ -10,6 +10,7 @@ import 'package:provider/provider.dart';
 import 'package:twnty2/Helper/Providers/app_provider.dart';
 import 'package:twnty2/Helper/Providers/auth_provider.dart';
 import 'package:twnty2/Helper/Router/router.dart';
+import 'package:twnty2/UI/Screens/SignInScreen/sign_in_screen.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
 
 import '../../../Helper/SharedPreferance/shared_preferance.dart';
@@ -31,7 +32,7 @@ class SelectLocationScreen extends StatelessWidget {
             InkWell(
               onTap: () {
                 RouterHelper.routerHelper
-                    .routingReplacementUntil(OnBoardingScreen());
+                    .routingReplacementUntil(SignInScreen());
               },
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),

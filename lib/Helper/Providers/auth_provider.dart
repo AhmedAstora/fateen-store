@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:string_validator/string_validator.dart';
 
 import '../../UI/Screens/OnBoardingScreen/onboarding_screen.dart';
+import '../../UI/Screens/SignInScreen/sign_in_screen.dart';
 import '../Model/Slide.dart';
 import '../Router/router.dart';
 
@@ -14,6 +16,12 @@ class AuthProvider extends ChangeNotifier {
   int currentPage = 0;
 
   final PageController pageController = PageController(initialPage: 0);
+
+
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwrodController = TextEditingController();
+
+  bool rememberMe = false;
 
   final slideList_welcome = [
     Slide(
@@ -39,6 +47,19 @@ class AuthProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  String? nullValidator(String? value) {
+    if (value!.isEmpty) {
+      return 'Required Field';
+    }
+    return null;
+  }
+
+  String? emailValidation(String? value) {
+    if (!isEmail(value!)) {
+      return 'InCorrect Email syntax';
+    }
+  }
+
   getUserLocation() async {
     isLoading = true;
     notifyListeners();
@@ -60,7 +81,7 @@ class AuthProvider extends ChangeNotifier {
 
     if (myLocation != null) {}
     if (position != null) {
-      RouterHelper.routerHelper.routingReplacementUntil(OnBoardingScreen());
+      RouterHelper.routerHelper.routingReplacementUntil(SignInScreen());
     }
     isLoading = false;
     notifyListeners();
