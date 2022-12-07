@@ -21,6 +21,10 @@ class AuthProvider extends ChangeNotifier {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwrodController = TextEditingController();
 
+
+
+  TextEditingController phoneController = TextEditingController();
+
   bool rememberMe = false;
 
   final slideList_welcome = [

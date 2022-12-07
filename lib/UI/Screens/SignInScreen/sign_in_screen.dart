@@ -11,11 +11,13 @@ import 'package:twnty2/Helper/Providers/auth_provider.dart';
 import 'package:twnty2/Helper/Router/router.dart';
 import 'package:twnty2/Helper/SharedPreferance/shared_preferance.dart';
 import 'package:twnty2/UI/CustomWidget/custom_bottom.dart';
+import 'package:twnty2/UI/CustomWidget/custom_text.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
 
 import '../../CustomWidget/custom_text_field.dart';
+import '../SignUpScreen/sign_up_screen.dart';
 
 class SignInScreen extends StatelessWidget {
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
@@ -171,8 +173,8 @@ class SignInScreen extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {
-                          // RouterHelper.routerHelper
-                          //     .routingReplacement(SignUpScreen());
+                          RouterHelper.routerHelper
+                              .routingReplacement(SignUpScreen());
                         },
                         child: Text(
                           "Create a new account".tr(),

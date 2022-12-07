@@ -114,7 +114,7 @@ class SelectLocationScreen extends StatelessWidget {
             InkWell(
               onTap: () {
                 RouterHelper.routerHelper
-                    .routingReplacementUntil(OnBoardingScreen());
+                    .routingReplacementUntil(SignInScreen());
               },
               child: Center(
                 child: Text(
