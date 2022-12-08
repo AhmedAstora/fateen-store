@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:twnty2/Helper/Providers/app_provider.dart';
+import 'package:twnty2/UI/CustomWidget/slider/slide_width_dots.dart';
 
+import '../../Utils/constant.dart';
 import '../custom_image_network.dart';
 
 final List<String> imagesList = [
@@ -41,7 +43,21 @@ class CarouselSliderImage extends StatelessWidget {
               },
             ),
           ),
-
+          SizedBox(height: 10.h,),
+          Container(
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                for (int i = 0; i <imagesList.length
+                ; i++)
+                  if (i == provider.currentIndex)
+                    SlideWidthDots(true, mainAppColor, Colors.grey)
+                  else
+                    SlideWidthDots(false, mainAppColor, Colors.grey)
+              ],
+            ),
+          ),
         ],
       );
     });

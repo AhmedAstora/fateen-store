@@ -1,9 +1,9 @@
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:twnty2/UI/CustomWidget/custom_text.dart';
 import 'package:twnty2/UI/CustomWidget/slider/carousel_slider.dart';
+import 'package:twnty2/UI/Utils/constant.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -46,7 +46,6 @@ class HomeScreen extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
-
                 SizedBox(
                   height: 15.h,
                 ),
@@ -61,9 +60,10 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Row(
                       children: [
-                        Icon(
-                          Icons.search,
-                          size: 30.0,
+                        ImageIcon(
+                          AssetImage("assets/images/search.png"),
+                          color: Colors.black,
+                          size: 30,
                         ),
                         SizedBox(
                           width: 11.w,
@@ -86,68 +86,46 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   height: 15.h,
                 ),
-                // Column(children: [
-                //   Container(
-                //     margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                //     decoration: BoxDecoration(
-                //       color:Colors.grey,
-                //       borderRadius: BorderRadius.all(Radius.circular(20)),
-                //     ),
-                //     child: ClipRRect(
-                //       borderRadius: BorderRadius.all(Radius.circular(20)),
-                //       child: AspectRatio(
-                //         aspectRatio: 16/9,
-                //         child: Container(
-                //           color: Colors.grey,
-                //         ),
-                //       ),
-                //     ),
-                //   ),
-                //   SizedBox(
-                //     height:17.h ,),
-                //   Row(
-                //     mainAxisAlignment: MainAxisAlignment.center,
-                //     children: [
-                //       Container(
-                //         height: 7.h,
-                //         width: 7.w,
-                //         decoration: BoxDecoration(
-                //           shape: BoxShape.circle,
-                //           color: Colors.grey,
-                //         ),
-                //       ),
-                //       SizedBox(width: 3.w,),
-                //       Container(
-                //         height: 7.h,
-                //         width: 7.w,
-                //         decoration: BoxDecoration(
-                //           shape: BoxShape.circle,
-                //           color: Colors.grey,
-                //         ),
-                //       ),
-                //       SizedBox(width: 3.w,),
-                //       Container(
-                //         height: 7.h,
-                //         width: 7.w,
-                //         decoration: BoxDecoration(
-                //           shape: BoxShape.circle,
-                //           color: Colors.grey,
-                //         ),
-                //       ),
-                //       SizedBox(width: 3.w,),
-                //       Container(
-                //         height: 7.h,
-                //         width: 7.w,
-                //         decoration: BoxDecoration(
-                //           shape: BoxShape.circle,
-                //           color: Colors.grey,
-                //         ),
-                //       ),
-                //       SizedBox(width: 3.w,),
-                //     ],
-                //   ),
-                // ],)
                 CarouselSliderImage(),
+                SizedBox(height: 24.h,),
+                Row(
+                  children: [
+                    CustomText('Categories',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0XFF545454),),
+                    Spacer(),
+                    CustomText('See all',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w500,
+                      color: mainAppColor,),
+                  ],
+                ),
+                SizedBox(height: 12.h,),
+                Container(
+                  width: 100,
+                  child: ListView.separated(
+                      physics: NeverScrollableScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context,index)=> Row(
+                        children: [
+                          DottedBorder(
+                            borderType: BorderType.Circle,
+                            padding: EdgeInsets.all(4.52),
+                            child: Container(
+                              width: 61.w,
+                              height: 61.h,
+                              child: CircleAvatar(
+                                backgroundColor: Colors.transparent,
+                                child: Image.asset('assets/images/img1.png'),
+                              ),
+                            ),
+                          ),
+                        ],),
+                      separatorBuilder:(context,index)=>SizedBox(width: 21.w,),
+                      itemCount: 5),
+                ),
+
               ],
             ),
           ),
