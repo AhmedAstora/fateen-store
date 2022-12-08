@@ -10,6 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:twnty2/UI/Screens/HomeScreen/home_screen.dart';
 
 import 'Helper/Providers/app_provider.dart';
 import 'Helper/Providers/auth_provider.dart';
@@ -202,7 +203,7 @@ class _MyAppsState extends State<MyApps> {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         debugShowCheckedModeBanner: false,
-        home: SplachScreen(),
+        home: HomeScreen(),
       ),
     );
   }

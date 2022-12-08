@@ -7,7 +7,7 @@ import '../Model/Slide.dart';
 class AppProvider extends ChangeNotifier {
   bool isHiden = false;
   int languageIndex = 0;
-
+  int currentIndex = 0;
   changeStatusPasseord() {
     isHiden = !isHiden;
     notifyListeners();
