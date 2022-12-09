@@ -17,7 +17,9 @@ import 'package:twnty2/UI/Utils/constant.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
 
 import '../../CustomWidget/custom_text_field.dart';
+import '../SignUpScreen/choose_signup_screen.dart';
 import '../SignUpScreen/sign_up_screen.dart';
+import 'forget_password_screen.dart';
 
 class SignInScreen extends StatelessWidget {
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
@@ -35,6 +37,7 @@ class SignInScreen extends StatelessWidget {
       return Form(
         key: loginFormKey,
         child: Scaffold(
+          backgroundColor: Colors.white,
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
@@ -104,9 +107,9 @@ class SignInScreen extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          // RouterHelper.routerHelper
-                          //     .routingToSpecificWidgetWithoutPop(
-                          //         ForgetPasswordScreen());
+                          RouterHelper.routerHelper
+                              .routingToSpecificWidgetWithoutPop(
+                                  ForgetPasswordScreen());
                         },
                         child: Text(
                           "Forgot your password ?".tr(),
@@ -153,7 +156,7 @@ class SignInScreen extends StatelessWidget {
                   CustomBottom(
                     onTap: () {},
                     title: 'Sign in',
-                    margin: EdgeInsets.symmetric(horizontal: 20.w),
+
                   ),
                   SizedBox(
                     height: 130.h,
@@ -174,7 +177,7 @@ class SignInScreen extends StatelessWidget {
                       InkWell(
                         onTap: () {
                           RouterHelper.routerHelper
-                              .routingReplacement(SignUpScreen());
+                              .routingToSpecificWidgetWithoutPop(ChooseSignUpScreen());
                         },
                         child: Text(
                           "Create a new account".tr(),

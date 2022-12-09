@@ -37,7 +37,7 @@ class CustomBottom extends StatelessWidget {
         decoration: BoxDecoration(
             color: backgroundColor,
             borderRadius: BorderRadius.circular(borderRadius!)),
-        child: Text(
+        child:   Text(
           title!.tr(),
           style: style ??
               TextStyle(

@@ -12,10 +12,11 @@ import '../../../Helper/Providers/auth_provider.dart';
 import '../../../Helper/Router/router.dart';
 import '../../../Helper/SharedPreferance/shared_preferance.dart';
 import '../../CustomWidget/custom_bottom.dart';
+import '../../CustomWidget/custom_text.dart';
 import '../../CustomWidget/custom_text_field.dart';
 import '../../Utils/constant.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpVendorScreen extends StatelessWidget {
   GlobalKey<FormState> signFormKey = GlobalKey<FormState>();
 
   loginValidate() {
@@ -49,10 +50,10 @@ class SignUpScreen extends StatelessWidget {
                     height: 20.h,
                   ),
                   Center(
-                    child: Text(
+                    child: CustomText(
                       "Sign up".tr(),
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500, fontSize: 18.sp),
+
+                          fontWeight: FontWeight.w600, fontSize: 18.sp,
                     ),
                   ),
                   SizedBox(
@@ -197,6 +198,78 @@ class SignUpScreen extends StatelessWidget {
                               fontSize: 14.sp)),
 
                       //  onChanged: (value){},
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  Text(
+                    '${"Commerical Registeration ".tr()}',
+                    style: TextStyle(
+                        color: greyColor,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12.sp),
+                  ),
+                  SizedBox(
+                    height: 8.h,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      provider.PickFile();
+                    },
+                    child: Container(
+                      height: 50,
+                      alignment: Alignment.center,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          Container(
+                              width: 250.w,
+                              child: CustomText(
+                                provider.fileController.text == ""
+                                    ? "Upload Document"
+                                    : provider.fileController.text,
+                                maxLines: 1,
+                                color: provider.fileController.text == ""
+                                    ? Colors.grey
+                                    : Colors.black,
+                              )),
+                          Spacer(),
+                          Image.asset(
+                            'assets/images/upload-file.png',
+                            width: 16.w,
+                            height: 16.h,
+                          ),
+                          SizedBox(
+                            width: 15.w,
+                          )
+                        ],
+                      ),
+                      decoration: BoxDecoration(
+
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(
+                              color: provider.errorFile
+                                  ? Colors.red
+                                  : Colors.grey.withOpacity(0.6),
+                              width: .8.w)),
+                    ),
+                  ),
+                  Visibility(
+                      visible: provider.errorFile,
+                      child: SizedBox(
+                        height: 5.h,
+                      )),
+                  Visibility(
+                    visible: provider.errorFile,
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 10.w),
+                      child: Text(
+                        'Required Field',
+                        style: TextStyle(fontSize: 12.sp, color: Colors.red),
+                      ),
                     ),
                   ),
                   SizedBox(

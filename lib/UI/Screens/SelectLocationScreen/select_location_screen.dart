@@ -95,13 +95,18 @@ class SelectLocationScreen extends StatelessWidget {
                   alignment: Alignment.center,
                   width: MediaQuery.of(context).size.width,
                   height: 50.h,
-                  child: Text(
-                    "Allow access".tr(),
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w600),
-                  ),
+                  child: provider.isLoading
+                      ? CircularProgressIndicator(
+                          color: Colors.white,
+                          strokeWidth: 2,
+                        )
+                      : Text(
+                          "Allow access".tr(),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w600),
+                        ),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: mainAppColor),

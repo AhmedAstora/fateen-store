@@ -205,7 +205,7 @@ class _MyAppsState extends State<MyApps> {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         debugShowCheckedModeBanner: false,
-        home: CartScreen(),
+        home: SplachScreen(),
       ),
     );
   }

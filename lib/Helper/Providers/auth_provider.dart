@@ -1,6 +1,11 @@
+import 'dart:developer';
+import 'dart:io';
+
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:path/path.dart';
 import 'package:string_validator/string_validator.dart';
 
 import '../../UI/Screens/OnBoardingScreen/onboarding_screen.dart';
@@ -17,15 +22,28 @@ class AuthProvider extends ChangeNotifier {
 
   final PageController pageController = PageController(initialPage: 0);
 
-
   TextEditingController emailController = TextEditingController();
   TextEditingController passwrodController = TextEditingController();
-
-
-
   TextEditingController phoneController = TextEditingController();
 
   bool rememberMe = false;
+
+
+  TextEditingController emailForgetController = TextEditingController();
+
+  TextEditingController resetPasswordController = TextEditingController();
+  TextEditingController ConfirmResetPasswordController =
+  TextEditingController();
+
+
+  var pinPutController = TextEditingController();
+  bool isExpire = true;
+  bool wrongCode = false;
+
+
+  TextEditingController fileController = TextEditingController();
+  bool errorFile = false;
+  File? file;
 
   final slideList_welcome = [
     Slide(
@@ -80,15 +98,32 @@ class AuthProvider extends ChangeNotifier {
       return Future.error(
           'Location permissions are permanently denied, we cannot request permissions.');
     }
-
-    Position position = await Geolocator.getCurrentPosition();
-    myLocation = LatLng(position.latitude, position.longitude);
+    Position? position;
+    try {
+      position = await Geolocator.getCurrentPosition();
+      myLocation = LatLng(position.latitude, position.longitude);
+    } catch (e) {
+      log(e.toString());
+    }
 
     if (myLocation != null) {}
     if (position != null) {
       RouterHelper.routerHelper.routingReplacementUntil(SignInScreen());
     }
     isLoading = false;
+    notifyListeners();
+  }
+  PickFile() async {
+    try{
+    FilePickerResult? result = await FilePicker.platform.pickFiles();
+    if (result != null) {
+      file = File(result.files.single.path!);
+      fileController.text = basename(file!.path);
+      errorFile = false;
+    }
+    }catch(e){
+      log(e.toString());
+    }
     notifyListeners();
   }
 }

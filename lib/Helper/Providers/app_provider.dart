@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -7,6 +9,7 @@ import '../Model/Slide.dart';
 class AppProvider extends ChangeNotifier {
   bool isHiden = false;
   int languageIndex = 0;
+  int userIndex = 0;
   int currentIndex = 0;
 
   int selectedSize = 0;
@@ -14,6 +17,7 @@ class AppProvider extends ChangeNotifier {
     isHiden = !isHiden;
     notifyListeners();
   }
+
 
   List<OnBoardingModel>? onboardingAr = [
     OnBoardingModel(
@@ -30,5 +34,6 @@ class AppProvider extends ChangeNotifier {
         title: 'Pay via the mesa',
         body: 'Get paid to provide meeting rooms in your workplace'),
   ];
+
 
 }
