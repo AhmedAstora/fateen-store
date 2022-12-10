@@ -226,67 +226,71 @@ class CartScreen extends StatelessWidget {
                     SizedBox(
                       height: 16.w,
                     ),
-                    Row(
-                      children: [
-                        CustomText(
-                          '${model.oldPrice}',
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12.0.sp,
-                          color: Color(0xff99969D),
-                        ),
-                        SizedBox(
-                          width: 10.w,
-                        ),
-                        CustomText('${model.price}',
-                            fontWeight: FontWeight.w700,
-                            fontSize: 16.0.sp,
-                            color: mainAppColor),
-                        SizedBox(
-                          width: 70.w,
-                        ),
-                        Container(
-                          height: 22.h,
-                          width: 67.w,
-                          child: Row(
-                            children: [
-                              Container(
-                                height: 22.h,
-                                width: 20.w,
-                                child: Icon(
-                                  Icons.minimize_sharp,
-                                  size: 18.sp,
-                                  color: Colors.black,
-                                ),
-                                decoration: BoxDecoration(
-                                    color: Colors.grey,
-                                    borderRadius: BorderRadius.circular(5)),
-                              ),
-                              Container(
-                                  height: 22.h,
-                                  width: 27.w,
-                                  color: Colors.white,
-                                  child: Center(
-                                      child: CustomText(
-                                    '${model.num}',
-                                    fontSize: 12.0.sp,
-                                    fontWeight: FontWeight.w700,
-                                  ))),
-                              Container(
-                                height: 22.h,
-                                width: 20.w,
-                                child: Icon(
-                                  Icons.add,
-                                  size: 15.sp,
-                                  color: Colors.white,
-                                ),
-                                decoration: BoxDecoration(
-                                    color: mainAppColor,
-                                    borderRadius: BorderRadius.circular(5)),
-                              ),
-                            ],
+                    Container(
+                      height: 25.h,
+                      width: 220.w,
+
+                      child: Row(
+                        children: [
+                          CustomText(
+                            '${model.oldPrice}',
+                            fontWeight: FontWeight.w500,
+                            fontSize: 12.0.sp,
+                            color: Color(0xff99969D),
                           ),
-                        ),
-                      ],
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          CustomText('${model.price}',
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16.0.sp,
+                              color: mainAppColor),
+                          Spacer(),
+                          Container(
+                            height: 22.h,
+                            width: 67.w,
+                            child: Row(
+                              children: [
+                                Container(
+                                  alignment: Alignment.bottomCenter,
+                                  height: 22.h,
+                                  width: 20.w,
+                                  child: Icon(
+                                    Icons.maximize,
+                                    size: 13.sp,
+                                    color: Colors.black,
+                                  ),
+                                  decoration: BoxDecoration(
+                                      color: Color(0xffEBEBEB),
+                                      borderRadius: BorderRadius.circular(5)),
+                                ),
+                                Container(
+                                    height: 22.h,
+                                    width: 27.w,
+                                    color: Colors.white,
+                                    child: Center(
+                                        child: CustomText(
+                                      '${model.num}',
+                                      fontSize: 12.0.sp,
+                                      fontWeight: FontWeight.w700,
+                                    ))),
+                                Container(
+                                  height: 22.h,
+                                  width: 20.w,
+                                  child: Icon(
+                                    Icons.add,
+                                    size: 15.sp,
+                                    color: Colors.white,
+                                  ),
+                                  decoration: BoxDecoration(
+                                      color: mainAppColor,
+                                      borderRadius: BorderRadius.circular(5)),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
