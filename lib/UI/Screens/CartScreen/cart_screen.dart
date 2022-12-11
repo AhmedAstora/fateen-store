@@ -191,146 +191,149 @@ class CartScreen extends StatelessWidget {
   }
 
   Widget buildItem(data model) {
-    return Slidable(
-        // Specify a key if the Slidable is dismissible.
-        key: const ValueKey(0),
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 8.h),
+      height: 115.h,
+      child: Slidable(
+          // Specify a key if the Slidable is dismissible.
+          key: const ValueKey(0),
 
-        // The start action pane is the one at the left or the top side.
-        startActionPane: ActionPane(
-          extentRatio: .22,
-          // A motion is a widget used to control how the pane animates.
-          motion: const ScrollMotion(),
+          // The start action pane is the one at the left or the top side.
+          startActionPane: ActionPane(
+            extentRatio: .22,
+            // A motion is a widget used to control how the pane animates.
+            motion: const ScrollMotion(),
 
-          // A pane can dismiss the Slidable.
-          //   dismissible: DismissiblePane(onDismissed: () {}),
+            // A pane can dismiss the Slidable.
+            //   dismissible: DismissiblePane(onDismissed: () {}),
 
-          // All actions are defined in the children parameter.
-          children: [
-            // A SlidableAction can have an icon and/or a label.
-            SlidableAction(
-              onPressed: (context) {},
-              borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(20),
-                  bottomRight: Radius.circular(20)),
-              backgroundColor: mainAppColor,
-              foregroundColor: Colors.white,
-              icon: Icons.delete,
-            ),
-          ],
-        ),
-        child: Container(
-          margin: EdgeInsets.symmetric(vertical: 8.h),
-          height: 115.h,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Color(0xadf8f8f8)),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(
-                    '${model.image}',
-                    fit: BoxFit.cover,
-                    height: 103.h,
-                    width: 87.w,
-                  ),
-                ),
-                SizedBox(
-                  width: 10.w,
-                ),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomText(
-                        '${model.title}',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16.0.sp,
-                      ),
-                      SizedBox(
-                        height: 5.w,
-                      ),
-                      CustomText(
-                        '${model.title1}',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14.0.sp,
-                        color: Color(0xff99969D),
-                      ),
-                      Spacer(),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          CustomText(
-                            '${model.oldPrice}',
-                            fontWeight: FontWeight.w500,
-                            fontSize: 12.0.sp,
-                            color: Color(0xff99969D),
-                          ),
-                          SizedBox(
-                            width: model.oldPrice == "" ? 0 : 10.w,
-                          ),
-                          CustomText('${model.price}',
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16.0.sp,
-                              color: mainAppColor),
-                          Spacer(),
-                          Container(
-                            height: 22.h,
-                            width: 67.w,
-                            child: Row(
-                              children: [
-                                Container(
-                                  alignment: Alignment.bottomCenter,
-                                  height: 22.h,
-                                  width: 20.w,
-                                  child: Icon(
-                                    Icons.maximize,
-                                    size: 13.sp,
-                                    color: Colors.black,
-                                  ),
-                                  decoration: BoxDecoration(
-                                      color: Color(0xffEBEBEB),
-                                      borderRadius: BorderRadius.circular(5)),
-                                ),
-                                Container(
-                                    height: 22.h,
-                                    width: 27.w,
-                                    color: Colors.white,
-                                    child: Center(
-                                        child: CustomText(
-                                      '${model.num}',
-                                      fontSize: 12.0.sp,
-                                      fontWeight: FontWeight.w700,
-                                    ))),
-                                Container(
-                                  height: 22.h,
-                                  width: 20.w,
-                                  child: Icon(
-                                    Icons.add,
-                                    size: 15.sp,
-                                    color: Colors.white,
-                                  ),
-                                  decoration: BoxDecoration(
-                                      color: mainAppColor,
-                                      borderRadius: BorderRadius.circular(5)),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 5.h,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+            // All actions are defined in the children parameter.
+            children: [
+              // A SlidableAction can have an icon and/or a label.
+              SlidableAction(
+                onPressed: (context) {},
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    bottomRight: Radius.circular(20)),
+                backgroundColor: mainAppColor,
+                foregroundColor: Colors.white,
+                icon: Icons.delete,
+              ),
+            ],
           ),
-        ));
+          child: Container(
+            height: 115.h,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Color(0xadf8f8f8)),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      '${model.image}',
+                      fit: BoxFit.cover,
+                      height: 103.h,
+                      width: 87.w,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10.w,
+                  ),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CustomText(
+                          '${model.title}',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16.0.sp,
+                        ),
+                        SizedBox(
+                          height: 5.w,
+                        ),
+                        CustomText(
+                          '${model.title1}',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14.0.sp,
+                          color: Color(0xff99969D),
+                        ),
+                        Spacer(),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            CustomText(
+                              '${model.oldPrice}',
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12.0.sp,
+                              color: Color(0xff99969D),
+                            ),
+                            SizedBox(
+                              width: model.oldPrice == "" ? 0 : 10.w,
+                            ),
+                            CustomText('${model.price}',
+                                fontWeight: FontWeight.w700,
+                                fontSize: 16.0.sp,
+                                color: mainAppColor),
+                            Spacer(),
+                            Container(
+                              height: 22.h,
+                              width: 67.w,
+                              child: Row(
+                                children: [
+                                  Container(
+                                    alignment: Alignment.bottomCenter,
+                                    height: 22.h,
+                                    width: 20.w,
+                                    child: Icon(
+                                      Icons.maximize,
+                                      size: 13.sp,
+                                      color: Colors.black,
+                                    ),
+                                    decoration: BoxDecoration(
+                                        color: Color(0xffEBEBEB),
+                                        borderRadius: BorderRadius.circular(5)),
+                                  ),
+                                  Container(
+                                      height: 22.h,
+                                      width: 27.w,
+                                      color: Colors.white,
+                                      child: Center(
+                                          child: CustomText(
+                                        '${model.num}',
+                                        fontSize: 12.0.sp,
+                                        fontWeight: FontWeight.w700,
+                                      ))),
+                                  Container(
+                                    height: 22.h,
+                                    width: 20.w,
+                                    child: Icon(
+                                      Icons.add,
+                                      size: 15.sp,
+                                      color: Colors.white,
+                                    ),
+                                    decoration: BoxDecoration(
+                                        color: mainAppColor,
+                                        borderRadius: BorderRadius.circular(5)),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 5.h,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )),
+    );
   }
 }

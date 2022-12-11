@@ -18,6 +18,7 @@ import 'Helper/Router/router.dart';
 import 'Helper/SharedPreferance/shared_preferance.dart';
 import 'UI/Screens/CartScreen/cart_screen.dart';
 import 'UI/Screens/DetailsScreen/details_screen.dart';
+import 'UI/Screens/MainNavigationScreen/main_navigation_screen.dart';
 import 'UI/Screens/SplashScreen/splash_screen.dart';
 import 'UI/Utils/constant.dart';
 
@@ -205,7 +206,7 @@ class _MyAppsState extends State<MyApps> {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         debugShowCheckedModeBanner: false,
-        home: CartScreen(),
+        home: MainNavigationScreen(),
       ),
     );
   }

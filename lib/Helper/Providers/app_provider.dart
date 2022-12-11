@@ -11,8 +11,16 @@ class AppProvider extends ChangeNotifier {
   int languageIndex = 0;
   int userIndex = 0;
   int currentIndex = 0;
-
+  int indexNavigation = 0;
   int selectedSize = 0;
+
+
+  void chageSelectedIndex(int i) {
+    indexNavigation = i;
+    notifyListeners();
+  }
+
+
   changeStatusPasseord() {
     isHiden = !isHiden;
     notifyListeners();
