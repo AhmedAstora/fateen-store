@@ -139,13 +139,9 @@ class CartBuyBottomSheet extends StatelessWidget {
                 'Location :  ',
                 fontWeight: FontWeight.w600,
               ),
-              Container(
-                height: 44.h,
-                width: 221.w,
-                child: CustomText(
-                  '(870) 285-3677 825 Saudi Arabia,  The city of Jeddah(AR), 71958 ',
-                  color: Color(0x9908151f),
-                ),
+              CustomText(
+                '(870) 285-3677 825 Saudi Arabia,\nThe city of Jeddah(AR), 71958 ',
+                color: Color(0x9908151f),
               ),
             ],
           ),

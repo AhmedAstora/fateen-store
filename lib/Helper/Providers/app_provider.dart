@@ -13,6 +13,7 @@ class AppProvider extends ChangeNotifier {
   int currentIndex = 0;
   int indexNavigation = 0;
   int selectedSize = 0;
+  int selectedtext = 0;
 
 
   void chageSelectedIndex(int i) {

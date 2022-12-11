@@ -17,8 +17,11 @@ import 'Helper/Providers/auth_provider.dart';
 import 'Helper/Router/router.dart';
 import 'Helper/SharedPreferance/shared_preferance.dart';
 import 'UI/Screens/CartScreen/cart_screen.dart';
+import 'UI/Screens/CartScreen/empty_cart_screen.dart';
+import 'UI/Screens/CheckOutScreen/check_out_screen.dart';
 import 'UI/Screens/DetailsScreen/details_screen.dart';
 import 'UI/Screens/MainNavigationScreen/main_navigation_screen.dart';
+import 'UI/Screens/RequestsScreen/requests_screen.dart';
 import 'UI/Screens/SplashScreen/splash_screen.dart';
 import 'UI/Utils/constant.dart';
 
@@ -192,6 +195,7 @@ class _MyAppsState extends State<MyApps> {
 
   @override
   Widget build(BuildContext context) {
+    context.setLocale(Locale("en"));
     //Set the fit size (Find your UI design, look at the dimensions of the device screen and fill it in,unit in dp)
     return ScreenUtilInit(
       designSize: Size(375, 812),
@@ -206,7 +210,7 @@ class _MyAppsState extends State<MyApps> {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         debugShowCheckedModeBanner: false,
-        home: MainNavigationScreen(),
+        home: RequestsScreen(),
       ),
     );
   }
