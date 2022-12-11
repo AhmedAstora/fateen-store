@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:twnty2/Helper/Providers/app_provider.dart';
+import 'package:twnty2/UI/Screens/CartScreen/cart_screen.dart';
+import 'package:twnty2/UI/Screens/RequestsScreen/requests_screen.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
 
 import '../HomeScreen/home_screen.dart';
@@ -115,7 +117,7 @@ class MainNavigationScreen extends StatelessWidget {
 List<Widget>? navgationWidget = [
   HomeScreen(),
   HomeScreen(),
-  HomeScreen(),
-  HomeScreen(),
+  CartScreen(),
+  RequestsScreen(),
   HomeScreen(),
 ];
