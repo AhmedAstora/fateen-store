@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twnty2/UI/CustomWidget/custom_text.dart';
 import 'package:twnty2/UI/CustomWidget/slider/carousel_slider.dart';
+import 'package:twnty2/UI/Screens/HomeScreen/widget/all_deals_view_one_widget.dart';
+import 'package:twnty2/UI/Screens/HomeScreen/widget/category_home_widget.dart';
+import 'package:twnty2/UI/Screens/HomeScreen/widget/deals_home_widget.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -41,15 +44,15 @@ class HomeScreen extends StatelessWidget {
         elevation: 0.0,
       ),
       body: SingleChildScrollView(
-        child: Center(
+        child: Container(
           child: Column(
             children: [
               SizedBox(
-                height: 15.h,
+                height: 10.h,
               ),
               Container(
-                width: 339.w,
-                height: 39.h,
+                margin: EdgeInsets.symmetric(horizontal: 16.w),
+                height: 45.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(23.5),
                   color: Color(0xFFF1F1F1),
@@ -86,22 +89,28 @@ class HomeScreen extends StatelessWidget {
               ),
               CarouselSliderImage(),
               SizedBox(
-                height: 24.h,
+                height: 14.h,
               ),
               Row(
                 children: [
+                  SizedBox(
+                    width: 16.w,
+                  ),
                   CustomText(
                     'Categories',
                     fontSize: 16.sp,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                     color: Color(0XFF545454),
                   ),
                   Spacer(),
                   CustomText(
                     'See all',
                     fontSize: 12.sp,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                     color: mainAppColor,
+                  ),
+                  SizedBox(
+                    width: 16.w,
                   ),
                 ],
               ),
@@ -109,27 +118,176 @@ class HomeScreen extends StatelessWidget {
                 height: 12.h,
               ),
               Container(
-                height: 65.h,
+                padding: EdgeInsets.only(left: 16.w),
+                height: 92.r,
                 child: ListView.separated(
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
                     scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) => DottedBorder(
-                          borderType: BorderType.Circle,
-                          padding: EdgeInsets.all(4.52),
-                          child: Container(
-                            width: 61.w,
-                            height: 61.h,
-                            child: CircleAvatar(
-                              backgroundColor: Colors.transparent,
-                              child: Image.asset('assets/images/img1.png'),
-                            ),
-                          ),
-                        ),
+                    itemBuilder: (context, index) => CategoryHomeWidget(),
                     separatorBuilder: (context, index) => SizedBox(
-                          width: 21.w,
+                          width: 15.w,
                         ),
                     itemCount: 5),
+              ),
+              SizedBox(
+                height: 14.h,
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 16.w,
+                  ),
+                  CustomText(
+                    'New Products',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0XFF545454),
+                  ),
+                  Spacer(),
+                  CustomText(
+                    'View all',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w600,
+                    color: mainAppColor,
+                  ),
+                  SizedBox(
+                    width: 16.w,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 16.w),
+                height: 240.h,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  itemBuilder: (_, index) => DealsHomeWidget(),
+                  itemCount: 5,
+                ),
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 16.w,
+                  ),
+                  CustomText(
+                    'Recommended for You',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0XFF545454),
+                  ),
+                  Spacer(),
+                  CustomText(
+                    'View all',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w600,
+                    color: mainAppColor,
+                  ),
+                  SizedBox(
+                    width: 16.w,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 16.w),
+                height: 240.h,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  itemBuilder: (_, index) => DealsHomeWidget(),
+                  itemCount: 5,
+                ),
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 16.w,
+                  ),
+                  CustomText(
+                    'Top Rated Products',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0XFF545454),
+                  ),
+                  Spacer(),
+                  CustomText(
+                    'View all',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w600,
+                    color: mainAppColor,
+                  ),
+                  SizedBox(
+                    width: 16.w,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 16.w),
+                height: 240.h,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  itemBuilder: (_, index) => DealsHomeWidget(),
+                  itemCount: 5,
+                ),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 16.w,
+                  ),
+                  CustomText(
+                    'All Products',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0XFF545454),
+                  ),
+                  Spacer(),
+                  CustomText(
+                    'View',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w500,
+                    color: mainAppColor,
+                  ),
+                  SizedBox(
+                    width: 5.w,
+                  ),
+                  Image.asset(
+                    'assets/images/view.png',
+                    width: 20.w,
+                    height: 20.h,
+                  ),
+                  SizedBox(
+                    width: 16.w,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 16.w),
+                child: ListView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemBuilder: (_, index) => AllDealsViewOneWidget(),
+                  itemCount: 5,
+                ),
+              ),
+              SizedBox(
+                height: 100.h,
               ),
             ],
           ),
