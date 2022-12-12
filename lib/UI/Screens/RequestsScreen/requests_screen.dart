@@ -33,7 +33,7 @@ class data {
 }
 class RequestsScreen extends StatelessWidget {
 
-  List<data> list = [
+  List<data> list =  [
     data(
       image: 'assets/images/requests.png',
       title: 'Imported cotton clothing set',
