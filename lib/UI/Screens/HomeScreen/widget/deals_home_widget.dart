@@ -26,6 +26,7 @@ class DealsHomeWidget extends StatelessWidget {
                     radius: 15,
                     width: 160.w,
                     fit: BoxFit.cover),
+
                 Align(
                   alignment: Alignment.bottomLeft,
                   child: Container(
@@ -35,7 +36,7 @@ class DealsHomeWidget extends StatelessWidget {
                         EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.black.withOpacity(.4)),
+                        color: Colors.black.withOpacity(.6)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
@@ -95,18 +96,22 @@ class DealsHomeWidget extends StatelessWidget {
                 '20-11-2022',
                 fontSize: 12.sp,
                 height: 1.5,
-                color: greyColor,
+                color: Colors.black,
                 fontWeight: FontWeight.w300,
                 maxLines: 1,
               ),
               SizedBox(
-                width: 5.w,
+                width: 2.w,
+              ),
+              Icon(Icons.arrow_forward_outlined,size: 12,)
+,              SizedBox(
+                width: 2.w,
               ),
               CustomText(
                 '20-11-2022',
                 fontSize: 12.sp,
                 height: 1.5,
-                color: greyColor,
+                color: Colors.black,
                 fontWeight: FontWeight.w300,
                 maxLines: 1,
               ),

@@ -7,6 +7,7 @@ import 'package:twnty2/UI/CustomWidget/custom_text.dart';
 import 'package:twnty2/UI/Screens/CartScreen/widget/cart_buy_bottom_sheet.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
 
+import '../../CustomWidget/back_appBar_widget.dart';
 import '../../CustomWidget/custom_bottom.dart';
 
 class data {
@@ -62,11 +63,7 @@ class CartScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
-        leading: Icon(
-          Icons.keyboard_arrow_left_outlined,
-          size: 30,
-          color: Colors.black,
-        ),
+        leading: BackAppBarWidget(),
         centerTitle: true,
         title: CustomText(
           'My Cart',
@@ -75,7 +72,7 @@ class CartScreen extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        physics: NeverScrollableScrollPhysics(),
+
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Column(
@@ -84,7 +81,7 @@ class CartScreen extends StatelessWidget {
                 height: 10.h,
               ),
               Container(
-                height: 430.h,
+                height: 390.h,
                 child: ListView.builder(
                     itemCount: list.length,
                     itemBuilder: (context, index) {
@@ -166,7 +163,7 @@ class CartScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 35.h,
+                height: 25.h,
               ),
               Center(
                 child: CustomBottom(
@@ -183,6 +180,7 @@ class CartScreen extends StatelessWidget {
                   borderRadius: 10,
                 ),
               ),
+              SizedBox(height: 50.h,),
             ],
           ),
         ),

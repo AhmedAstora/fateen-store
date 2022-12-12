@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomText extends StatelessWidget {
@@ -9,6 +10,7 @@ class CustomText extends StatelessWidget {
   int? maxLines;
   Color? color;
   double? height;
+  VoidCallback? onTap;
   TextDecoration? decoration;
 
   CustomText(this.text,
@@ -18,21 +20,25 @@ class CustomText extends StatelessWidget {
       this.maxLines,
       this.color,
       this.height,
+      this.onTap,
       this.decoration});
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Text(
-      text,
-      maxLines: maxLines,
-      style: TextStyle(
-          decoration: decoration ?? TextDecoration.none,
-          color: color,
-          height: height,
-          fontSize: fontSize ?? 14.sp,
-          fontWeight: fontWeight ?? FontWeight.w400),
-      textAlign: textAlign ?? TextAlign.start,
+    return InkWell(
+      onTap: onTap,
+      child: Text(
+        text,
+        maxLines: maxLines,
+        style: TextStyle(
+            decoration: decoration ?? TextDecoration.none,
+            color: color,
+            height: height,
+            fontSize: fontSize ?? 14.sp,
+            fontWeight: fontWeight ?? FontWeight.w400),
+        textAlign: textAlign ?? TextAlign.start,
+      ),
     );
   }
 }

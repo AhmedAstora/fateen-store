@@ -14,19 +14,26 @@ class AppProvider extends ChangeNotifier {
   int indexNavigation = 0;
   int selectedSize = 0;
   int selectedtext = 0;
+  bool isOneView = true;
 
+  int selectedSubCategory =0;
+
+
+
+  void changeHomeView() {
+    isOneView =!isOneView;
+    notifyListeners();
+  }
 
   void chageSelectedIndex(int i) {
     indexNavigation = i;
     notifyListeners();
   }
 
-
   changeStatusPasseord() {
     isHiden = !isHiden;
     notifyListeners();
   }
-
 
   List<OnBoardingModel>? onboardingAr = [
     OnBoardingModel(
@@ -43,6 +50,4 @@ class AppProvider extends ChangeNotifier {
         title: 'Pay via the mesa',
         body: 'Get paid to provide meeting rooms in your workplace'),
   ];
-
-
 }
