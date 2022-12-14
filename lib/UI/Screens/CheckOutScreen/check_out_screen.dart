@@ -11,18 +11,6 @@ class CheckOutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      persistentFooterButtons: [
-        Center(
-          child: CustomBottom(
-            onTap: () {},
-            height: 45.0.sp,
-            width: 271.0.sp,
-            backgroundColor: mainAppColor,
-            title: 'BUY NOW',
-            borderRadius: 10,
-          ),
-        ),
-      ],
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0.0,
@@ -81,9 +69,9 @@ class CheckOutScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 5,
-                    blurRadius: 7,
+                    color: Colors.grey.withOpacity(0.4),
+                    spreadRadius: 2,
+                    blurRadius: 5,
                     offset: Offset(0, 3), // changes position of shadow
                   ),
                 ],
@@ -222,9 +210,18 @@ class CheckOutScreen extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 35.h,
+              height: 62.h,
             ),
-
+            Center(
+              child: CustomBottom(
+                onTap: () {},
+                height: 45.0.sp,
+                width: 271.0.sp,
+                backgroundColor: mainAppColor,
+                title: 'BUY NOW',
+                borderRadius: 10,
+              ),
+            ),
             SizedBox(
               height: 20.h,
             ),

@@ -15,8 +15,8 @@ class TimearWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 79.0.h,
-      width: 78.0.w,
+      height: 72.0.h,
+      width: 72.0.w,
       decoration: BoxDecoration(
         color: Color(0xd7494747),
         borderRadius: BorderRadius.circular(10),
@@ -24,12 +24,12 @@ class TimearWidget extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: 6.0.h,
+            height: 3.0.h,
           ),
           Text(
             '${num}',
             style: TextStyle(
-              fontSize: 20.0.sp,
+              fontSize: 18.0.sp,
               fontWeight: FontWeight.w700,
               color: Colors.white,
             ),
@@ -37,7 +37,7 @@ class TimearWidget extends StatelessWidget {
           Text(
             '${title}',
             style: TextStyle(
-              fontSize: 16.0.sp,
+              fontSize: 15.0.sp,
               fontWeight: FontWeight.w400,
               color: Colors.white,
             ),

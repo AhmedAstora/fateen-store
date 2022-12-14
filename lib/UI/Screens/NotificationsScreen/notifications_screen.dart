@@ -39,7 +39,6 @@ class NotificationsScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Colors.white,
-        leading: BackAppBarWidget(),
         title: CustomText(
           'notifications',
           fontSize: 16.sp,
@@ -47,11 +46,25 @@ class NotificationsScreen extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: ListView.builder(
-          itemCount: list.length,
-          itemBuilder: (context, index) {
-            return buildItem(list[index], context);
-          }),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 10.h,
+            ),
+            ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: list.length,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return buildItem(list[index], context);
+                }),
+            SizedBox(
+              height: 40.h,
+            ),
+          ],
+        ),
+      ),
     );
   }
 
@@ -64,20 +77,24 @@ class NotificationsScreen extends StatelessWidget {
           CustomText(
             '${model.title2}',
             fontSize: 12.sp,
+            height: 1.2,
           ),
           SizedBox(
             height: 10.h,
           ),
           Container(
-            height: 80.h, 
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Color(0xcddadada)),
             child: Padding(
-              padding: const EdgeInsets.only(top: 10, right: 10, left: 10),
+              padding: EdgeInsets.only(
+                  top: 10.h, right: 10.w, left: 10.w, bottom: 10.h),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(
+                    width: 10.w,
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(top: 7),
                     child: Image.asset(
@@ -95,7 +112,7 @@ class NotificationsScreen extends StatelessWidget {
                       CustomText(
                         '${model.title1}',
                         fontSize: 10.0.sp,
-                        color: Color(0xff595959),
+                        color: Color(0xff929292),
                       ),
                     ],
                   ),

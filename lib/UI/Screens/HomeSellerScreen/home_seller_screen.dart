@@ -5,7 +5,7 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 import '../../CustomWidget/back_appBar_widget.dart';
 import '../../CustomWidget/custom_text.dart';
 import '../../Utils/constant.dart';
-import '../DetailsScreen/widget/size_product_widget.dart';
+
 
 class _ChartData {
   _ChartData(this.x, this.y1, this.y2, this.y3, this.y4);

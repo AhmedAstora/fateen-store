@@ -9,7 +9,6 @@ import '../../CustomWidget/back_appBar_widget.dart';
 import '../../CustomWidget/custom_text.dart';
 import '../../Utils/constant.dart';
 
-
 class data {
   String? image;
   String? title;
@@ -31,9 +30,9 @@ class data {
     this.num,
   });
 }
-class RequestsScreen extends StatelessWidget {
 
-  List<data> list =  [
+class RequestsScreen extends StatelessWidget {
+  List<data> list = [
     data(
       image: 'assets/images/requests.png',
       title: 'Imported cotton clothing set',
@@ -42,7 +41,6 @@ class RequestsScreen extends StatelessWidget {
       title3: 'Pending',
       oldPrice: '&9.9',
       price: '&5.8',
-
     ),
     data(
       image: 'assets/images/requests1.png',
@@ -52,7 +50,6 @@ class RequestsScreen extends StatelessWidget {
       title3: 'Finished',
       oldPrice: '&9.9',
       price: '&5.8',
-
     ),
     data(
       image: 'assets/images/requests2.png',
@@ -62,7 +59,6 @@ class RequestsScreen extends StatelessWidget {
       title3: 'Canceled',
       oldPrice: '&9.9',
       price: '&5.8',
-
     ),
   ];
 
@@ -76,7 +72,7 @@ class RequestsScreen extends StatelessWidget {
           appBar: AppBar(
             elevation: 0.0,
             backgroundColor: Colors.white,
-            leading: BackAppBarWidget(),
+
             title: CustomText(
               'Requests',
               fontSize: 16.sp,
@@ -120,7 +116,7 @@ class RequestsScreen extends StatelessWidget {
                 Expanded(
                   child: TabBarView(children: [
                     ListView.builder(
-                      padding: EdgeInsets.symmetric(vertical: 40),
+                        padding: EdgeInsets.symmetric(vertical: 40),
                         itemCount: list.length,
                         itemBuilder: (context, index) {
                           return buildItem(list[index]);
@@ -131,7 +127,6 @@ class RequestsScreen extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return buildItem(list[index]);
                         }),
-
                   ]),
                 ),
               ],
@@ -139,121 +134,86 @@ class RequestsScreen extends StatelessWidget {
           ),
         ),
       );
-    }
-    );
+    });
   }
+
   Widget buildItem(data model) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8.h),
       height: 115.h,
-      child: Slidable(
-        // Specify a key if the Slidable is dismissible.
-          key: const ValueKey(0),
-
-          // The start action pane is the one at the left or the top side.
-          startActionPane: ActionPane(
-            extentRatio: .22,
-            // A motion is a widget used to control how the pane animates.
-            motion: const ScrollMotion(),
-
-            // A pane can dismiss the Slidable.
-            //   dismissible: DismissiblePane(onDismissed: () {}),
-
-            // All actions are defined in the children parameter.
-            children: [
-              // A SlidableAction can have an icon and/or a label.
-              SlidableAction(
-                onPressed: (context) {},
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(20),
-                    bottomRight: Radius.circular(20)),
-                backgroundColor: mainAppColor,
-                foregroundColor: Colors.white,
-                icon: Icons.delete,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10), color: Color(0xadf8f8f8)),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                '${model.image}',
+                fit: BoxFit.cover,
+                height: 108.h,
+                width: 108.w,
               ),
-            ],
-          ),
-          child: Container(
-            height: 115.h,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color(0xadf8f8f8)),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
+            ),
+            SizedBox(
+              width: 10.w,
+            ),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.asset(
-                      '${model.image}',
-                      fit: BoxFit.cover,
-                      height: 108.h,
-                      width: 108.w,
-                    ),
+                  CustomText(
+                    '${model.title}',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.0.sp,
                   ),
-                  SizedBox(
-                    width: 10.w,
+                  Row(
+                    children: [
+                      CustomText(
+                        '${model.price}',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12.0.sp,
+                        color: mainAppColor,
+                      ),
+                      SizedBox(
+                        width: 5.w,
+                      ),
+                      CustomText(
+                        '${model.oldPrice}',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12.0.sp,
+                        color: Color(0xff929292),
+                      ),
+                    ],
                   ),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomText(
-                          '${model.title}',
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12.0.sp,
-                        ),
-                        Row(
-                          children: [
-                            CustomText(
-                              '${model.price}',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12.0.sp,
-                              color: mainAppColor,
-                            ),
-                            SizedBox(
-                              width: 5.w,
-                            ),
-                            CustomText(
-                              '${model.oldPrice}',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12.0.sp,
-                              color: Color(0xff929292),
-                            ),
-                          ],
-                        ),
-                        CustomText(
-                          '${model.title1}',
-                          color: Color(0xff929292),
-                          fontSize: 12.0.sp,
-                        ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            CustomText(
-                              '${model.title2}',
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12.0.sp,
-                              color: Color(0xff99969D),
-                            ),
-                            SizedBox(
-                              width:10.w,
-                            ),
-                            CustomText('${model.title3}',
-                                fontSize: 14.0.sp,
-                              color: Color(0xffE94E1B)
-                            ),
-                          ],
-                        ),
-
-                      ],
-                    ),
+                  CustomText(
+                    '${model.title1}',
+                    color: Color(0xff929292),
+                    fontSize: 12.0.sp,
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      CustomText(
+                        '${model.title2}',
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12.0.sp,
+                        color: Color(0xff99969D),
+                      ),
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      CustomText('${model.title3}',
+                          fontSize: 14.0.sp, color: Color(0xffE94E1B)),
+                    ],
                   ),
                 ],
               ),
             ),
-          )),
+          ],
+        ),
+      ),
     );
   }
 }

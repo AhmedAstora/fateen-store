@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:string_validator/string_validator.dart';
 
 import '../Model/OnBoarding.dart';
 import '../Model/Slide.dart';
@@ -15,13 +16,37 @@ class AppProvider extends ChangeNotifier {
   int selectedSize = 0;
   int selectedtext = 0;
   bool isOneView = true;
+  bool loading = false;
+  File? file;
 
-  int selectedSubCategory =0;
+  int selectedSubCategory = 0;
+
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwrodController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+
+  TextEditingController contactUsController = TextEditingController();
 
 
+  TextEditingController currentPasswordController = TextEditingController();
+  TextEditingController newPasswordController = TextEditingController();
+  TextEditingController confirmNewPasswordController = TextEditingController();
+
+  String? nullValidator(String? value) {
+    if (value!.isEmpty) {
+      return 'Required Field';
+    }
+    return null;
+  }
+
+  String? emailValidation(String? value) {
+    if (!isEmail(value!)) {
+      return 'InCorrect Email syntax';
+    }
+  }
 
   void changeHomeView() {
-    isOneView =!isOneView;
+    isOneView = !isOneView;
     notifyListeners();
   }
 
@@ -49,5 +74,33 @@ class AppProvider extends ChangeNotifier {
         image: 'assets/images/slide1.png',
         title: 'Pay via the mesa',
         body: 'Get paid to provide meeting rooms in your workplace'),
+  ];
+  List<String> titleProfile = [
+    'Edit_Profile',
+    'Adress',
+    'My cards',
+    'Terms_conditions',
+    'Privacy_Policy',
+    'language',
+    'change_password',
+    'Contact_us',
+    'About_us',
+    'App_Rate',
+    'Delete Account',
+    'Log_out'
+  ];
+  List<String> imagesProfile = [
+    'assets/images/edit_profile.png',
+    'assets/images/info.png',
+    'assets/images/info.png',
+    'assets/images/terms.png',
+    'assets/images/privacy.png',
+    'assets/images/lang.png',
+    'assets/images/password.png',
+    'assets/images/contact_us.png',
+    'assets/images/info.png',
+    'assets/images/rate_app.png',
+    'assets/images/Delete.png',
+    'assets/images/log_out.png',
   ];
 }

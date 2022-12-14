@@ -7,15 +7,15 @@ import 'package:provider/provider.dart';
 import 'package:twnty2/Helper/Providers/app_provider.dart';
 import 'package:twnty2/UI/CustomWidget/custom_bottom.dart';
 import 'package:twnty2/UI/CustomWidget/custom_text.dart';
-import 'package:twnty2/UI/Screens/DetailsScreen/widget/size_product_widget.dart';
-import 'package:twnty2/UI/Screens/DetailsScreen/widget/timear_widget.dart';
+import 'package:twnty2/UI/Screens/DeailsDetailsScreen/widget/size_product_widget.dart';
+import 'package:twnty2/UI/Screens/DeailsDetailsScreen/widget/timear_widget.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
 import '../../CustomWidget/custom_image_network.dart';
 import '../../CustomWidget/slider/custom_indicator.dart';
 import '../../CustomWidget/slider/slide_dots.dart';
 import '../../CustomWidget/slider/slide_width_dots.dart';
 
-class DetailsScreen extends StatelessWidget {
+class DealsDetailsScreen extends StatelessWidget {
   List<String> images = [
     "S : 68cm x 70cm",
     "M : 72cm x 74cm",
@@ -24,10 +24,10 @@ class DetailsScreen extends StatelessWidget {
   ];
 
   final List<String> imagesList = [
-    'https://cdn.pixabay.com/photo/2017/04/04/18/07/ice-cream-2202561_1280.jpg',
-    'https://cdn.pixabay.com/photo/2019/01/14/17/25/gelato-3932596_1280.jpg',
-    'https://cdn.pixabay.com/photo/2016/11/18/19/00/breads-1836411_1280.jpg',
-    'https://cdn.pixabay.com/photo/2020/11/01/23/22/breakfast-5705180_1280.jpg',
+    'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
+    'https://images.unsplash.com/photo-1516762689617-e1cffcef479d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=711&q=80',
+    'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2xvdGhlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+    'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80',
   ];
 
   List<Color> colors = [
@@ -60,22 +60,31 @@ class DetailsScreen extends StatelessWidget {
             persistentFooterButtons: [
               Row(
                 children: [
-                  CustomBottom(
-                    height: 55.0.sp,
-                    width: 266.0.sp,
-                    backgroundColor: mainAppColor,
-                    title: 'BUY NOW',
-                    borderRadius: 100,
+                  SizedBox(
+                    width: 8.w,
                   ),
-                  Spacer(),
+                  Expanded(
+                    child: CustomBottom(
+                      height: 50.0.sp,
+                      backgroundColor: mainAppColor,
+                      title: 'BUY NOW',
+                      borderRadius: 100,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 12.w,
+                  ),
                   CircleAvatar(
-                      radius: 27,
+                      radius: 25,
                       backgroundColor: Color(0xff15172E),
                       child: Image.asset(
                         'assets/images/CartIcon.png',
                         height: 22.h,
                         width: 26.w,
-                      ))
+                      )),
+                  SizedBox(
+                    width: 8.w,
+                  ),
                 ],
               ),
             ],
@@ -124,7 +133,9 @@ class DetailsScreen extends StatelessWidget {
                       alignment: Alignment.topLeft,
                       children: [
                         ClipRRect(
-                          borderRadius: BorderRadius.only(bottomRight: Radius.circular(25),bottomLeft: Radius.circular(25)),
+                          borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(25),
+                              bottomLeft: Radius.circular(25)),
                           child: CarouselSlider(
                             items: imagesList
                                 .map((item) => CustomImageNetwork(
@@ -198,7 +209,6 @@ class DetailsScreen extends StatelessWidget {
                                   Spacer(),
                                   Container(
                                     width: 75.0.w,
-                                    height: 60.0.h,
                                     child: Column(
                                       children: [
                                         SizedBox(
@@ -207,14 +217,27 @@ class DetailsScreen extends StatelessWidget {
                                         CustomText(
                                           '£54.43',
                                           fontSize: 12.0.sp,
+                                          height: 1,
                                           fontWeight: FontWeight.w300,
                                         ),
                                         CustomText(
                                           '£129,99',
+                                          height: 1.3,
                                           fontSize: 20.0.sp,
-                                          fontWeight: FontWeight.w600,
+                                          fontWeight: FontWeight.w700,
                                           color: mainAppColor,
                                         ),
+                                        SizedBox(height: 3.h,),
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.circular(100),
+                                          child: LinearProgressIndicator(
+                                            value: .3,
+                                            color: mainAppColor,
+                                            backgroundColor:
+                                                Colors.grey.withOpacity(.3),
+                                            minHeight: 6.5.h,
+                                          ),
+                                        )
                                       ],
                                     ),
                                   ),
@@ -230,7 +253,7 @@ class DetailsScreen extends StatelessWidget {
                                   CustomText(
                                     '300',
                                     fontSize: 14.0.sp,
-                                    fontWeight: FontWeight.w500,
+                                    fontWeight: FontWeight.w600,
                                     color: Colors.green,
                                   ),
                                 ],
@@ -248,7 +271,7 @@ class DetailsScreen extends StatelessWidget {
                                   CustomText(
                                     '150',
                                     fontSize: 14.0.sp,
-                                    fontWeight: FontWeight.w500,
+                                    fontWeight: FontWeight.w600,
                                     color: mainAppColor,
                                   ),
                                 ],
@@ -324,7 +347,6 @@ class DetailsScreen extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                   ),
                                   Container(
-                                    height: 40.0.h,
                                     width: 213.0.w,
                                     child: CustomText(
                                       'Disaster Records Merchandise Screenprinted',
@@ -434,7 +456,7 @@ class DetailsScreen extends StatelessWidget {
                                     ),
                                   ]),
                               Container(
-                                height: 150,
+                                height: 300,
                                 child: TabBarView(children: [
                                   SingleChildScrollView(
                                     child: Column(
@@ -445,7 +467,6 @@ class DetailsScreen extends StatelessWidget {
                                           height: 40.0.h,
                                         ),
                                         Container(
-                                          height: 60.h,
                                           width: 339.0.w,
                                           child: CustomText(
                                             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus'
@@ -454,7 +475,7 @@ class DetailsScreen extends StatelessWidget {
                                             ' Nulla blandit ut sapien tristique mattis. Nulla ut ultricies velit.'
                                             ' Pellentesque luctus non ligula at rhoncus. Sed at tincidunt magna.'
                                             ' Morbi a metus est. Suspendisse vitae feugiat libero.',
-                                            fontSize: 10.sp,
+                                            fontSize: 12.sp,
                                             fontWeight: FontWeight.w500,
                                           ),
                                         ),
@@ -470,7 +491,6 @@ class DetailsScreen extends StatelessWidget {
                                           height: 40.0.h,
                                         ),
                                         Container(
-                                          height: 60.h,
                                           width: 339.0.w,
                                           child: CustomText(
                                             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus'
@@ -479,7 +499,7 @@ class DetailsScreen extends StatelessWidget {
                                             ' Nulla blandit ut sapien tristique mattis. Nulla ut ultricies velit.'
                                             ' Pellentesque luctus non ligula at rhoncus. Sed at tincidunt magna.'
                                             ' Morbi a metus est. Suspendisse vitae feugiat libero.',
-                                            fontSize: 10.sp,
+                                            fontSize: 12.sp,
                                             fontWeight: FontWeight.w500,
                                           ),
                                         ),

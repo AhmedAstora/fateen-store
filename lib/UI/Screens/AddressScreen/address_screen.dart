@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:twnty2/Helper/Router/router.dart';
+import 'package:twnty2/UI/Screens/AddAddressScreen/add_address_screen.dart';
 import 'package:twnty2/UI/Screens/AddressScreen/show_dialog_widget.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
 
@@ -48,12 +50,17 @@ class AddressScreen extends StatelessWidget {
           color: Colors.black,
         ),
         actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Icon(
-              Icons.add_location_outlined,
-              size: 25.0,
-              color: Colors.black,
+          InkWell(
+            onTap: (){
+              RouterHelper.routerHelper.routingToSpecificWidgetWithoutPop(AddAddressScreen());
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Icon(
+                Icons.add_location_outlined,
+                size: 25.0,
+                color: Colors.black,
+              ),
             ),
           )
         ],
