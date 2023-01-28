@@ -2,11 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../CustomWidget/back_appBar_widget.dart';
-import '../../CustomWidget/custom_bottom.dart';
-import '../../CustomWidget/custom_text.dart';
-import '../../CustomWidget/custom_text_field.dart';
-import '../../Utils/constant.dart';
+import '../../../CustomWidget/back_appBar_widget.dart';
+import '../../../CustomWidget/custom_bottom.dart';
+import '../../../CustomWidget/custom_text.dart';
+import '../../../CustomWidget/custom_text_field.dart';
+import '../../../Utils/constant.dart';
+
 
 class PaymentScreen extends StatelessWidget {
 

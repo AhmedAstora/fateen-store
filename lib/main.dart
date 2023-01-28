@@ -10,28 +10,14 @@ import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:twnty2/UI/Screens/HomeScreen/home_screen.dart';
+import 'package:twnty2/UI/Screens/SharedScreens/PaymentScreen/payment_screen.dart';
 
 import 'Helper/Providers/app_provider.dart';
 import 'Helper/Providers/auth_provider.dart';
 import 'Helper/Router/router.dart';
 import 'Helper/SharedPreferance/shared_preferance.dart';
-import 'UI/Screens/AddAddressScreen/add_address_screen.dart';
-import 'UI/Screens/AddPaymentScreen/add_payment_screen.dart';
-import 'UI/Screens/AddressScreen/address_screen.dart';
-import 'UI/Screens/CartScreen/cart_screen.dart';
-import 'UI/Screens/CartScreen/empty_cart_screen.dart';
-import 'UI/Screens/CheckOutScreen/check_out_screen.dart';
-import 'UI/Screens/DealsScreen/deals_screen.dart';
-import 'UI/Screens/DealsSearchScreen/deals_search_screen.dart';
-import 'UI/Screens/EmptyPaymentScreen/empty_payment_screen.dart';
-import 'UI/Screens/HomeSellerScreen/home_seller_screen.dart';
-import 'UI/Screens/MainNavigationScreen/main_navigation_screen.dart';
-import 'UI/Screens/NotificationsScreen/notifications_screen.dart';
-import 'UI/Screens/OrderDetailsScreen/order_details_screen.dart';
-import 'UI/Screens/PaymentScreen/payment_screen.dart';
-import 'UI/Screens/RequestsScreen/requests_screen.dart';
-import 'UI/Screens/SplashScreen/splash_screen.dart';
+
+import 'UI/Screens/UserScreens/MainNavigationScreen/main_navigation_screen.dart';
 import 'UI/Utils/constant.dart';
 
 const String groupKey = 'com.android.example.WORK_EMAIL';
@@ -219,7 +205,7 @@ class _MyAppsState extends State<MyApps> {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         debugShowCheckedModeBanner: false,
-        home: PaymentScreen(),
+        home: MainNavigationScreen(),
       ),
     );
   }

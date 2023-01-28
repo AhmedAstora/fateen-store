@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twnty2/UI/CustomWidget/back_appBar_widget.dart';
 
-import '../../CustomWidget/custom_bottom.dart';
-import '../../CustomWidget/custom_text.dart';
-import '../../Utils/constant.dart';
-import '../CartScreen/widget/cart_buy_bottom_sheet.dart';
+import '../../../CustomWidget/custom_bottom.dart';
+import '../../../CustomWidget/custom_text.dart';
+import '../../../Utils/constant.dart';
+
 
 class EmptyPaymentScreen extends StatelessWidget {
   @override
