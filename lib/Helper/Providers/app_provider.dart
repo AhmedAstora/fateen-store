@@ -13,6 +13,7 @@ class AppProvider extends ChangeNotifier {
   int userIndex = 0;
   int currentIndex = 0;
   int indexNavigation = 0;
+  int indexSellerNavigation = 0;
   int selectedSize = 0;
   int selectedtext = 0;
   bool isOneView = true;
@@ -54,6 +55,10 @@ class AppProvider extends ChangeNotifier {
     indexNavigation = i;
     notifyListeners();
   }
+  void changeIndexNavigation(int i) {
+    indexSellerNavigation = i;
+    notifyListeners();
+  }
 
   changeStatusPasseord() {
     isHiden = !isHiden;
@@ -65,7 +70,7 @@ class AppProvider extends ChangeNotifier {
         image: 'assets/images/slide3.png',
         title: 'Keep track of the timeavailable',
         body:
-            'Track the time available for reservations either by map or by the place of your choice'),
+        'Track the time available for reservations either by map or by the place of your choice'),
     OnBoardingModel(
         image: 'assets/images/slide2.png',
         title: 'Book meeting room',

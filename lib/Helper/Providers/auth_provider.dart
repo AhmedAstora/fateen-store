@@ -6,9 +6,8 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:path/path.dart';
 import 'package:string_validator/string_validator.dart';
+import 'package:twnty2/UI/Screens/UserScreens/SignInScreen/sign_in_screen.dart';
 
-import '../../UI/Screens/OnBoardingScreen/onboarding_screen.dart';
-import '../../UI/Screens/SignInScreen/sign_in_screen.dart';
 import '../Model/Slide.dart';
 import '../Router/router.dart';
 
