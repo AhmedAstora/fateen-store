@@ -54,7 +54,7 @@ class PaymentScreen extends StatelessWidget {
               child: Row(
                 children: [
                   Container(
-                    height: 41.h,
+                      height: 41.h,
                       width: 97.w,
                       decoration: BoxDecoration(
                         border: Border.all(color: Color(0xff215CA8)),
@@ -108,7 +108,10 @@ class PaymentScreen extends StatelessWidget {
               children: [
                 CustomText('Expiry date'),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width/3.32,
+                  width: MediaQuery
+                      .of(context)
+                      .size
+                      .width / 3.32,
                 ),
                 CustomText('CVV'),
               ],
