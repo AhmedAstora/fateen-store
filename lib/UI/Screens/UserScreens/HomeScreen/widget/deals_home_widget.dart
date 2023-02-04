@@ -4,8 +4,11 @@ import 'package:twnty2/Helper/Router/router.dart';
 import 'package:twnty2/UI/CustomWidget/custom_image_network.dart';
 import 'package:twnty2/UI/CustomWidget/custom_text.dart';
 import 'package:twnty2/UI/Screens/UserScreens/DeailsDetailsScreen/deals_details_screen.dart';
+import 'package:twnty2/UI/Screens/UserScreens/HomeScreen/widget/timear_widget_home.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
 
+import '../../../../CustomWidget/linear_progress_widget.dart';
+import '../../DeailsDetailsScreen/widget/timear_widget.dart';
 
 class DealsHomeWidget extends StatelessWidget {
   @override
@@ -35,37 +38,35 @@ class DealsHomeWidget extends StatelessWidget {
                       width: 160.w,
                       fit: BoxFit.cover),
                   Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Container(
-                      margin: EdgeInsets.symmetric(
-                          horizontal: 10.w, vertical: 13.h),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.black.withOpacity(.6)),
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 12),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          CustomText(
-                            'Amount:',
-                            fontSize: 12.sp,
-                            color: Colors.white,
-                          ),
-                          CustomText(
-                            '200',
-                            fontSize: 12.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w700,
+                          TimearWidgethome(
+                            num: '15',
+                            title: 'Day',
                           ),
                           SizedBox(
-                            width: 10.w,
-                          )
+                            width: 10.0.w,
+                          ),
+                          TimearWidgethome(
+                            num: '60',
+                            title: 'Min',
+                          ),
+                          SizedBox(
+                            width: 10.0.w,
+                          ),
+                          TimearWidgethome(
+                            num: '23',
+                            title: 'sec',
+                          ),
                         ],
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -99,35 +100,49 @@ class DealsHomeWidget extends StatelessWidget {
                 ),
               ],
             ),
-            Row(
-              children: [
-                CustomText(
-                  '20-11-2022',
-                  fontSize: 12.sp,
-                  height: 1.5,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w300,
-                  maxLines: 1,
+            Container(
+              width: 160.w,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(8),
+                      bottomRight: Radius.circular(8)),
+                border: Border.all(color: Colors.grey,width: 0.2)
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    CustomText(
+                      'Remaining quantity: 200',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    Row(
+                      children: [
+                        CustomLienarProgressWidget(
+                          value: .6,
+                          width: 106.w,
+                          height: 10.h,
+
+                        ),
+                        SizedBox(
+                          width: 10.w,
+                        ),
+                        CustomText(
+                          '78%',
+                          fontSize: 10.sp,
+                          height: 1,
+
+                        ),
+
+                      ],
+                    ),
+                  ],
                 ),
-                SizedBox(
-                  width: 2.w,
-                ),
-                Icon(
-                  Icons.arrow_forward_outlined,
-                  size: 12,
-                ),
-                SizedBox(
-                  width: 2.w,
-                ),
-                CustomText(
-                  '20-11-2022',
-                  fontSize: 12.sp,
-                  height: 1.5,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w300,
-                  maxLines: 1,
-                ),
-              ],
+              ),
             )
           ],
         ),

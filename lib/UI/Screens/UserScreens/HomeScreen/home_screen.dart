@@ -151,7 +151,7 @@ class HomeScreen extends StatelessWidget {
                       width: 16.w,
                     ),
                     CustomText(
-                      'New Products',
+                      'New deals',
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w700,
                       color: Color(0XFF545454),
@@ -223,7 +223,7 @@ class HomeScreen extends StatelessWidget {
                       width: 16.w,
                     ),
                     CustomText(
-                      'Top Rated Products',
+                      'Deals are about to expire',
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w700,
                       color: Color(0XFF545454),

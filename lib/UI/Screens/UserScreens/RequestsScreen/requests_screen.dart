@@ -8,8 +8,6 @@ import '../../../../Helper/Providers/app_provider.dart';
 import '../../../CustomWidget/custom_text.dart';
 import '../../../Utils/constant.dart';
 
-
-
 class data {
   String? image;
   String? title;
@@ -73,7 +71,6 @@ class RequestsScreen extends StatelessWidget {
           appBar: AppBar(
             elevation: 0.0,
             backgroundColor: Colors.white,
-
             title: CustomText(
               'Requests',
               fontSize: 16.sp,
@@ -206,7 +203,8 @@ class RequestsScreen extends StatelessWidget {
                         width: 10.w,
                       ),
                       CustomText('${model.title3}',
-                          fontSize: 14.0.sp, color: Color(0xffE94E1B)),
+                          fontSize: 14.0.sp,
+                           color: Color(0xffE94E1B)),
                     ],
                   ),
                 ],

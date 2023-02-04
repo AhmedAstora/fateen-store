@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twnty2/UI/CustomWidget/custom_image_network.dart';
+import 'package:twnty2/UI/Screens/UserScreens/HomeScreen/widget/timear_widget_home.dart';
 
 import '../../../../CustomWidget/custom_text.dart';
+import '../../../../CustomWidget/linear_progress_widget.dart';
 import '../../../../Utils/constant.dart';
+import '../../DeailsDetailsScreen/widget/timear_widget.dart';
 
 class AllDealsViewTwoWidget extends StatelessWidget {
   @override
@@ -30,77 +33,49 @@ class AllDealsViewTwoWidget extends StatelessWidget {
                     radius: 10,
                     width: MediaQuery.of(context).size.width,
                     fit: BoxFit.cover),
+
                 Align(
-                  alignment: Alignment.topLeft,
-                  child: Container(
-                      margin:
-                          EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 10.w, vertical: 7.h),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          color: Colors.white),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          CustomText(
-                            '20-11-2022',
-                            fontSize: 12.sp,
-                            height: 1.5,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w600,
-                            maxLines: 1,
-                          ),
-                          SizedBox(
-                            width: 2.w,
-                          ),
-                          Icon(
-                            Icons.arrow_forward_outlined,
-                            size: 15,
-                          ),
-                          SizedBox(
-                            width: 2.w,
-                          ),
-                          CustomText(
-                            '20-11-2022',
-                            fontSize: 12.sp,
-                            height: 1.5,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w600,
-                            maxLines: 1,
-                          ),
-                        ],
-                      )),
-                ),
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Container(
-                    margin:
-                        EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        color: Colors.black.withOpacity(.6)),
+                  alignment: Alignment.bottomCenter,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 12),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        CustomText(
-                          'Amount: ',
-                          fontSize: 12.sp,
-                          color: Colors.white,
+                        TimearWidget(
+                          num: '15',
+                          title: 'Day',
+                          height: 57.h,
+                          width: 57.w,
+                          heightnum: 1.4,
+                          heighttitle: 1.2,
                         ),
-                        CustomText(
-                          '200',
-                          fontSize: 12.sp,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w700,
+                        SizedBox(
+                          width: 10.0.w,
+                        ),
+                        TimearWidget(
+                          num: '60',
+                          title: 'Min',
+                          height: 57.h,
+                          width: 57.w,
+                          heightnum: 1.4,
+                          heighttitle: 1.2,
+                        ),
+                        SizedBox(
+                          width: 10.0.w,
+                        ),
+                        TimearWidget(
+                          num: '23',
+                          title: 'sec',
+                          height: 57.h,
+                          width: 57.w,
+                          heightnum: 1.4,
+                          heighttitle: 1.2,
                         ),
                       ],
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -146,9 +121,39 @@ class AllDealsViewTwoWidget extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: 8.h,
-          ),
+
+      Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10.w),
+        child:CustomText(
+            'Remaining quantity: 200',
+            fontSize: 10.sp,
+            fontWeight: FontWeight.w600,
+          ),),
+      SizedBox(
+        height: 5.h,
+      ),
+      Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10.w),
+        child: Row(
+            children: [
+              CustomLienarProgressWidget(
+                value: .6,
+                width: 290.w,
+                height: 10.h,
+
+              ),
+              SizedBox(
+                width: 10.w,
+              ),
+              CustomText(
+                '78%',
+                fontSize: 10.sp,
+                height: 1,
+
+              ),
+
+            ],
+          ),),
         ],
       ),
     );

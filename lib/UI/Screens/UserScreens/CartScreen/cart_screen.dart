@@ -41,17 +41,9 @@ class CartScreen extends StatelessWidget {
       image: 'assets/images/mycart.png',
       title: 'Sweet Black Shirt',
       title1: 'Size L',
-      oldPrice: '',
+      oldPrice: '&40.00',
       price: '&22.00',
       num: '5',
-    ),
-    data(
-      image: 'assets/images/mycart.png',
-      title: 'Sweet Black Shirt',
-      title1: 'Size L',
-      oldPrice: '',
-      price: '&22.00',
-      num: '10',
     ),
   ];
 
@@ -75,22 +67,28 @@ class CartScreen extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                height: 10.h,
+                height: 40.h,
               ),
               Container(
-                height: 390.h,
-                child: ListView.builder(
-                    itemCount: list.length,
-                    itemBuilder: (context, index) {
-                      return buildItem(list[index]);
-                    }),
+                height: 330.h,
+                child: ListView.separated(
+                  itemCount: list.length,
+                  itemBuilder: (context, index) {
+                    return buildItem(list[index]);
+                  },
+                  separatorBuilder: (BuildContext context, int index) {
+                    return SizedBox(
+                      height: 10.h,
+                    );
+                  },
+                ),
               ),
               SizedBox(
                 height: 10.h,
               ),
               Container(
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color(0x80999ba9)),
+
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Padding(
@@ -100,22 +98,65 @@ class CartScreen extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          CustomText('items (2)', color: Color(0xff999BA9)),
+                          CustomText('Items numbers ', color: Color(0xff999BA9)),
                           Spacer(),
                           CustomText(
-                            '&80.00',
+                            '(2)',
+                            fontSize: 12.sp,
                           ),
                         ],
+                      ),
+                      Container(
+                        child: Row(
+                          children: List.generate(
+                              80 ~/ 1,
+                                  (index) => Expanded(
+                                child: Container(
+                                  color: index % 2 == 0
+                                      ? Colors.transparent
+                                      : Colors.grey.withOpacity(.6),
+                                  height: .6,
+                                ),
+                              )),
+                        ),
                       ),
                       SizedBox(
                         height: 12.h,
                       ),
                       Row(
                         children: [
-                          CustomText('Discount', color: Color(0xff999BA9)),
+                          CustomText('Subtotal', color: Color(0xff999BA9)),
+                          Spacer(),
+                          CustomText(
+                            'SAR22.00',
+                            fontSize: 12.sp,
+                          ),
+                        ],
+                      ),
+                      Container(
+                        child: Row(
+                          children: List.generate(
+                              80 ~/ 1,
+                                  (index) => Expanded(
+                                child: Container(
+                                  color: index % 2 == 0
+                                      ? Colors.transparent
+                                      : Colors.grey.withOpacity(.6),
+                                  height: .6,
+                                ),
+                              )),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 12.h,
+                      ),
+                      Row(
+                        children: [
+                          CustomText('Delivery Charge!', color: Color(0xff999BA9)),
                           Spacer(),
                           CustomText(
                             '&7.00',
+                            fontSize: 12.sp,
                           ),
                         ],
                       ),
@@ -146,12 +187,20 @@ class CartScreen extends StatelessWidget {
                             fontWeight: FontWeight.w600,
                             fontSize: 16.sp,
                           ),
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          CustomText(
+                            'The price includes tax',
+                            fontSize: 10.sp,
+                            color: Colors.grey[500],
+                          ),
                           Spacer(),
                           CustomText(
-                            '&73.00',
+                            'SAR22.00',
                             fontWeight: FontWeight.w600,
                             color: mainAppColor,
-                            fontSize: 16.0.sp,
+                            fontSize: 12.0.sp,
                           ),
                         ],
                       ),
@@ -166,6 +215,9 @@ class CartScreen extends StatelessWidget {
                 child: CustomBottom(
                   onTap: () {
                     showModalBottomSheet(
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(top: Radius.circular(30.0)),
+                        ),
                         isScrollControlled: true,
                         context: context,
                         builder: (_) => CartBuyBottomSheet());
@@ -173,7 +225,7 @@ class CartScreen extends StatelessWidget {
                   height: 45.0.sp,
                   width: 271.0.sp,
                   backgroundColor: mainAppColor,
-                  title: 'BUY NOW',
+                  title: 'Checkout',
                   borderRadius: 10,
                 ),
               ),
@@ -189,148 +241,125 @@ class CartScreen extends StatelessWidget {
 
   Widget buildItem(data model) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8.h),
-      height: 115.h,
-      child: Slidable(
-          // Specify a key if the Slidable is dismissible.
-          key: const ValueKey(0),
-
-          // The start action pane is the one at the left or the top side.
-          startActionPane: ActionPane(
-            extentRatio: .22,
-            // A motion is a widget used to control how the pane animates.
-            motion: const ScrollMotion(),
-
-            // A pane can dismiss the Slidable.
-            //   dismissible: DismissiblePane(onDismissed: () {}),
-
-            // All actions are defined in the children parameter.
-            children: [
-              // A SlidableAction can have an icon and/or a label.
-              SlidableAction(
-                onPressed: (context) {},
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(20),
-                    bottomRight: Radius.circular(20)),
-                backgroundColor: mainAppColor,
-                foregroundColor: Colors.white,
-                icon: Icons.delete,
+      height: 135.h,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: Colors.grey, width: 0.3)),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                '${model.image}',
+                fit: BoxFit.cover,
+                height: 103.h,
+                width: 87.w,
               ),
-            ],
-          ),
-          child: Container(
-            height: 115.h,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color(0xadf8f8f8)),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
+            ),
+            SizedBox(
+              width: 10.w,
+            ),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.asset(
-                      '${model.image}',
-                      fit: BoxFit.cover,
-                      height: 103.h,
-                      width: 87.w,
-                    ),
+                  Row(
+                    children: [
+                      CustomText(
+                        '${model.title}',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16.0.sp,
+                      ),
+                      Spacer(),
+                      Icon(
+                        Icons.delete_outline,
+                        size: 20,
+                        color: mainAppColor,
+                      )
+                    ],
                   ),
                   SizedBox(
-                    width: 10.w,
+                    height: 5.w,
                   ),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomText(
-                          '${model.title}',
-                          fontWeight: FontWeight.w400,
+                  CustomText(
+                    '${model.title1}',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14.0.sp,
+                    color: Color(0xff99969D),
+                  ),
+                  Spacer(),
+                  CustomText(
+                    '${model.oldPrice}',
+                    fontWeight: FontWeight.w500,
+                    fontSize: 12.0.sp,
+                    color: Color(0xff99969D),
+                  ),
+                  SizedBox(
+                    width: model.oldPrice == "" ? 0 : 10.w,
+                  ),
+                  Row(
+                    children: [
+                      CustomText('${model.price}',
+                          fontWeight: FontWeight.w700,
                           fontSize: 16.0.sp,
-                        ),
-                        SizedBox(
-                          height: 5.w,
-                        ),
-                        CustomText(
-                          '${model.title1}',
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14.0.sp,
-                          color: Color(0xff99969D),
-                        ),
-                        Spacer(),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          color: mainAppColor),
+                      Spacer(),
+                      Container(
+                        height: 22.h,
+                        width: 67.w,
+                        child: Row(
                           children: [
-                            CustomText(
-                              '${model.oldPrice}',
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12.0.sp,
-                              color: Color(0xff99969D),
+                            Container(
+                              alignment: Alignment.bottomCenter,
+                              height: 22.h,
+                              width: 20.w,
+                              child: Icon(
+                                Icons.maximize,
+                                size: 13.sp,
+                                color: Colors.black,
+                              ),
+                              decoration: BoxDecoration(
+                                  color: Color(0xffEBEBEB),
+                                  borderRadius: BorderRadius.circular(5)),
                             ),
-                            SizedBox(
-                              width: model.oldPrice == "" ? 0 : 10.w,
-                            ),
-                            CustomText('${model.price}',
-                                fontWeight: FontWeight.w700,
-                                fontSize: 16.0.sp,
-                                color: mainAppColor),
-                            Spacer(),
+                            Container(
+                                height: 22.h,
+                                width: 27.w,
+                                color: Colors.white,
+                                child: Center(
+                                    child: CustomText(
+                                  '${model.num}',
+                                  fontSize: 12.0.sp,
+                                  fontWeight: FontWeight.w700,
+                                ))),
                             Container(
                               height: 22.h,
-                              width: 67.w,
-                              child: Row(
-                                children: [
-                                  Container(
-                                    alignment: Alignment.bottomCenter,
-                                    height: 22.h,
-                                    width: 20.w,
-                                    child: Icon(
-                                      Icons.maximize,
-                                      size: 13.sp,
-                                      color: Colors.black,
-                                    ),
-                                    decoration: BoxDecoration(
-                                        color: Color(0xffEBEBEB),
-                                        borderRadius: BorderRadius.circular(5)),
-                                  ),
-                                  Container(
-                                      height: 22.h,
-                                      width: 27.w,
-                                      color: Colors.white,
-                                      child: Center(
-                                          child: CustomText(
-                                        '${model.num}',
-                                        fontSize: 12.0.sp,
-                                        fontWeight: FontWeight.w700,
-                                      ))),
-                                  Container(
-                                    height: 22.h,
-                                    width: 20.w,
-                                    child: Icon(
-                                      Icons.add,
-                                      size: 15.sp,
-                                      color: Colors.white,
-                                    ),
-                                    decoration: BoxDecoration(
-                                        color: mainAppColor,
-                                        borderRadius: BorderRadius.circular(5)),
-                                  ),
-                                ],
+                              width: 20.w,
+                              child: Icon(
+                                Icons.add,
+                                size: 15.sp,
+                                color: Colors.white,
                               ),
+                              decoration: BoxDecoration(
+                                  color: mainAppColor,
+                                  borderRadius: BorderRadius.circular(5)),
                             ),
                           ],
                         ),
-                        SizedBox(
-                          height: 5.h,
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 5.h,
                   ),
                 ],
               ),
             ),
-          )),
+          ],
+        ),
+      ),
     );
   }
 }

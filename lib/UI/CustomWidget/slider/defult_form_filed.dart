@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:twnty2/Helper/Providers/app_provider.dart';
 import 'package:twnty2/Helper/SharedPreferance/shared_preferance.dart';
 
-class CustomTextField extends StatelessWidget {
+class DefaultTextField extends StatelessWidget {
   final bool isPassword;
   final String hintText;
   VoidCallback onClick;
@@ -18,37 +18,39 @@ class CustomTextField extends StatelessWidget {
   double? paddingH;
   double? paddingV;
   double? height;
+  IconData? suffix;
   double? fontsize = 14.sp;
   int? maxLines;
   int? maxLength;
   String? Function(String? val)? validationFun;
   TextInputType textInputType;
 
-  CustomTextField(
+  DefaultTextField(
       {required this.onClick,
-      this.onChange,
-      required this.hintText,
-      required this.isPassword,
-      required this.controller,
-      this.fillColor,
-      this.textColor,
-      this.filled,
-      this.enable,
-      this.autofocus = false,
-      this.fontsize,
-      this.paddingH = 9,
-      this.paddingV = 1,
-      this.height = 50,
-      this.maxLines = 1,
-      this.maxLength,
-      this.validationFun,
-      this.textInputType = TextInputType.text});
+        this.onChange,
+        required this.hintText,
+        required this.isPassword,
+        required this.controller,
+        this.fillColor,
+        this.textColor,
+        this.filled,
+        this.suffix,
+        this.enable,
+        this.autofocus = false,
+        this.fontsize,
+        this.paddingH = 9,
+        this.paddingV = 1,
+        this.height = 50,
+        this.maxLines = 1,
+        this.maxLength,
+        this.validationFun,
+        this.textInputType = TextInputType.text});
 
   @override
   Widget build(BuildContext context) {
     return Consumer<AppProvider>(builder: (context, provider, _) {
       return Container(
-         // height: height!.h,
+        // height: height!.h,
         child: TextFormField(
           onTap: onClick,
           onChanged: onChange,
@@ -67,26 +69,11 @@ class CustomTextField extends StatelessWidget {
               fillColor: fillColor,
               contentPadding: EdgeInsets.symmetric(
                   horizontal: paddingH!, vertical: paddingV!),
-              suffixIcon: isPassword
-                  ? provider.isHiden
-                      ? InkWell(
-                          onTap: () {
-                            provider.changeStatusPasseord();
-                          },
-                          child: Icon(
-                            Icons.visibility,
-                            color:  Colors.black,
-                            size: 19,
-                          ),
-                        )
-                      : InkWell(
-                          onTap: () {
-                            provider.changeStatusPasseord();
-                          },
-                          child: Icon(Icons.visibility_off,
-                              color:  Colors.black,
-                              size: 19))
-                  : Text(''),
+              suffixIcon:Icon(
+                  suffix
+              ) ,
+
+            border: OutlineInputBorder(),
               focusedErrorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
                   borderSide: BorderSide(
@@ -115,8 +102,8 @@ class CustomTextField extends StatelessWidget {
 
           obscureText: isPassword
               ? provider.isHiden
-                  ? false
-                  : true
+              ? false
+              : true
               : isPassword,
 
           //  onChanged: (value){},

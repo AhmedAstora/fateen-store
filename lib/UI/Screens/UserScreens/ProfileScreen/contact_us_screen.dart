@@ -67,15 +67,98 @@ class ContactUsScreen extends StatelessWidget {
                       filled: true,
                       controller: provider.contactUsController),
                   SizedBox(
-                    height: 286.h,
+                    height: 30.h,
                   ),
-                  CustomBottom(
-                    title: "Done",
-                    onTap: () {
-                      if (signupValidate()) {
-                        // provider.contactUs(context);
-                      }
-                    },
+                  Row(
+                    children: [
+                      Image.asset('assets/images/phone.png',height: 17.h,width: 17.w,),
+                      SizedBox(
+                        width: 20.w,
+                      ),
+                      CustomText('Mobile service for suppliers and merchants',fontSize: 12.sp,),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 12.h,
+                  ),
+                  Container(
+                    height: 1,
+                    color: Colors.grey[300],
+                  ),
+                  SizedBox(
+                    height: 12.h,
+                  ),
+                  Row(
+                    children: [
+                      Image.asset('assets/images/phone.png',height: 17.h,width: 17.w,),
+                      SizedBox(
+                        width: 20.w,
+                      ),
+                      CustomText(' Customer service contact',fontSize: 12.sp,),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 12.h,
+                  ),
+                  Container(
+                    height: 1,
+                    color: Colors.grey[300],
+                  ),
+                  SizedBox(
+                    height: 12.h,
+                  ),
+                  Row(
+                    children: [
+                      Image.asset('assets/images/whatsappicon.png',height: 17.h,width: 17.w,),
+                      SizedBox(
+                        width: 20.w,
+                      ),
+                      CustomText('Whatsapp customer service',fontSize: 12.sp,),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 12.h,
+                  ),
+                  Container(
+                    height: 1,
+                    color: Colors.grey[300],
+                  ),
+                  SizedBox(
+                    height: 12.h,
+                  ),
+                  Row(
+                    children: [
+                      Image.asset('assets/images/massege.png',height: 17.h,width: 17.w,),
+                      SizedBox(
+                        width: 20.w,
+                      ),
+                      CustomText('Whatsapp customer service',fontSize: 12.sp,),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 12.h,
+                  ),
+                  Container(
+                    height: 1,
+                    color: Colors.grey[300],
+                  ),
+                  SizedBox(
+                    height: 100.h,
+                  ),
+                  Center(
+                    child: CustomBottom(
+                      title: "Contact us",
+                      height: 45.h,
+                      width: 271.w,
+                      onTap: () {
+                        if (signupValidate()) {
+                          // provider.contactUs(context);
+                        }
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    height: 120.h,
                   ),
                 ],
               ),

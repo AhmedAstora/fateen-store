@@ -2,21 +2,31 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../CustomWidget/custom_text.dart';
+
 class TimearWidget extends StatelessWidget {
 
   String? num;
   String? title;
+  double? height;
+  double? width;
+  double? heightnum;
+  double? heighttitle;
   TimearWidget({
     this.num,
-    this.title
+    this.title,
+    this.height,
+    this.width,
+    this.heightnum,
+    this.heighttitle,
 
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 72.0.h,
-      width: 72.0.w,
+      height: height,
+      width: width,
       decoration: BoxDecoration(
         color: Color(0xd7494747),
         borderRadius: BorderRadius.circular(10),
@@ -26,21 +36,19 @@ class TimearWidget extends StatelessWidget {
           SizedBox(
             height: 3.0.h,
           ),
-          Text(
+          CustomText(
             '${num}',
-            style: TextStyle(
-              fontSize: 18.0.sp,
-              fontWeight: FontWeight.w700,
-              color: Colors.white,
-            ),
+            fontSize: 20.0.sp,
+            fontWeight: FontWeight.w700,
+            height: heightnum,
+            color: Colors.white,
           ),
-          Text(
+          CustomText(
             '${title}',
-            style: TextStyle(
-              fontSize: 15.0.sp,
-              fontWeight: FontWeight.w400,
-              color: Colors.white,
-            ),
+            fontSize: 16.0.sp,
+            fontWeight: FontWeight.w700,
+            color: Colors.white,
+            height: heighttitle,
           ),
         ],
       ),

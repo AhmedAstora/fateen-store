@@ -38,6 +38,59 @@ class AboutScreen extends StatelessWidget {
                 Text(
                     "Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad ms veniam, quis nostrud exercitation ullamco nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur.\n\n Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet,  consectetur  adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \n\nUt enim ad ms veniam, quis nostrud exercitation ullamco nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
                 SizedBox(
+                  height: 16.sp,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Row(
+                      children: [
+                        Image.asset(
+                          'assets/images/facebook1.png',
+                          height: 24.h,
+                          width: 24.w,
+                        ),
+                        SizedBox(
+                          width: 10.w,
+                        ),
+                        CustomText(
+                          'Facebook',
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Image.asset(
+                          'assets/images/twitter1.png',
+                          height: 24.h,
+                          width: 24.w,
+                        ),
+                        SizedBox(
+                          width: 10.w,
+                        ),
+                        CustomText(
+                          'Twitter',
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Image.asset(
+                          'assets/images/whatsapp1.png',
+                          height: 24.h,
+                          width: 24.w,
+                        ),
+                        SizedBox(
+                          width: 10.w,
+                        ),
+                        CustomText(
+                          'WhatsApp',
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
                   height: 50.h,
                 ),
                 CustomBottom(

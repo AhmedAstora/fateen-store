@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twnty2/UI/CustomWidget/custom_image_network.dart';
 
 import '../../../../CustomWidget/custom_text.dart';
+import '../../../../CustomWidget/linear_progress_widget.dart';
 import '../../../../Utils/constant.dart';
 
 
@@ -31,36 +32,7 @@ class AllDealsViewOneWidget extends StatelessWidget {
                     radius: 10,
                     width: 101.w,
                     fit: BoxFit.cover),
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Container(
-                    margin:
-                    EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
-                    padding:
-                    EdgeInsets.symmetric(horizontal: 6.w, vertical: 1.h),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        color: Colors.black.withOpacity(.6)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        CustomText(
-                          'Amount: ',
-                          fontSize: 10.sp,
-                          color: Colors.white,
-                        ),
-                        CustomText(
-                          '200',
-                          fontSize: 10.sp,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w700,
-                        ),
 
-                      ],
-                    ),
-                  ),
-                )
               ],
             ),
           ),
@@ -107,36 +79,31 @@ class AllDealsViewOneWidget extends StatelessWidget {
                 SizedBox(
                   height: 3.h,
                 ),
+                CustomText(
+                  'Remaining quantity: 200',
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.w600,
+                ),
                 Row(
                   children: [
-                    CustomText(
-                      '20-11-2022',
-                      fontSize: 12.sp,
-                      height: 1.5,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w300,
-                      maxLines: 1,
+                    CustomLienarProgressWidget(
+                      value: .6,
+                      width: 106.w,
+                      height: 10.h,
+
                     ),
                     SizedBox(
-                      width: 2.w,
-                    ),
-                    Icon(
-                      Icons.arrow_forward_outlined,
-                      size: 12,
-                    ),
-                    SizedBox(
-                      width: 2.w,
+                      width: 10.w,
                     ),
                     CustomText(
-                      '20-11-2022',
-                      fontSize: 12.sp,
-                      height: 1.5,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w300,
-                      maxLines: 1,
+                      '78%',
+                      fontSize: 10.sp,
+                      height: 1,
+
                     ),
+
                   ],
-                )
+                ),
               ],
             ),
           )

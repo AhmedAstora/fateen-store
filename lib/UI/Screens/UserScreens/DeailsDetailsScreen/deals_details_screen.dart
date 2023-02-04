@@ -112,6 +112,8 @@ class DealsDetailsScreen extends StatelessWidget {
                               TimearWidget(
                                 num: '15',
                                 title: 'Day',
+                                height: 78.h,
+                                width: 78.w,
                               ),
                               SizedBox(
                                 width: 10.0.w,
@@ -119,6 +121,8 @@ class DealsDetailsScreen extends StatelessWidget {
                               TimearWidget(
                                 num: '60',
                                 title: 'Min',
+                                height: 78.h,
+                                width: 78.w,
                               ),
                               SizedBox(
                                 width: 10.0.w,
@@ -126,16 +130,12 @@ class DealsDetailsScreen extends StatelessWidget {
                               TimearWidget(
                                 num: '23',
                                 title: 'sec',
+                                height: 78.h,
+                                width: 78.w,
                               ),
                             ],
                           ),
-                          SizedBox(
-                            height: 10.h,
-                          ),
-                          CustomLienarProgressWidget(
-                            value: .3,
-                            paddingH: 20.w,
-                          ),
+
                         ],
                       ),
                     ),
@@ -174,11 +174,20 @@ class DealsDetailsScreen extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 10.0, vertical: 50.0),
-                          child: Icon(
-                            Icons.keyboard_arrow_left_outlined,
-                            size: 30,
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.keyboard_arrow_left_outlined,
+                                size: 30,
+                              ),
+                                  Spacer(),
+                                  Icon(Icons.favorite_border),
+                                  Icon(Icons.share_outlined),
+
+                            ],
                           ),
                         ),
+
                       ],
                     ),
                   ),
@@ -214,56 +223,65 @@ class DealsDetailsScreen extends StatelessWidget {
                               Row(
                                 children: [
                                   CustomText(
-                                    'Hot Pants',
+                                    'Quilted thermal shirt',
                                     fontSize: 18.0.sp,
                                     fontWeight: FontWeight.w500,
                                   ),
                                   Spacer(),
-                                  Container(
-                                    width: 75.0.w,
-                                    child: Column(
-                                      children: [
-                                        SizedBox(
-                                          height: 5.0.h,
-                                        ),
-                                        CustomText(
-                                          '£54.43',
-                                          fontSize: 12.0.sp,
-                                          height: 1,
-                                          fontWeight: FontWeight.w300,
-                                        ),
-                                        CustomText(
-                                          '£129,99',
-                                          height: 1.3,
-                                          fontSize: 20.0.sp,
-                                          fontWeight: FontWeight.w700,
-                                          color: mainAppColor,
-                                        ),
-                                        SizedBox(
-                                          height: 3.h,
-                                        ),
-                                      ],
+                                  Expanded(
+                                    child: Container(
+                                      width: 75.0.w,
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.end,
+                                        children: [
+                                          SizedBox(
+                                            height: 5.0.h,
+                                          ),
+                                          Row(
+                                            mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                            children: [
+                                              CustomText(
+                                                '${currency}',
+                                                fontSize: 8.0.sp,
+                                              ),
+                                              CustomText(
+                                                '54.43',
+                                                fontSize: 12.0.sp,
+                                                height: 1,
+                                                fontWeight: FontWeight.w300,
+                                              ),
+                                            ],
+                                          ),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              CustomText(
+                                                '${currency}',
+                                                height: 1.3,
+                                                fontSize: 12.0.sp,
+                                                fontWeight: FontWeight.w700,
+                                                color: mainAppColor,
+                                              ),
+                                              CustomText(
+                                                '129,99',
+                                                height: 1.3,
+                                                fontSize: 20.0.sp,
+                                                fontWeight: FontWeight.w700,
+                                                color: mainAppColor,
+                                              ),
+                                            ],
+                                          ),
+                                          SizedBox(
+                                            height: 3.h,
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ],
-                              ),
-                              Row(
-                                children: [
-                                  CustomText(
-                                    'Total Quantity: ',
-                                    fontSize: 14.0.sp,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                  CustomText(
-                                    '300',
-                                    fontSize: 14.0.sp,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.green,
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 5.0.h,
                               ),
                               Row(
                                 children: [
@@ -285,8 +303,30 @@ class DealsDetailsScreen extends StatelessWidget {
                               ),
                               Row(
                                 children: [
+                                  CustomLienarProgressWidget(
+                                    value: .8,
+                                    width: 219.w,
+                                    height: 10.h,
+                                  ),
+                                  SizedBox(
+                                    width: 10.w,
+                                  ),
                                   CustomText(
-                                    'Condition  :   ',
+                                    '65%',
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w500,
+                                    height: 1,
+                                    color: mainAppColor,
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 10.0.h,
+                              ),
+                              Row(
+                                children: [
+                                  CustomText(
+                                    'Status    :   ',
                                     fontSize: 14.0.sp,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -346,66 +386,20 @@ class DealsDetailsScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   CustomText(
-                                    'Storefront :  ',
+                                    'Size  :',
                                     fontSize: 14.0.sp,
                                     fontWeight: FontWeight.w400,
-                                  ),
-                                  Container(
-                                    width: 213.0.w,
-                                    child: CustomText(
-                                      'Disaster Records Merchandise Screenprinted',
-                                      fontSize: 14.0.sp,
-                                      fontWeight: FontWeight.w500,
-                                      color: Color(0x9808151f),
-                                    ),
                                   ),
                                 ],
                               ),
                               SizedBox(
-                                height: 10.h,
+                                height: 10.w,
                               ),
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   CustomText(
-                                    'Size Chart :  ',
-                                    fontSize: 14.0.sp,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                  Expanded(
-                                    child: Container(
-                                        height: (4 / 2) * 50.h,
-                                        child: GridView.builder(
-                                          padding: EdgeInsets.only(top: 5),
-                                          itemCount: 4,
-                                          physics:
-                                              NeverScrollableScrollPhysics(),
-                                          gridDelegate:
-                                              SliverGridDelegateWithFixedCrossAxisCount(
-                                            crossAxisCount: 2,
-                                            mainAxisExtent: 32.h,
-                                            crossAxisSpacing: 8.0,
-                                            mainAxisSpacing: 12.0,
-                                          ),
-                                          itemBuilder: (BuildContext context,
-                                              int index) {
-                                            return SizeProductWidget(
-                                              title: images[index],
-                                              index: index,
-                                            );
-                                          },
-                                        )),
-                                  ),
-                                  SizedBox(
-                                    width: 28.w,
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  CustomText(
-                                    'Size Chart :  ',
+                                    'Colors :  ',
                                     fontSize: 14.0.sp,
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -435,6 +429,28 @@ class DealsDetailsScreen extends StatelessWidget {
                                   ),
                                   SizedBox(
                                     width: 155.w,
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/coin.png',
+                                    height: 27.h,
+                                    width: 27.w,
+                                  ),
+                                  SizedBox(
+                                    width: 5.w,
+                                  ),
+                                  CustomText(
+                                    'By:       ',
+                                    fontSize: 14.0.sp,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  CustomText(
+                                    'Mahmoud quaider',
+                                    fontSize: 14.0.sp,
+                                    fontWeight: FontWeight.w500,
                                   ),
                                 ],
                               ),

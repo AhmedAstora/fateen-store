@@ -49,7 +49,7 @@ class SelectLocationScreen extends StatelessWidget {
             ),
             Center(
               child: Image.asset(
-                'assets/images/map.png',
+                'assets/images/Map2.png',
                 width: 276.w,
                 height: 160.h,
               ),

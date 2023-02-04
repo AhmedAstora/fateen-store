@@ -17,7 +17,42 @@ import 'Helper/Providers/auth_provider.dart';
 import 'Helper/Router/router.dart';
 import 'Helper/SharedPreferance/shared_preferance.dart';
 
+import 'UI/Screens/SharedScreens/AddPaymentScreen/add_payment_screen.dart';
+import 'UI/Screens/SharedScreens/AddressScreen/address_screen.dart';
+import 'UI/Screens/SharedScreens/ChooseLanguageScreen/choose_language_screen.dart';
+import 'UI/Screens/SharedScreens/ForgetPasswordScreen/reset_password_screen.dart';
+import 'UI/Screens/SharedScreens/NotificationsScreen/notifications_screen.dart';
+import 'UI/Screens/SharedScreens/SelectLocationScreen/select_location_screen.dart';
+import 'UI/Screens/UserScreens/AddNewAddress/add_new_address.dart';
+import 'UI/Screens/UserScreens/CartScreen/cart_screen.dart';
+import 'UI/Screens/UserScreens/CategoryScreen/category_screen.dart';
+import 'UI/Screens/UserScreens/CheckOutScreen/check_out_screen.dart';
+import 'UI/Screens/UserScreens/CheckOutScreen/view_invoice_screen.dart';
+import 'UI/Screens/UserScreens/DeailsDetailsScreen/deals_details_screen.dart';
+import 'UI/Screens/UserScreens/HomeScreen/home_screen.dart';
 import 'UI/Screens/UserScreens/MainNavigationScreen/main_navigation_screen.dart';
+import 'UI/Screens/UserScreens/ProfileScreen/about_screen.dart';
+import 'UI/Screens/UserScreens/ProfileScreen/change_password_screen.dart';
+import 'UI/Screens/UserScreens/ProfileScreen/contact_us_screen.dart';
+import 'UI/Screens/UserScreens/ProfileScreen/edit_profile_screen.dart';
+import 'UI/Screens/UserScreens/ProfileScreen/privacy_screen.dart';
+import 'UI/Screens/UserScreens/ProfileScreen/profile_screen.dart';
+import 'UI/Screens/UserScreens/ProfileScreen/terms_screen.dart';
+import 'UI/Screens/UserScreens/RequestsScreen/requests_screen.dart';
+import 'UI/Screens/UserScreens/SearchHomeScreen/search_home_screen.dart';
+import 'UI/Screens/VendorScreens/AddADealScreen/add_a_deal_screen.dart';
+import 'UI/Screens/VendorScreens/AddADealScreen/add_a_deal_screen1.dart';
+import 'UI/Screens/VendorScreens/AddADealScreen/add_a_deal_screen2.dart';
+import 'UI/Screens/VendorScreens/AddADealScreen/add_a_deal_screen3.dart';
+import 'UI/Screens/VendorScreens/DealsScreen/deals_screen.dart';
+import 'UI/Screens/VendorScreens/DealsSearchScreen/deals_search_screen.dart';
+import 'UI/Screens/VendorScreens/EditDealsScreen/edit_deals_screen.dart';
+import 'UI/Screens/VendorScreens/HomeSellerScreen/home_seller_screen.dart';
+import 'UI/Screens/VendorScreens/MainSellerNavigationScreen/main_seller_navigation_screen.dart';
+import 'UI/Screens/VendorScreens/OrderDetailsScreen/order_details_screen.dart';
+import 'UI/Screens/VendorScreens/OrderDetailsScreen1/order_details_screen1.dart';
+import 'UI/Screens/VendorScreens/RequestsSellerScreen/requests_seller_screen.dart';
+import 'UI/Screens/VendorScreens/SignUpVendorScreen/sign_up_vendor_screen.dart';
 import 'UI/Utils/constant.dart';
 
 const String groupKey = 'com.android.example.WORK_EMAIL';
@@ -205,7 +240,7 @@ class _MyAppsState extends State<MyApps> {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         debugShowCheckedModeBanner: false,
-        home: MainNavigationScreen(),
+        home: OrderDetailsScreen1(),
       ),
     );
   }

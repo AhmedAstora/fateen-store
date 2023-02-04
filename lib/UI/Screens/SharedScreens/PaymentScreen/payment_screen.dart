@@ -25,7 +25,7 @@ class PaymentScreen extends StatelessWidget {
             height: 45.0.sp,
             width: 271.0.sp,
             backgroundColor: mainAppColor,
-            title: 'Save',
+            title: 'Confirm',
             borderRadius: 10,
           ),
         ),
@@ -36,7 +36,7 @@ class PaymentScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         leading: BackAppBarWidget(),
         title: CustomText(
-          'Paid',
+          'Price',
           fontSize: 16.sp,
           color: Colors.black,
         ),
