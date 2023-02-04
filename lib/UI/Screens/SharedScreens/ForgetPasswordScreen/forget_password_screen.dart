@@ -95,12 +95,12 @@ class ForgetPasswordScreen extends StatelessWidget {
                 ),
                 CustomBottom(
                   onTap: () {
-                    if (signupValidate()) {
+                    // if (signupValidate()) {
                       RouterHelper.routerHelper
                           .routingToSpecificWidgetWithoutPop(
                           VerificationScreen(type: 1,));
                       // provider.forgetPassword(context);
-                    }
+                    // }
                   },
                   title: 'Next',
                 ),

@@ -1,17 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:twnty2/Helper/Providers/app_provider.dart';
-import 'package:twnty2/UI/Screens/UserScreens/SubCategoryScreen/widget/sub_category_widget.dart';
+import 'package:twnty2/UI/Screens/UserScreens/HomeScreen/widget/deals_home_widget.dart';
+import 'package:twnty2/UI/Screens/UserScreens/SearchHomeScreen/filter_screen.dart';
+import 'package:twnty2/UI/Screens/UserScreens/SearchHomeScreen/widget/search_one_widget.dart';
 
+import '../../../../Helper/Router/router.dart';
 import '../../../CustomWidget/back_appBar_widget.dart';
 import '../../../CustomWidget/custom_text.dart';
 import '../../../Utils/constant.dart';
 import '../HomeScreen/widget/all_deals_view_one_widget.dart';
-import '../HomeScreen/widget/all_deals_view_two_widget.dart';
 
-class SubCategoryScreen extends StatelessWidget {
+class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -24,16 +25,15 @@ class SubCategoryScreen extends StatelessWidget {
           leading: BackAppBarWidget(),
           centerTitle: true,
           title: CustomText(
-            'Clothing',
+            'Search',
             fontSize: 16.0.sp,
             color: Colors.black,
           ),
         ),
         body: SingleChildScrollView(
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 16.w),
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   height: 10.h,
@@ -61,9 +61,9 @@ class SubCategoryScreen extends StatelessWidget {
                             BoxConstraints(maxHeight: 15.w, maxWidth: 40),
                         suffixIcon: InkWell(
                           onTap: () {
-                            // RouterHelper.routerHelper
-                            //     .routingToSpecificWidgetWithoutPop(
-                            //     ScanScreen());
+                            RouterHelper.routerHelper
+                                .routingToSpecificWidgetWithoutPop(
+                                    FilterScreen());
                           },
                           child: Container(
                             margin: EdgeInsets.symmetric(horizontal: 7.w),
@@ -101,27 +101,13 @@ class SubCategoryScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 10.h,
-                ),
-                Container(
-                  height: 35.h,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    itemBuilder: (_, index) => SubCategoryWidget(
-                      index: index,
-                    ),
-                    itemCount: titles.length,
-                  ),
-                ),
-                SizedBox(
-                  height: 15.h,
+                  height: 20.h,
                 ),
                 Row(
                   children: [
                     CustomText(
-                      'All Products',
-                      fontSize: 16.sp,
+                      'Research results',
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w600,
                       color: Color(0XFF545454),
                     ),
@@ -134,7 +120,7 @@ class SubCategoryScreen extends StatelessWidget {
                         children: [
                           CustomText(
                             'View',
-                            fontSize: 14.sp,
+                            fontSize: 12.sp,
                             fontWeight: FontWeight.w500,
                             color: mainAppColor,
                           ),
@@ -145,8 +131,8 @@ class SubCategoryScreen extends StatelessWidget {
                             provider.isOneView
                                 ? 'assets/images/view.png'
                                 : 'assets/images/list_view.png',
-                            width: 20.w,
-                            height: 20.h,
+                            width: 18.w,
+                            height: 18.h,
                           ),
                         ],
                       ),
@@ -154,21 +140,35 @@ class SubCategoryScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 5.h,
+                  height: 10.h,
                 ),
-                Container(
-                  child: ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemBuilder: (_, index) => provider.isOneView
-                        ? AllDealsViewOneWidget()
-                        : AllDealsViewTwoWidget(),
-                    itemCount: 5,
-                  ),
-                ),
-                SizedBox(
-                  height: 100.h,
-                ),
+                provider.isOneView
+                    ? Container(
+                        child: ListView.builder(
+                          physics: NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemBuilder: (_, index) => AllDealsViewOneWidget(),
+                          itemCount: 5,
+                        ),
+                      )
+                    : Container(
+                        color: Colors.white,
+                        child: GridView.builder(
+                          shrinkWrap: true,
+                          padding: EdgeInsets.only(top: 5),
+                          itemCount: 10,
+                          physics: NeverScrollableScrollPhysics(),
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            mainAxisExtent: 256.h,
+                            crossAxisSpacing: 12.0,
+                            mainAxisSpacing: 15.0,
+                          ),
+                          itemBuilder: (context, index) {
+                            return SearchOneWidget();
+                          },
+                        )),
               ],
             ),
           ),

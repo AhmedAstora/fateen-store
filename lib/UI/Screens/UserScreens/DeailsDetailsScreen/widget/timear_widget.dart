@@ -5,13 +5,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../CustomWidget/custom_text.dart';
 
 class TimearWidget extends StatelessWidget {
-
   String? num;
   String? title;
   double? height;
   double? width;
   double? heightnum;
   double? heighttitle;
+
   TimearWidget({
     this.num,
     this.title,
@@ -19,7 +19,6 @@ class TimearWidget extends StatelessWidget {
     this.width,
     this.heightnum,
     this.heighttitle,
-
   });
 
   @override
@@ -32,10 +31,8 @@ class TimearWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
-            height: 3.0.h,
-          ),
           CustomText(
             '${num}',
             fontSize: 20.0.sp,
@@ -45,8 +42,9 @@ class TimearWidget extends StatelessWidget {
           ),
           CustomText(
             '${title}',
+
             fontSize: 16.0.sp,
-            fontWeight: FontWeight.w700,
+            fontWeight: FontWeight.normal,
             color: Colors.white,
             height: heighttitle,
           ),

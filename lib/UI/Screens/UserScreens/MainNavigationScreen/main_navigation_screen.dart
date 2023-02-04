@@ -28,7 +28,7 @@ class MainNavigationScreen extends StatelessWidget {
                 ]),
             margin: EdgeInsets.only(right: 20.w, left: 20.w, bottom: 20.h),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(500),
+              borderRadius: BorderRadius.circular(5),
               child: SingleChildScrollView(
                 physics: NeverScrollableScrollPhysics(),
                 child: BottomNavigationBar(
@@ -61,8 +61,8 @@ class MainNavigationScreen extends StatelessWidget {
                     BottomNavigationBarItem(
                       icon: Image.asset(
                         'assets/images/notification1.png',
-                        width: 22,
-                        height: 22,
+                        width: 19,
+                        height: 19,
                         color: provider.indexNavigation == 1
                             ? mainAppColor
                             : inActiveColor,
@@ -72,8 +72,8 @@ class MainNavigationScreen extends StatelessWidget {
                     BottomNavigationBarItem(
                       icon: Image.asset(
                         'assets/images/cart.png',
-                        width: 22,
-                        height: 22,
+                        width: 20,
+                        height: 20,
                         color: provider.indexNavigation == 2
                             ? mainAppColor
                             : inActiveColor,
@@ -83,8 +83,8 @@ class MainNavigationScreen extends StatelessWidget {
                     BottomNavigationBarItem(
                       icon: Image.asset(
                         'assets/images/order.png',
-                        width: 22,
-                        height: 22,
+                        width: 18,
+                        height: 18,
                         color: provider.indexNavigation == 3
                             ? mainAppColor
                             : inActiveColor,

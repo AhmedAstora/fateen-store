@@ -22,7 +22,7 @@ class AllDealsViewTwoWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 156.h,
+            height: 176.h,
             width: MediaQuery.of(context).size.width,
             child: Stack(
               children: [
@@ -37,7 +37,7 @@ class AllDealsViewTwoWidget extends StatelessWidget {
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 12),
+                    padding: const EdgeInsets.only(bottom: 22),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -47,8 +47,8 @@ class AllDealsViewTwoWidget extends StatelessWidget {
                           title: 'Day',
                           height: 57.h,
                           width: 57.w,
-                          heightnum: 1.4,
-                          heighttitle: 1.2,
+                          heightnum: 1.2,
+                          heighttitle: 1,
                         ),
                         SizedBox(
                           width: 10.0.w,
@@ -58,8 +58,8 @@ class AllDealsViewTwoWidget extends StatelessWidget {
                           title: 'Min',
                           height: 57.h,
                           width: 57.w,
-                          heightnum: 1.4,
-                          heighttitle: 1.2,
+                          heightnum: 1.2,
+                          heighttitle: 1,
                         ),
                         SizedBox(
                           width: 10.0.w,
@@ -69,8 +69,8 @@ class AllDealsViewTwoWidget extends StatelessWidget {
                           title: 'sec',
                           height: 57.h,
                           width: 57.w,
-                          heightnum: 1.4,
-                          heighttitle: 1.2,
+                          heightnum: 1.2,
+                          heighttitle: 1,
                         ),
                       ],
                     ),
@@ -97,7 +97,19 @@ class AllDealsViewTwoWidget extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.w),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
+                CustomText(
+                  'SAR',
+                  fontSize: 12.sp,
+                  height: 1.3,
+                  color: mainAppColor,
+                  fontWeight: FontWeight.normal,
+                  maxLines: 1,
+                ),
+                SizedBox(
+                  width: 2.w,
+                ),
                 CustomText(
                   '\$54.43',
                   fontSize: 16.sp,
@@ -108,6 +120,14 @@ class AllDealsViewTwoWidget extends StatelessWidget {
                 ),
                 SizedBox(
                   width: 5.w,
+                ),
+                CustomText(
+                  'SAR',
+                  fontSize: 10.sp,
+                  height: 1.5,
+                  color: Colors.grey,
+                  fontWeight: FontWeight.normal,
+                  maxLines: 1,
                 ),
                 CustomText(
                   '\$54.43',
@@ -124,11 +144,21 @@ class AllDealsViewTwoWidget extends StatelessWidget {
 
       Padding(
         padding: EdgeInsets.symmetric(horizontal: 10.w),
-        child:CustomText(
-            'Remaining quantity: 200',
-            fontSize: 10.sp,
-            fontWeight: FontWeight.w600,
-          ),),
+        child:Row(
+          children: [
+            CustomText(
+                'Remaining quantity:',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w600,
+              ),
+            SizedBox(width: 3.w,),
+            CustomText(
+              '200',
+              fontSize: 10.sp,
+              fontWeight: FontWeight.bold,
+            ),
+          ],
+        ),),
       SizedBox(
         height: 5.h,
       ),
@@ -154,6 +184,9 @@ class AllDealsViewTwoWidget extends StatelessWidget {
 
             ],
           ),),
+          SizedBox(
+            height: 10.h,
+          ),
         ],
       ),
     );

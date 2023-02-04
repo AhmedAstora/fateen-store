@@ -187,7 +187,7 @@ class AddADealScreen2 extends StatelessWidget {
                   onClick: () {},
                   hintText: 'Other',
                   isPassword: false,
-                  suffix: Icons.keyboard_arrow_down_sharp,
+                  suffix: Icon(Icons.keyboard_arrow_down_sharp),
                   fillColor: Colors.white,
                   fontsize: 14.sp,
                   filled: true,

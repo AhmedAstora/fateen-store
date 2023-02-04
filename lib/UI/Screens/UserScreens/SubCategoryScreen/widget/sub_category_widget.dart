@@ -21,7 +21,7 @@ class SubCategoryWidget extends StatelessWidget {
           provider.notifyListeners();
         },
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 5.w),
+          margin: EdgeInsets.symmetric(horizontal: 1.w),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
               color: provider.selectedSubCategory == index

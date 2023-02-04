@@ -12,26 +12,28 @@ class TimearWidgethome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 30.h,
+      height: 33.h,
       width: 30.0.w,
       decoration: BoxDecoration(
         color: Color(0xd7494747),
         borderRadius: BorderRadius.circular(5),
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          SizedBox(height: 2),
           CustomText(
             '${num}',
-            height: 1.3,
+            height: 0.9,
             color: Colors.white,
             fontWeight: FontWeight.w700,
           ),
           CustomText(
             '${title}',
-            height: 1.1,
+            height: 0.9,
             fontSize: 10.sp,
             color: Colors.white,
-            fontWeight: FontWeight.w700,
+            fontWeight: FontWeight.w500,
           ),
         ],
       ),

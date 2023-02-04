@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:twnty2/Helper/Providers/app_provider.dart';
+import 'package:twnty2/Helper/Providers/auth_provider.dart';
 
 import '../../../../Helper/Router/router.dart';
 import '../../../CustomWidget/custom_bottom.dart';
@@ -14,7 +15,7 @@ class ChooseSignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Consumer<AppProvider>(builder: (context, provider, _) {
+    return Consumer<AuthProvider>(builder: (context, provider, _) {
       return Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
@@ -30,12 +31,13 @@ class ChooseSignUpScreen extends StatelessWidget {
                     child: Image.asset(
                   'assets/images/logo.png',
                   height: 130.h,
+                  width: 90.w,
                 )),
                 SizedBox(
                   height: 65.h,
                 ),
                 Text(
-                  "Choose the language of the application".tr(),
+                  "Choose the type of account".tr(),
                   style:
                       TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w600),
                 ),
@@ -107,6 +109,43 @@ class ChooseSignUpScreen extends StatelessWidget {
                                 groupValue: 1,
                                 onChanged: (value) {
                                   provider.userIndex = 1;
+                                  provider.notifyListeners();
+                                }))
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 25.h),
+                InkWell(
+                  onTap: () async {
+                    provider.userIndex = 2;
+                    provider.notifyListeners();
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    height: 55.h,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(width: .5, color: Colors.grey)),
+                    child: Row(
+                      children: [
+                        Text(
+                          'Browse as a guest',
+                          style: TextStyle(
+                              fontSize: 14.sp,
+                              color: Colors.grey[700],
+                              fontWeight: FontWeight.w400),
+                        ),
+                        Spacer(),
+                        Container(
+                            height: 30.h,
+                            width: 30.w,
+                            child: Radio(
+                                activeColor: mainAppColor,
+                                value: provider.userIndex,
+                                groupValue: 2,
+                                onChanged: (value) {
+                                  provider.userIndex = 2;
                                   provider.notifyListeners();
                                 }))
                       ],

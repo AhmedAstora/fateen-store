@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:string_validator/string_validator.dart';
 
@@ -10,7 +11,7 @@ import '../Model/Slide.dart';
 class AppProvider extends ChangeNotifier {
   bool isHiden = false;
   int languageIndex = 0;
-  int userIndex = 0;
+
   int currentIndex = 0;
   int indexNavigation = 0;
   int indexSellerNavigation = 0;
@@ -19,6 +20,7 @@ class AppProvider extends ChangeNotifier {
   bool isOneView = true;
   bool loading = false;
   File? file;
+  RangeValues rangeValues= RangeValues(1, 2000);
 
   int selectedSubCategory = 0;
 

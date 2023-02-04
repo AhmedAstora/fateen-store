@@ -9,8 +9,6 @@ import '../../../CustomWidget/linear_progress_widget.dart';
 import '../../../Utils/constant.dart';
 import '../OrderDetailsScreen/order_details_screen.dart';
 
-
-
 class data {
   String? image;
   String? title;
@@ -36,6 +34,7 @@ class data {
     this.date,
   });
 }
+
 class dataorder {
   String? image;
   String? title;
@@ -122,7 +121,7 @@ class RequestsSellerScreen extends StatelessWidget {
       title3: 'Remaining quantity:',
       title4: '#NSUD525632',
       title5: 'View details',
-      price2:' 200',
+      price2: ' 200',
       price: '520\$',
       title2: 'Total amount:',
     ),
@@ -182,8 +181,8 @@ class RequestsSellerScreen extends StatelessWidget {
                   ListView.separated(
                       padding: EdgeInsets.symmetric(vertical: 40),
                       separatorBuilder: (context, index) => SizedBox(
-                        height: 12.h,
-                      ),
+                            height: 12.h,
+                          ),
                       itemCount: list.length,
                       itemBuilder: (context, index) {
                         return buildItem(list[index]);
@@ -191,8 +190,8 @@ class RequestsSellerScreen extends StatelessWidget {
                   ListView.separated(
                       padding: EdgeInsets.symmetric(vertical: 40),
                       separatorBuilder: (context, index) => SizedBox(
-                        height: 12.h,
-                      ),
+                            height: 12.h,
+                          ),
                       itemCount: listOrder.length,
                       itemBuilder: (context, index) {
                         return buildItem1(listOrder[index]);
@@ -213,7 +212,6 @@ class RequestsSellerScreen extends StatelessWidget {
             .routingToSpecificWidgetWithoutPop(OrderDetailsScreen());
       },
       child: Container(
-        height: 146.h,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
@@ -332,6 +330,7 @@ class RequestsSellerScreen extends StatelessWidget {
       ),
     );
   }
+
   Widget buildItem1(dataorder model1) {
     return InkWell(
       onTap: () {
@@ -450,7 +449,6 @@ class RequestsSellerScreen extends StatelessWidget {
                             value: .6,
                             width: 106.w,
                             height: 10.h,
-
                           ),
                           SizedBox(
                             width: 10.w,
@@ -459,9 +457,7 @@ class RequestsSellerScreen extends StatelessWidget {
                             '78%',
                             fontSize: 10.sp,
                             height: 1,
-
                           ),
-
                         ],
                       ),
                       Align(

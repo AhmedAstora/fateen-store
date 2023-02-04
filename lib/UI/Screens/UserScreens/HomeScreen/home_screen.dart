@@ -14,6 +14,7 @@ import 'package:twnty2/UI/Screens/UserScreens/HomeScreen/widget/deals_home_widge
 import 'package:twnty2/UI/Utils/constant.dart';
 
 import '../CategoryScreen/category_screen.dart';
+import '../SearchHomeScreen/search_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -23,33 +24,39 @@ class HomeScreen extends StatelessWidget {
     return Consumer<AppProvider>(builder: (context, provider, _) {
       return Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          centerTitle: true,
-          title: Column(
-            children: [
-              CustomText(
-                'Your Location',
-                height: 1.2,
-                fontSize: 12.sp,
-                color: Colors.black,
-                maxLines: 1,
-                fontWeight: FontWeight.w500,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 0),
-                child: CustomText(
-                  'Saudi Arabia',
-                  fontSize: 14.sp,
-                  color: Colors.black,
-                  height: 1.2,
-                  maxLines: 1,
-                  fontWeight: FontWeight.w600,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(60),
+          child: AppBar(
+            centerTitle: true,
+            title: Column(
+              children: [
+                SizedBox(
+                  height: 10.h,
                 ),
-              ),
-            ],
+                CustomText(
+                  'Your Location',
+                  height: 1.2,
+                  fontSize: 12.sp,
+                  color: Colors.black,
+                  maxLines: 1,
+                  fontWeight: FontWeight.w500,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 0),
+                  child: CustomText(
+                    'Saudi Arabia',
+                    fontSize: 14.sp,
+                    color: Colors.black,
+                    height: 1.2,
+                    maxLines: 1,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+            backgroundColor: Colors.white,
+            elevation: 0.0,
           ),
-          backgroundColor: Colors.white,
-          elevation: 0.0,
         ),
         body: SingleChildScrollView(
           child: Container(
@@ -58,37 +65,43 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   height: 10.h,
                 ),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 16.w),
-                  height: 45.h,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(23.5),
-                    color: Color(0xFFF1F1F1),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Row(
-                      children: [
-                        ImageIcon(
-                          AssetImage("assets/images/search.png"),
-                          color: Colors.black,
-                          size: 30,
-                        ),
-                        SizedBox(
-                          width: 11.w,
-                        ),
-                        CustomText(
-                          'Search product here...',
-                          color: Color(0xFF000000).withOpacity(0.5),
-                          fontSize: 13.sp,
-                        ),
-                        Spacer(),
-                        ImageIcon(
-                          AssetImage("assets/images/icon_category.png"),
-                          color: Colors.black,
-                          size: 30,
-                        ),
-                      ],
+                InkWell(
+                  onTap: () {
+                    RouterHelper.routerHelper
+                        .routingToSpecificWidgetWithoutPop(SearchScreen());
+                  },
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 16.w),
+                    height: 45.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(23.5),
+                      color: Color(0xFFF1F1F1),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Row(
+                        children: [
+                          ImageIcon(
+                            AssetImage("assets/images/search.png"),
+                            color: Colors.black,
+                            size: 30,
+                          ),
+                          SizedBox(
+                            width: 11.w,
+                          ),
+                          CustomText(
+                            'Search product here...',
+                            color: Color(0xFF000000).withOpacity(0.5),
+                            fontSize: 13.sp,
+                          ),
+                          Spacer(),
+                          ImageIcon(
+                            AssetImage("assets/images/icon_category.png"),
+                            color: Colors.black,
+                            size: 30,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -173,13 +186,16 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Container(
                   margin: EdgeInsets.only(left: 16.w),
-                  height: 240.h,
+                  height: 260.h,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
                     itemBuilder: (_, index) => DealsHomeWidget(),
                     itemCount: 5,
                   ),
+                ),
+                SizedBox(
+                  height: 15.h,
                 ),
                 Row(
                   children: [
@@ -209,13 +225,16 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Container(
                   margin: EdgeInsets.only(left: 16.w),
-                  height: 240.h,
+                  height: 260.h,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
                     itemBuilder: (_, index) => DealsHomeWidget(),
                     itemCount: 5,
                   ),
+                ),
+                SizedBox(
+                  height: 15.h,
                 ),
                 Row(
                   children: [
@@ -245,7 +264,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Container(
                   margin: EdgeInsets.only(left: 16.w),
-                  height: 240.h,
+                  height: 260.h,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
@@ -254,7 +273,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 10.h,
+                  height: 15.h,
                 ),
                 Row(
                   children: [

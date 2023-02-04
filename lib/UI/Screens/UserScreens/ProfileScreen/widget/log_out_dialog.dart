@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twnty2/Helper/Router/router.dart';
 import 'package:twnty2/Helper/SharedPreferance/shared_preferance.dart';
 
-import '../../SignInScreen/sign_in_screen.dart';
+import '../../../SharedScreens/SignInScreen/sign_in_screen.dart';
 
 class LogoutDialog extends StatelessWidget {
   @override

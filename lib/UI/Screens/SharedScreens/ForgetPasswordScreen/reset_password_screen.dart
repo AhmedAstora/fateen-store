@@ -11,8 +11,8 @@ import 'package:twnty2/Helper/Router/router.dart';
 import '../../../CustomWidget/back_appBar_widget.dart';
 import '../../../CustomWidget/custom_bottom.dart';
 import '../../../CustomWidget/custom_text_field.dart';
-
-
+import '../SignInScreen/sign_in_screen.dart';
+import '../SignInScreen/widget/success_dialog.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
   GlobalKey<FormState> resetFormKey = GlobalKey<FormState>();
@@ -118,17 +118,20 @@ class ResetPasswordScreen extends StatelessWidget {
                 SizedBox(
                   height: 54.h,
                 ),
-                InkWell(
+                CustomBottom(
                   onTap: () {
-                    if (signupValidate()) {
-                      // provider.resetPassword(context);
-                    }
-                  },
-                  child: CustomBottom(
-                    onTap: () {},
-                    title: 'Reset',
+                    // if (signupValidate()) {
+                    //   // provider.resetPassword(context);
+                    // }
 
-                  ),
+                    showDialog(
+                            context: context, builder: (_) => SuccessDialog())
+                        .then((value) => {
+                              RouterHelper.routerHelper
+                                  .routingReplacementUntil(SignInScreen())
+                            });
+                  },
+                  title: 'Reset',
                 ),
               ],
             ),

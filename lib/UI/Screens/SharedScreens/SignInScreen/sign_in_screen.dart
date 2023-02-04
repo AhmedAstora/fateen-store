@@ -12,6 +12,7 @@ import 'package:twnty2/Helper/Router/router.dart';
 import 'package:twnty2/Helper/SharedPreferance/shared_preferance.dart';
 import 'package:twnty2/UI/CustomWidget/custom_bottom.dart';
 import 'package:twnty2/UI/CustomWidget/custom_text.dart';
+import 'package:twnty2/UI/Screens/UserScreens/MainNavigationScreen/main_navigation_screen.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
@@ -153,7 +154,10 @@ class SignInScreen extends StatelessWidget {
                     height: 70.h,
                   ),
                   CustomBottom(
-                    onTap: () {},
+                    onTap: () {
+                      RouterHelper.routerHelper
+                          .routingReplacementUntil(MainNavigationScreen());
+                    },
                     title: 'Sign in',
                   ),
                   SizedBox(

@@ -119,7 +119,6 @@ class OrderDetailsScreen1 extends StatelessWidget {
                 Spacer(),
                 Container(
                     height: 23.h,
-                    width: 90.w,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4),
                         color: mainAppColor),
@@ -176,22 +175,20 @@ class OrderDetailsScreen1 extends StatelessWidget {
 
   Widget buildItem(data model) {
     return Container(
-      height: 100.h,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(4),
-        color: Colors.white,
-        border: Border.all(
-          color: greyColor.withOpacity(.1),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.21),
-            spreadRadius: 1,
-            blurRadius: 3,
-            offset: Offset(0, 3), // changes position of shadow
+          borderRadius: BorderRadius.circular(4),
+          color: Colors.white,
+          border: Border.all(
+            color: greyColor.withOpacity(.1),
           ),
-        ]
-      ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.21),
+              spreadRadius: 1,
+              blurRadius: 3,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ]),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         child: Row(
@@ -224,6 +221,8 @@ class OrderDetailsScreen1 extends StatelessWidget {
                 CustomText(
                   '${model.title2}',
                   fontSize: 10.sp,
+                  maxLines: 2,
+
                 ),
               ],
             ),

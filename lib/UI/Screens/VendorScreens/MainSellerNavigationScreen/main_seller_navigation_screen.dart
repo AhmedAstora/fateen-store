@@ -12,8 +12,6 @@ import '../DealsSearchScreen/deals_search_screen.dart';
 import '../HomeSellerScreen/home_seller_screen.dart';
 import '../RequestsSellerScreen/requests_seller_screen.dart';
 
-
-
 class MainSellerNavigationScreen extends StatelessWidget {
   List<Widget>? navgationWidget = [
     HomeSellerScreen(),

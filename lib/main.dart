@@ -11,6 +11,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:twnty2/UI/Screens/SharedScreens/PaymentScreen/payment_screen.dart';
+import 'package:twnty2/UI/Screens/SharedScreens/SplashScreen/splash_screen.dart';
 
 import 'Helper/Providers/app_provider.dart';
 import 'Helper/Providers/auth_provider.dart';
@@ -39,7 +40,7 @@ import 'UI/Screens/UserScreens/ProfileScreen/privacy_screen.dart';
 import 'UI/Screens/UserScreens/ProfileScreen/profile_screen.dart';
 import 'UI/Screens/UserScreens/ProfileScreen/terms_screen.dart';
 import 'UI/Screens/UserScreens/RequestsScreen/requests_screen.dart';
-import 'UI/Screens/UserScreens/SearchHomeScreen/search_home_screen.dart';
+import 'UI/Screens/UserScreens/SearchHomeScreen/filter_screen.dart';
 import 'UI/Screens/VendorScreens/AddADealScreen/add_a_deal_screen.dart';
 import 'UI/Screens/VendorScreens/AddADealScreen/add_a_deal_screen1.dart';
 import 'UI/Screens/VendorScreens/AddADealScreen/add_a_deal_screen2.dart';
@@ -240,7 +241,7 @@ class _MyAppsState extends State<MyApps> {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         debugShowCheckedModeBanner: false,
-        home: OrderDetailsScreen1(),
+        home: SplachScreen(),
       ),
     );
   }

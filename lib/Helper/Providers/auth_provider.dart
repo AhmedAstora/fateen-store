@@ -6,18 +6,15 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:path/path.dart';
 import 'package:string_validator/string_validator.dart';
-import 'package:twnty2/UI/Screens/UserScreens/SignInScreen/sign_in_screen.dart';
-
+import '../../UI/Screens/SharedScreens/SignInScreen/sign_in_screen.dart';
 import '../Model/Slide.dart';
 import '../Router/router.dart';
 
 class AuthProvider extends ChangeNotifier {
   LatLng? myLocation;
-
   bool isLoading = false;
-
   int currentPage = 0;
-
+  int userIndex = 0;
   final PageController pageController = PageController(initialPage: 0);
 
   TextEditingController emailController = TextEditingController();
@@ -26,18 +23,15 @@ class AuthProvider extends ChangeNotifier {
 
   bool rememberMe = false;
 
-
   TextEditingController emailForgetController = TextEditingController();
 
   TextEditingController resetPasswordController = TextEditingController();
   TextEditingController ConfirmResetPasswordController =
-  TextEditingController();
-
+      TextEditingController();
 
   var pinPutController = TextEditingController();
   bool isExpire = true;
   bool wrongCode = false;
-
 
   TextEditingController fileController = TextEditingController();
   bool errorFile = false;
@@ -111,15 +105,16 @@ class AuthProvider extends ChangeNotifier {
     isLoading = false;
     notifyListeners();
   }
+
   PickFile() async {
-    try{
-    FilePickerResult? result = await FilePicker.platform.pickFiles();
-    if (result != null) {
-      file = File(result.files.single.path!);
-      fileController.text = basename(file!.path);
-      errorFile = false;
-    }
-    }catch(e){
+    try {
+      FilePickerResult? result = await FilePicker.platform.pickFiles();
+      if (result != null) {
+        file = File(result.files.single.path!);
+        fileController.text = basename(file!.path);
+        errorFile = false;
+      }
+    } catch (e) {
       log(e.toString());
     }
     notifyListeners();

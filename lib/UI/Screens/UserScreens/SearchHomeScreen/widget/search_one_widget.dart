@@ -10,7 +10,7 @@ import 'package:twnty2/UI/Utils/constant.dart';
 import '../../../../CustomWidget/linear_progress_widget.dart';
 import '../../DeailsDetailsScreen/widget/timear_widget.dart';
 
-class DealsHomeWidget extends StatelessWidget {
+class SearchOneWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -25,13 +25,12 @@ class DealsHomeWidget extends StatelessWidget {
               color: greyColor.withOpacity(.2), blurRadius: 5, spreadRadius: 1)
         ], borderRadius: BorderRadius.circular(15), color: Colors.white),
         width: 160.w,
-        margin: EdgeInsets.only(right: 20.w, bottom: 1.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 171.h,
-              width: 160.w,
+              height: 161.h,
+              width: double.infinity,
               child: Stack(
                 children: [
                   CustomImageNetwork(
@@ -39,7 +38,7 @@ class DealsHomeWidget extends StatelessWidget {
                           'https://images.unsplash.com/photo-1516762689617-e1cffcef479d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=711&q=80',
                       height: 156.h,
                       radius: 15,
-                      width: 160.w,
+                      width: double.infinity,
                       fit: BoxFit.cover),
                   Align(
                     alignment: Alignment.bottomCenter,
@@ -138,7 +137,7 @@ class DealsHomeWidget extends StatelessWidget {
             // ),
             Expanded(
               child: Container(
-                width: 160.w,
+                width: double.infinity,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
@@ -146,7 +145,7 @@ class DealsHomeWidget extends StatelessWidget {
                         bottomRight: Radius.circular(8)),
                     border: Border.all(color: Colors.grey, width: 0.2)),
                 child: Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: 5.w),
+                  padding: const EdgeInsets.all(4.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -166,7 +165,6 @@ class DealsHomeWidget extends StatelessWidget {
                           ),
                         ],
                       ),
-
                       SizedBox(height: 5.h,),
                       Row(
                         children: [
@@ -185,7 +183,6 @@ class DealsHomeWidget extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 5.h,),
                     ],
                   ),
                 ),

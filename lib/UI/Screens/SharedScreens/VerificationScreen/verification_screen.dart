@@ -5,14 +5,19 @@ import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
+import 'package:twnty2/Helper/Router/router.dart';
 import 'package:twnty2/UI/CustomWidget/back_appBar_widget.dart';
 import 'package:twnty2/UI/CustomWidget/custom_bottom.dart';
+import 'package:twnty2/UI/Screens/SharedScreens/ForgetPasswordScreen/forget_password_screen.dart';
+import 'package:twnty2/UI/Screens/SharedScreens/ForgetPasswordScreen/reset_password_screen.dart';
+import 'package:twnty2/UI/Screens/UserScreens/MainNavigationScreen/main_navigation_screen.dart';
+import 'package:twnty2/UI/Screens/VendorScreens/MainSellerNavigationScreen/main_seller_navigation_screen.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
 
 import 'dart:ui' as ui;
 
 import '../../../../Helper/Providers/auth_provider.dart';
-import '../../UserScreens/SignInScreen/widget/success_dialog.dart';
+import '../SignInScreen/widget/success_dialog.dart';
 
 class VerificationScreen extends StatelessWidget {
   final FocusNode _pinPutFocusNode = FocusNode();
@@ -132,11 +137,23 @@ class VerificationScreen extends StatelessWidget {
                       provider.wrongCode = false;
                       provider.notifyListeners();
                       if (type == 1) {
-                        showDialog(
-                            context: context, builder: (_) => SuccessDialog());
+
+                        RouterHelper.routerHelper
+                            .routingToSpecificWidgetWithoutPop(
+                            ResetPasswordScreen());
                         // provider.verfiyCode(context);
                       } else if (type == 2) {
                         // provider.verfiyForgetPasswordCode(context);
+
+                        if (provider.userIndex == 0) {
+                          RouterHelper.routerHelper
+                              .routingReplacementUntil(
+                                  MainNavigationScreen());
+                        } else if(provider.userIndex ==1) {
+                          RouterHelper.routerHelper
+                              .routingReplacementUntil(
+                                  MainSellerNavigationScreen());
+                        }
                       }
                     }
                   },

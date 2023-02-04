@@ -13,8 +13,8 @@ import 'package:twnty2/Helper/Router/router.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
 
 
-import '../../UserScreens/SignInScreen/sign_in_screen.dart';
 import '../OnBoardingScreen/onboarding_screen.dart';
+import '../SignInScreen/sign_in_screen.dart';
 
 class SelectLocationScreen extends StatelessWidget {
   @override

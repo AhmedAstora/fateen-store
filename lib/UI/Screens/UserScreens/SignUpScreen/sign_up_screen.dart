@@ -6,13 +6,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:twnty2/UI/Screens/SharedScreens/VerificationScreen/verification_screen.dart';
+import 'package:twnty2/UI/Screens/UserScreens/ProfileScreen/terms_screen.dart';
 
 import '../../../../Helper/Providers/auth_provider.dart';
 import '../../../../Helper/Router/router.dart';
+import '../../../../Helper/SharedPreferance/shared_preferance.dart';
 import '../../../CustomWidget/custom_bottom.dart';
 import '../../../CustomWidget/custom_text_field.dart';
 import '../../../Utils/constant.dart';
-import '../SignInScreen/sign_in_screen.dart';
+import '../../SharedScreens/SignInScreen/sign_in_screen.dart';
+import '../ProfileScreen/privacy_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
   GlobalKey<FormState> signFormKey = GlobalKey<FormState>();
@@ -225,6 +229,35 @@ class SignUpScreen extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
+                        Container(
+                          width: 20.w,
+                          height: 20.h,
+                          child: Transform.scale(
+                            scaleY: .9,
+                            scaleX: .9,
+                            child: Checkbox(
+                                activeColor: mainAppColor,
+                                fillColor:
+                                    MaterialStateProperty.resolveWith<Color>(
+                                        (states) {
+                                  if (states.contains(MaterialState.disabled)) {
+                                    return Colors.orange.withOpacity(.32);
+                                  }
+                                  return Colors.orange;
+                                }),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(4)),
+                                value: SpHelper.spHelper.getRemember(),
+                                onChanged: (value) {
+                                  provider.rememberMe = value!;
+                                  SpHelper.spHelper.setRemember(value);
+                                  provider.notifyListeners();
+                                }),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10.w,
+                        ),
                         Text(
                             '${"By clicking \"Sign up\" I agree that I have read and accepted they".tr()}  ',
                             style: TextStyle(fontSize: 12.sp)),
@@ -235,9 +268,8 @@ class SignUpScreen extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          // RouterHelper.routerHelper
-                          //     .routingToSpecificWidgetWithoutPop(
-                          //     TermsAndConditionsScreen());
+                          RouterHelper.routerHelper
+                              .routingToSpecificWidgetWithoutPop(TermsScreen());
                         },
                         child: Text(
                           "Terms and Conditions".tr(),
@@ -249,9 +281,9 @@ class SignUpScreen extends StatelessWidget {
                           style: TextStyle(fontSize: 12.sp)),
                       InkWell(
                         onTap: () {
-                          // RouterHelper.routerHelper
-                          //     .routingToSpecificWidgetWithoutPop(
-                          //     PrivacyScreen());
+                          RouterHelper.routerHelper
+                              .routingToSpecificWidgetWithoutPop(
+                                  PrivacyScreen());
                         },
                         child: Text(
                           '${"Privacy policy".tr()}.',
@@ -265,7 +297,11 @@ class SignUpScreen extends StatelessWidget {
                     height: 40.h,
                   ),
                   CustomBottom(
-                    onTap: () {},
+                    onTap: () {
+                      RouterHelper.routerHelper
+                          .routingToSpecificWidgetWithoutPop(
+                              VerificationScreen(type: 2,));
+                    },
                     title: 'Sign Up',
                   ),
                   SizedBox(

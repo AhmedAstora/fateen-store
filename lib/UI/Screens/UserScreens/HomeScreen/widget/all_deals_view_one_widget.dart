@@ -16,7 +16,7 @@ class AllDealsViewOneWidget extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(width: 1.w, color: Colors.grey.withOpacity(.5))),
+          border: Border.all(width: 1.w, color: Colors.grey.withOpacity(.3))),
       child: Row(
         children: [
           Container(
@@ -50,10 +50,22 @@ class AllDealsViewOneWidget extends StatelessWidget {
                   maxLines: 1,
                 ),
                 SizedBox(
-                  height: 3.h,
+                  height: 1.h,
                 ),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
+                    CustomText(
+                      'SAR',
+                      fontSize: 10.sp,
+                      height: 1.3,
+                      color: mainAppColor,
+                      fontWeight: FontWeight.bold,
+                      maxLines: 1,
+                    ),
+                    SizedBox(
+                      width: 1.w,
+                    ),
                     CustomText(
                       '\$54.43',
                       fontSize: 14.sp,
@@ -76,13 +88,26 @@ class AllDealsViewOneWidget extends StatelessWidget {
                     ),
                   ],
                 ),
+
+                Row(
+                  children: [
+                    CustomText(
+                      'Remaining quantity:',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    SizedBox(
+                      width: 2.w,
+                    ),
+                    CustomText(
+                      '200',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ],
+                ),
                 SizedBox(
                   height: 3.h,
-                ),
-                CustomText(
-                  'Remaining quantity: 200',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w600,
                 ),
                 Row(
                   children: [
