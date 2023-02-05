@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -25,7 +26,7 @@ class SearchScreen extends StatelessWidget {
           leading: BackAppBarWidget(),
           centerTitle: true,
           title: CustomText(
-            'Search',
+            'Search'.tr(),
             fontSize: 16.0.sp,
             color: Colors.black,
           ),
@@ -78,7 +79,7 @@ class SearchScreen extends StatelessWidget {
                             EdgeInsets.symmetric(horizontal: 9, vertical: 6),
                         filled: true,
                         fillColor: Colors.grey[250],
-                        hintText: 'Search product here...',
+                        hintText: 'Search product here...'.tr(),
                         disabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(100),
                             borderSide: BorderSide(
@@ -106,7 +107,7 @@ class SearchScreen extends StatelessWidget {
                 Row(
                   children: [
                     CustomText(
-                      'Research results',
+                      'Research results'.tr(),
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w600,
                       color: Color(0XFF545454),
@@ -119,7 +120,7 @@ class SearchScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           CustomText(
-                            'View',
+                            'View'.tr(),
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w500,
                             color: mainAppColor,

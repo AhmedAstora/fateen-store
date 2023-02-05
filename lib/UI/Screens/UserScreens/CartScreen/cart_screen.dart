@@ -57,7 +57,7 @@ class CartScreen extends StatelessWidget {
         elevation: 0.0,
         centerTitle: true,
         title: CustomText(
-          'My Cart',
+          'My Cart'.tr(),
           fontSize: 16.0.sp,
           color: Colors.black,
         ),
@@ -101,7 +101,7 @@ class CartScreen extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          CustomText('Items numbers ',
+                          CustomText('Items numbers '.tr(),
                               color: Color(0xff999BA9)),
                           Spacer(),
                           CustomText(
@@ -132,7 +132,7 @@ class CartScreen extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          CustomText('Subtotal', color: Color(0xff999BA9)),
+                          CustomText('Subtotal'.tr(), color: Color(0xff999BA9)),
                           Spacer(),
                           CustomText(
                             'SAR22.00',
@@ -162,7 +162,7 @@ class CartScreen extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          CustomText('Delivery Charge!',
+                          CustomText('Delivery Charge!'.tr(),
                               color: Color(0xff999BA9)),
                           Spacer(),
                           CustomText(
@@ -195,7 +195,7 @@ class CartScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           CustomText(
-                            'Total Price',
+                            'Total Price'.tr(),
                             fontWeight: FontWeight.w600,
                             fontSize: 16.sp,
                           ),
@@ -203,7 +203,7 @@ class CartScreen extends StatelessWidget {
                             width: 10.w,
                           ),
                           CustomText(
-                            'The price includes tax',
+                            'The price includes tax'.tr(),
                             fontSize: 10.sp,
                             color: Colors.grey[500],
                           ),
@@ -244,7 +244,7 @@ class CartScreen extends StatelessWidget {
                   height: 45.0.sp,
                   width: 271.0.sp,
                   backgroundColor: mainAppColor,
-                  title: 'Checkout',
+                  title: 'Checkout'.tr(),
                   borderRadius: 10,
                 ),
               ),

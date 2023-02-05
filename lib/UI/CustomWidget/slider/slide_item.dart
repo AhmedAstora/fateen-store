@@ -70,7 +70,7 @@ class SlideItem extends StatelessWidget {
                 height: 100.h,
               ),
               Text(
-                "${provider.slideList_welcome[index].title}",
+                "${provider.slideList_welcome[index].title}".tr(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18.sp,
@@ -85,7 +85,7 @@ class SlideItem extends StatelessWidget {
               Container(
                 width: 280.w,
                 child: Text(
-                  '${provider.slideList_welcome[index].text}',
+                  '${provider.slideList_welcome[index].text}'.tr(),
                   maxLines: 3,
                   textAlign: TextAlign.center,
                   style: TextStyle(

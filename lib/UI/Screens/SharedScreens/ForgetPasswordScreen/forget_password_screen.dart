@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -34,7 +35,7 @@ class ForgetPasswordScreen extends StatelessWidget {
           elevation: 0,
           centerTitle: true,
           title: Text(
-            'Forgot Password',
+            'Forgot Password'.tr(),
             style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 16.sp,
@@ -56,7 +57,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 15.w),
                   child: Text(
-                    'Enter your Email and we\'ll send you a login code to get back into your account.',
+                    'ForgotText'.tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 12.sp,
@@ -70,7 +71,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 3.w),
                   child: Text(
-                    'Email or phone',
+                    'Email or phone'.tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 12.sp,
@@ -102,7 +103,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                       // provider.forgetPassword(context);
                     // }
                   },
-                  title: 'Next',
+                  title: 'Next'.tr(),
                 ),
               ],
             ),

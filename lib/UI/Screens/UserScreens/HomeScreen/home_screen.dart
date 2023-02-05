@@ -1,4 +1,5 @@
 import 'package:dotted_border/dotted_border.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -34,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                   height: 10.h,
                 ),
                 CustomText(
-                  'Your Location',
+                  'Your Location'.tr(),
                   height: 1.2,
                   fontSize: 12.sp,
                   color: Colors.black,
@@ -44,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 0),
                   child: CustomText(
-                    'Saudi Arabia',
+                    'Saudi Arabia'.tr(),
                     fontSize: 14.sp,
                     color: Colors.black,
                     height: 1.2,
@@ -90,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                             width: 11.w,
                           ),
                           CustomText(
-                            'Search product here...',
+                            'Search product here...'.tr(),
                             color: Color(0xFF000000).withOpacity(0.5),
                             fontSize: 13.sp,
                           ),
@@ -118,14 +119,14 @@ class HomeScreen extends StatelessWidget {
                       width: 16.w,
                     ),
                     CustomText(
-                      'Categories',
+                      'Categories'.tr(),
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                       color: Color(0XFF545454),
                     ),
                     Spacer(),
                     CustomText(
-                      'See all',
+                      'See all'.tr(),
                       onTap: () {
                         RouterHelper.routerHelper
                             .routingToSpecificWidgetWithoutPop(
@@ -164,14 +165,14 @@ class HomeScreen extends StatelessWidget {
                       width: 16.w,
                     ),
                     CustomText(
-                      'New deals',
+                      'New deals'.tr(),
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w700,
                       color: Color(0XFF545454),
                     ),
                     Spacer(),
                     CustomText(
-                      'View all',
+                      'View all'.tr(),
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
                       color: mainAppColor,
@@ -203,14 +204,14 @@ class HomeScreen extends StatelessWidget {
                       width: 16.w,
                     ),
                     CustomText(
-                      'Recommended for You',
+                      'Recommended for You'.tr(),
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w700,
                       color: Color(0XFF545454),
                     ),
                     Spacer(),
                     CustomText(
-                      'View all',
+                      'View all'.tr(),
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
                       color: mainAppColor,
@@ -242,14 +243,14 @@ class HomeScreen extends StatelessWidget {
                       width: 16.w,
                     ),
                     CustomText(
-                      'Deals are about to expire',
+                      'Deals are about to expire'.tr(),
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w700,
                       color: Color(0XFF545454),
                     ),
                     Spacer(),
                     CustomText(
-                      'View all',
+                      'View all'.tr(),
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
                       color: mainAppColor,
@@ -281,7 +282,7 @@ class HomeScreen extends StatelessWidget {
                       width: 16.w,
                     ),
                     CustomText(
-                      'All Products',
+                      'All Products'.tr(),
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w700,
                       color: Color(0XFF545454),
@@ -294,7 +295,7 @@ class HomeScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           CustomText(
-                            'View',
+                            'View'.tr(),
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w500,
                             color: mainAppColor,

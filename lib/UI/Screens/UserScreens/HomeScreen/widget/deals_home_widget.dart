@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twnty2/Helper/Router/router.dart';
@@ -51,21 +52,21 @@ class DealsHomeWidget extends StatelessWidget {
                         children: [
                           TimearWidgethome(
                             num: '15',
-                            title: 'Day',
+                            title: 'Day'.tr(),
                           ),
                           SizedBox(
                             width: 10.0.w,
                           ),
                           TimearWidgethome(
                             num: '60',
-                            title: 'Min',
+                            title: 'Min'.tr(),
                           ),
                           SizedBox(
                             width: 10.0.w,
                           ),
                           TimearWidgethome(
                             num: '23',
-                            title: 'sec',
+                            title: 'sec'.tr(),
                           ),
                         ],
                       ),
@@ -77,7 +78,7 @@ class DealsHomeWidget extends StatelessWidget {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 5.w),
               child: CustomText(
-                'T-shirt for the mens',
+                'T-shirt for the mens'.tr(),
                 fontSize: 14.sp,
                 fontWeight: FontWeight.bold,
                 maxLines: 1,
@@ -154,7 +155,7 @@ class DealsHomeWidget extends StatelessWidget {
                       Row(
                         children: [
                           CustomText(
-                            'Remaining quantity:',
+                            'Remaining quantity:'.tr(),
                             fontSize: 10.sp,
                             fontWeight: FontWeight.w600,
                           ),

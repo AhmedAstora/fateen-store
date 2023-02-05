@@ -1,4 +1,5 @@
 import 'package:dotted_border/dotted_border.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -38,7 +39,7 @@ class CategoryHomeWidget extends StatelessWidget {
           height: 2.h,
         ),
         CustomText(
-          "Category",
+          "Category".tr(),
           fontSize: 12.sp,
         )
       ],

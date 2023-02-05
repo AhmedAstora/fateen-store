@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,7 +32,7 @@ class OrderDetailsScreen1 extends StatelessWidget {
       image1: 'assets/images/box.png',
       title: 'Abu Osama Yusuf',
       title1: '#522521',
-      title2: 'Kingdom of Saudi Arabia, Riyadh, Western\nDistrict Street',
+      title2: 'detailsT1',
       price: 'SAR 520',
     ),
     data(
@@ -39,7 +40,7 @@ class OrderDetailsScreen1 extends StatelessWidget {
       image1: 'assets/images/box.png',
       title: 'Abu Osama Yusuf',
       title1: '#522521',
-      title2: 'Kingdom of Saudi Arabia, Riyadh, Western\nDistrict Street',
+      title2: 'detailsT1',
       price: 'SAR 520',
     ),
     data(
@@ -47,7 +48,7 @@ class OrderDetailsScreen1 extends StatelessWidget {
       image1: 'assets/images/box.png',
       title: 'Abu Osama Yusuf',
       title1: '#522521',
-      title2: 'Kingdom of Saudi Arabia, Riyadh, Western\nDistrict Street',
+      title2: 'detailsT1',
       price: 'SAR 520',
     ),
     data(
@@ -55,7 +56,7 @@ class OrderDetailsScreen1 extends StatelessWidget {
       image1: 'assets/images/box.png',
       title: 'Abu Osama Yusuf',
       title1: '#522521',
-      title2: 'Kingdom of Saudi Arabia, Riyadh, Western\nDistrict Street',
+      title2: 'detailsT1',
       price: 'SAR 520',
     ),
     data(
@@ -63,7 +64,7 @@ class OrderDetailsScreen1 extends StatelessWidget {
       image1: 'assets/images/box.png',
       title: 'Abu Osama Yusuf',
       title1: '#522521',
-      title2: 'Kingdom of Saudi Arabia, Riyadh, Western\nDistrict Street',
+      title2: 'detailsT1',
       price: 'SAR 520',
     ),
   ];
@@ -81,7 +82,7 @@ class OrderDetailsScreen1 extends StatelessWidget {
           color: Colors.black,
         ),
         title: CustomText(
-          'Order details',
+          'Order details'.tr(),
           fontSize: 16.sp,
           color: Colors.black,
         ),
@@ -105,7 +106,7 @@ class OrderDetailsScreen1 extends StatelessWidget {
                   width: 10.w,
                 ),
                 CustomText(
-                  'Order details',
+                  'Order details'.tr(),
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w500,
                 ),
@@ -113,7 +114,7 @@ class OrderDetailsScreen1 extends StatelessWidget {
                   width: 10.w,
                 ),
                 CustomText(
-                  '(520 requests)',
+                  '(520 requests)'.tr(),
                   fontSize: 8.sp,
                 ),
                 Spacer(),
@@ -128,7 +129,7 @@ class OrderDetailsScreen1 extends StatelessWidget {
                       child: Row(
                         children: [
                           CustomText(
-                            'Quick edit',
+                            'Quick edit'.tr(),
                             color: Colors.white,
                             fontSize: 10.sp,
                           ),
@@ -205,21 +206,21 @@ class OrderDetailsScreen1 extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomText(
-                  '${model.title}',
+                  '${model.title}'.tr(),
                   fontSize: 12.sp,
                 ),
                 SizedBox(
                   height: 5.h,
                 ),
                 CustomText(
-                  '${model.title1}',
+                  '${model.title1}'.tr(),
                   fontSize: 10.sp,
                 ),
                 SizedBox(
                   height: 5.h,
                 ),
                 CustomText(
-                  '${model.title2}',
+                  '${model.title2}'.tr(),
                   fontSize: 10.sp,
                   maxLines: 2,
 

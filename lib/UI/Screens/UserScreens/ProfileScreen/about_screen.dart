@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,7 +22,7 @@ class AboutScreen extends StatelessWidget {
           backgroundColor: Colors.white,
           leading: BackAppBarWidget(),
           title: CustomText(
-            'About us',
+            'About us'.tr(),
             fontSize: 16.sp,
             color: Colors.black,
           ),
@@ -36,7 +37,7 @@ class AboutScreen extends StatelessWidget {
                   height: 16.sp,
                 ),
                 Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad ms veniam, quis nostrud exercitation ullamco nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur.\n\n Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet,  consectetur  adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \n\nUt enim ad ms veniam, quis nostrud exercitation ullamco nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+                    "AboutUsT1".tr()),
                 SizedBox(
                   height: 16.sp,
                 ),
@@ -54,7 +55,7 @@ class AboutScreen extends StatelessWidget {
                           width: 10.w,
                         ),
                         CustomText(
-                          'Facebook',
+                          'Facebook'.tr(),
                         ),
                       ],
                     ),
@@ -69,7 +70,7 @@ class AboutScreen extends StatelessWidget {
                           width: 10.w,
                         ),
                         CustomText(
-                          'Twitter',
+                          'Twitter'.tr(),
                         ),
                       ],
                     ),
@@ -84,7 +85,7 @@ class AboutScreen extends StatelessWidget {
                           width: 10.w,
                         ),
                         CustomText(
-                          'WhatsApp',
+                          'WhatsApp'.tr(),
                         ),
                       ],
                     ),
@@ -94,7 +95,7 @@ class AboutScreen extends StatelessWidget {
                   height: 50.h,
                 ),
                 CustomBottom(
-                  title: "Done",
+                  title: "Done".tr(),
                 ),
                 SizedBox(
                   height: 50.h,

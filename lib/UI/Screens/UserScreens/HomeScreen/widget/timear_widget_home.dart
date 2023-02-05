@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,7 +30,7 @@ class TimearWidgethome extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
           CustomText(
-            '${title}',
+            '${title}'.tr(),
             height: 0.9,
             fontSize: 10.sp,
             color: Colors.white,

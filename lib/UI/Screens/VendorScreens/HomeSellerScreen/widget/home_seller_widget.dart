@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,7 +39,7 @@ class HomeSellerWidget extends StatelessWidget {
               color: Color(0xff44B66B),
             ),
             CustomText(
-              'Total earnings',
+              'Total earnings'.tr(),
               fontSize: 12,
             ),
             Spacer(),

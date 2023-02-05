@@ -56,7 +56,7 @@ class ChooseSignUpScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          'User',
+                          'User'.tr(),
                           style: TextStyle(
                               fontSize: 14.sp,
                               color: Colors.grey[700],
@@ -93,7 +93,7 @@ class ChooseSignUpScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          'Vendor',
+                          'Vendor'.tr(),
                           style: TextStyle(
                               fontSize: 14.sp,
                               color: Colors.grey[700],
@@ -130,7 +130,7 @@ class ChooseSignUpScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          'Browse as a guest',
+                          'Browse as a guest'.tr(),
                           style: TextStyle(
                               fontSize: 14.sp,
                               color: Colors.grey[700],
@@ -169,7 +169,7 @@ class ChooseSignUpScreen extends StatelessWidget {
                       fontSize: 18.sp,
                       color: Colors.white,
                       fontWeight: FontWeight.w600),
-                  title: 'Next',
+                  title: 'Next'.tr(),
                   margin: EdgeInsets.symmetric(horizontal: 14.w),
                 ),
               ],

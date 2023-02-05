@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -137,7 +138,7 @@ class RequestsSellerScreen extends StatelessWidget {
           elevation: 0.0,
           backgroundColor: Colors.white,
           title: CustomText(
-            'Requests',
+            'Requests'.tr(),
             fontSize: 16.sp,
             color: Colors.black,
           ),
@@ -163,13 +164,13 @@ class RequestsSellerScreen extends StatelessWidget {
                       tabs: [
                         Tab(
                           child: CustomText(
-                            'Complete requests',
+                            'Complete requests'.tr(),
                             color: Colors.black,
                           ),
                         ),
                         Tab(
                           child: CustomText(
-                            'Open orders',
+                            'Open orders'.tr(),
                             color: Colors.black,
                           ),
                         ),
@@ -247,7 +248,7 @@ class RequestsSellerScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomText(
-                        '${model.title}',
+                        '${model.title}'.tr(),
                         fontWeight: FontWeight.w600,
                         fontSize: 10.0.sp,
                       ),
@@ -255,7 +256,7 @@ class RequestsSellerScreen extends StatelessWidget {
                         height: 4.h,
                       ),
                       CustomText(
-                        '${model.title4}',
+                        '${model.title4}'.tr(),
                         fontWeight: FontWeight.w400,
                         fontSize: 10.0.sp,
                       ),
@@ -265,7 +266,7 @@ class RequestsSellerScreen extends StatelessWidget {
                       Row(
                         children: [
                           CustomText(
-                            '${model.title1}',
+                            '${model.title1}'.tr(),
                             fontWeight: FontWeight.w400,
                             fontSize: 10.0.sp,
                           ),
@@ -284,7 +285,7 @@ class RequestsSellerScreen extends StatelessWidget {
                       Row(
                         children: [
                           CustomText(
-                            '${model.title2}',
+                            '${model.title2}'.tr(),
                             fontSize: 10.0.sp,
                           ),
                           SizedBox(
@@ -304,11 +305,11 @@ class RequestsSellerScreen extends StatelessWidget {
                       Row(
                         children: [
                           CustomText(
-                            '${model.title3}',
+                            '${model.title3}'.tr(),
                             fontSize: 10.0.sp,
                           ),
                           CustomText(
-                            '${model.date}',
+                            '${model.date}'.tr(),
                             fontSize: 10.0.sp,
                           ),
                         ],
@@ -316,7 +317,7 @@ class RequestsSellerScreen extends StatelessWidget {
                       Align(
                         alignment: Alignment.bottomRight,
                         child: CustomText(
-                          '${model.title5}',
+                          '${model.title5}'.tr(),
                           fontSize: 10.0.sp,
                         ),
                       ),
@@ -338,7 +339,7 @@ class RequestsSellerScreen extends StatelessWidget {
             .routingToSpecificWidgetWithoutPop(OrderDetailsScreen());
       },
       child: Container(
-        height: 146.h,
+
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
@@ -374,7 +375,7 @@ class RequestsSellerScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomText(
-                        '${model1.title}',
+                        '${model1.title}'.tr(),
                         fontWeight: FontWeight.w600,
                         fontSize: 10.0.sp,
                       ),
@@ -382,7 +383,7 @@ class RequestsSellerScreen extends StatelessWidget {
                         height: 3.h,
                       ),
                       CustomText(
-                        '${model1.title4}',
+                        '${model1.title4}'.tr(),
                         fontWeight: FontWeight.w400,
                         fontSize: 10.0.sp,
                       ),
@@ -392,7 +393,7 @@ class RequestsSellerScreen extends StatelessWidget {
                       Row(
                         children: [
                           CustomText(
-                            '${model1.title1}',
+                            '${model1.title1}'.tr(),
                             fontWeight: FontWeight.w400,
                             fontSize: 10.0.sp,
                           ),
@@ -411,7 +412,7 @@ class RequestsSellerScreen extends StatelessWidget {
                       Row(
                         children: [
                           CustomText(
-                            '${model1.title2}',
+                            '${model1.title2}'.tr(),
                             fontSize: 10.0.sp,
                           ),
                           SizedBox(
@@ -431,7 +432,7 @@ class RequestsSellerScreen extends StatelessWidget {
                       Row(
                         children: [
                           CustomText(
-                            '${model1.title3}',
+                            '${model1.title3}'.tr(),
                             fontSize: 10.0.sp,
                           ),
                           CustomText(
@@ -463,7 +464,7 @@ class RequestsSellerScreen extends StatelessWidget {
                       Align(
                         alignment: Alignment.bottomRight,
                         child: CustomText(
-                          '${model1.title5}',
+                          '${model1.title5}'.tr(),
                           fontSize: 10.0.sp,
                         ),
                       ),

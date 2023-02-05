@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +20,7 @@ class EmptyPaymentScreen extends StatelessWidget {
             height: 45.0.sp,
             width: 271.0.sp,
             backgroundColor: mainAppColor,
-            title: 'Add',
+            title: 'Add'.tr(),
             borderRadius: 10,
           ),
         ),
@@ -31,7 +32,7 @@ class EmptyPaymentScreen extends StatelessWidget {
         leading: BackAppBarWidget(
         ),
         title: CustomText(
-          'payment cards',
+          'payment cards'.tr(),
           fontSize: 16.sp,
           color: Colors.black,
         ),
@@ -51,7 +52,7 @@ class EmptyPaymentScreen extends StatelessWidget {
             height: 65.h,
           ),
           CustomText(
-              'No payment cards entered')
+              'No payment cards entered'.tr())
         ],
       ),
     );

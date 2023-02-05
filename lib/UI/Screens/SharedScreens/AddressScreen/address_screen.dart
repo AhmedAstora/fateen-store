@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,12 +25,12 @@ class AddressScreen extends StatelessWidget {
     data(
       title: 'Saudi Arabia',
       title1:
-          'Saudi Arabia, Riyadh, Al-Suwaidi Al-\nGharbi District, Building 5, Flat 12  ',
+          'addressT1',
     ),
     data(
       title: 'Saudi Arabia',
       title1:
-          'Saudi Arabia, Riyadh, Al-Suwaidi Al-\nGharbi District, Building 5, Flat 12   ',
+          'addressT1',
     ),
   ];
 
@@ -42,7 +43,7 @@ class AddressScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         leading: BackAppBarWidget(),
         title: CustomText(
-          'Address',
+          'Address'.tr(),
           fontSize: 16.sp,
           color: Colors.black,
         ),
@@ -98,9 +99,9 @@ class AddressScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomText('${model.title}'),
+                      CustomText('${model.title}'.tr()),
                       CustomText(
-                        '${model.title1}',
+                        '${model.title1}'.tr(),
                         fontSize: 12.0.sp,
                         color: Color(0xff595959),
                       ),
@@ -115,7 +116,7 @@ class AddressScreen extends StatelessWidget {
                       Row(
                         children: [
                           CustomText(
-                            'Edit',
+                            'Edit'.tr(),
                             fontSize: 12.0.sp,
                             color: Color(0xff595959),
                           ),
@@ -123,7 +124,7 @@ class AddressScreen extends StatelessWidget {
                             width: 10.w,
                           ),
                           CustomText(
-                            'Delete',
+                            'Delete'.tr(),
                             fontSize: 12.0.sp,
                             color:mainAppColor,
                           ),
@@ -131,7 +132,7 @@ class AddressScreen extends StatelessWidget {
                             width: 10.w,
                           ),
                           CustomText(
-                            'Set default',
+                            'Set default'.tr(),
                             fontSize: 12.0.sp,
 
                           ),

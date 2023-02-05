@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,7 +50,7 @@ class HomeSellerScreen extends StatelessWidget {
           elevation: 0.0,
           backgroundColor: Colors.white,
           title: CustomText(
-            'Dashboard',
+            'Dashboard'.tr(),
             fontSize: 16.sp,
             color: Colors.black,
           ),
@@ -120,7 +121,7 @@ class HomeSellerScreen extends StatelessWidget {
                             Row(
                               children: [
                                 CustomText(
-                                  'Hi, Abu Omar',
+                                  'Hi, Abu Omar'.tr(),
                                   fontWeight: FontWeight.w500,
                                   color: mainAppColor,
                                 ),
@@ -193,13 +194,13 @@ class HomeSellerScreen extends StatelessWidget {
                             tabs: [
                               Tab(
                                 child: CustomText(
-                                  '6 months',
+                                  '6 months'.tr(),
                                   color: Colors.black,
                                 ),
                               ),
                               Tab(
                                 child: CustomText(
-                                  'week',
+                                  'week'.tr(),
                                   color: Colors.black,
                                 ),
                               ),
@@ -220,7 +221,7 @@ class HomeSellerScreen extends StatelessWidget {
                       SfCartesianChart(
                         plotAreaBorderWidth: 0,
                         title: ChartTitle(
-                            text: 'Quarterly wise sales of products'),
+                            text: 'Quarterly wise sales of products'.tr()),
                         legend: Legend(isVisible: false),
                         primaryXAxis: CategoryAxis(
                           majorGridLines: const MajorGridLines(width: 0),
@@ -247,7 +248,7 @@ class HomeSellerScreen extends StatelessWidget {
                         child: SfCartesianChart(
                           plotAreaBorderWidth: 0,
                           title: ChartTitle(
-                              text: 'Total sales',
+                              text: 'Total sales'.tr(),
                               textStyle: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 14.0.sp,

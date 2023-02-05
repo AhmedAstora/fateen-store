@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,7 +39,7 @@ class AddAddressBottomSheet extends StatelessWidget {
                     backgroundColor: Colors.white,
                   ),
                   CustomText(
-                    'Gaza, Palestine',
+                    'Gaza, Palestine'.tr(),
                     fontSize: 12.sp,
                     color: mainAppColor,
                   ),
@@ -53,7 +54,7 @@ class AddAddressBottomSheet extends StatelessWidget {
                     ),
                     child: Center(
                         child: CustomText(
-                      'Change',
+                      'Change'.tr(),
                       fontSize: 12.sp,
                       color: mainAppColor,
                     )),
@@ -77,12 +78,12 @@ class AddAddressBottomSheet extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomText(
-                    'Street Name*',
+                    'Street Name*'.tr(),
                     fontSize: 12.sp,
                     color: Colors.grey[400],
                   ),
                   CustomText(
-                    'Al-Moghrabi St.',
+                    'Al-Moghrabi St.'.tr(),
                   ),
                 ],
               ),
@@ -105,12 +106,12 @@ class AddAddressBottomSheet extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomText(
-                        'Street Name*',
+                        'Street Name*'.tr(),
                         fontSize: 12.sp,
                         color: Colors.grey[400],
                       ),
                       CustomText(
-                        'Al-Moghrabi St.',
+                        'Al-Moghrabi St.'.tr(),
                       ),
                     ],
                   ),
@@ -132,7 +133,7 @@ class AddAddressBottomSheet extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomText(
-                        'Building',
+                        'Building'.tr(),
                         color: Colors.grey[500],
                       ),
                     ],
@@ -159,7 +160,7 @@ class AddAddressBottomSheet extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomText(
-                        'Floor',
+                        'Floor'.tr(),
                         color: Colors.grey[500],
                       ),
                     ],
@@ -182,7 +183,7 @@ class AddAddressBottomSheet extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomText(
-                        'Flat No.',
+                        'Flat No.'.tr(),
                         color: Colors.grey[500],
                       ),
                     ],
@@ -195,7 +196,7 @@ class AddAddressBottomSheet extends StatelessWidget {
             height: 16.h,
           ),
           CustomText(
-            'Address Details',
+            'Address Details'.tr(),
           ),
           SizedBox(
             height: 8.h,
@@ -211,7 +212,7 @@ class AddAddressBottomSheet extends StatelessWidget {
                 ),
                 child: Center(
                     child: CustomText(
-                  'Home',
+                  'Home'.tr(),
                 )),
               ),
               SizedBox(
@@ -227,7 +228,7 @@ class AddAddressBottomSheet extends StatelessWidget {
                 ),
                 child: Center(
                     child: CustomText(
-                      'Work',
+                      'Work'.tr(),
                       color: mainAppColor,
                     )),
               ),
@@ -243,7 +244,7 @@ class AddAddressBottomSheet extends StatelessWidget {
                 ),
                 child: Center(
                     child: CustomText(
-                      'Others',
+                      'Others'.tr(),
                     )),
               ),
 
@@ -265,7 +266,7 @@ class AddAddressBottomSheet extends StatelessWidget {
 
                 children: [
                   CustomText(
-                    'Address Nickname “Mother’s house”',
+                    'AddressHouse'.tr(),
                     fontSize: 12.sp,
                     color: Colors.grey[400],
                   )
@@ -281,7 +282,7 @@ class AddAddressBottomSheet extends StatelessWidget {
             height: 45.0.sp,
             width: 343.0.sp,
             backgroundColor: mainAppColor,
-            title: 'Save',
+            title: 'Save'.tr(),
             borderRadius: 10,
           ),
         ],

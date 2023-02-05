@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,7 +33,7 @@ class ProfileScreen extends StatelessWidget {
           elevation: 0.0,
           backgroundColor: Colors.white,
           title: CustomText(
-            'Profile',
+            'Profile'.tr(),
             fontSize: 16.sp,
             color: Colors.black,
           ),

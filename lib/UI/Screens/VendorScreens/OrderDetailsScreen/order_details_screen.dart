@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,7 +24,7 @@ class OrderDetailsScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         leading: BackAppBarWidget(),
         title: CustomText(
-          'Order details',
+          'Order details'.tr(),
           fontSize: 16.sp,
           color: Colors.black,
         ),
@@ -67,13 +68,13 @@ class OrderDetailsScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               CustomText(
-                                'T-shirt, Turkish cotton material',
+                                'T-shirt, Turkish cotton material'.tr(),
                                 fontSize: 10.0.sp,
                               ),
                               Row(
                                 children: [
                                   CustomText(
-                                    'Quantity:',
+                                    'Quantity:'.tr(),
                                     fontSize: 10.0.sp,
                                   ),
                                   SizedBox(
@@ -88,7 +89,7 @@ class OrderDetailsScreen extends StatelessWidget {
                               Row(
                                 children: [
                                   CustomText(
-                                    'Total price:',
+                                    'Total price:'.tr(),
                                     fontSize: 10.0.sp,
                                   ),
                                   SizedBox(
@@ -114,7 +115,7 @@ class OrderDetailsScreen extends StatelessWidget {
                 height: 20.h,
               ),
               CustomText(
-                'Order details',
+                'Order details'.tr(),
                 fontSize: 16.sp,
               ),
               SizedBox(
@@ -133,7 +134,7 @@ class OrderDetailsScreen extends StatelessWidget {
                       Row(
                         children: [
                           CustomText(
-                            'Receipt Number:',
+                            'Receipt Number:'.tr(),
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w500,
                           ),
@@ -168,7 +169,7 @@ class OrderDetailsScreen extends StatelessWidget {
                       Row(
                         children: [
                           CustomText(
-                            'Size :',
+                            'Size :'.tr(),
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w500,
                           ),
@@ -176,7 +177,7 @@ class OrderDetailsScreen extends StatelessWidget {
                             width: 102.w,
                           ),
                           CustomText(
-                            'S - M - L - XL',
+                            'S - M - L - XL'.tr(),
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w500,
                           ),
@@ -205,7 +206,7 @@ class OrderDetailsScreen extends StatelessWidget {
                       Row(
                         children: [
                           CustomText(
-                            'Color:',
+                            'Color:'.tr(),
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w500,
                           ),
@@ -262,7 +263,7 @@ class OrderDetailsScreen extends StatelessWidget {
                       Row(
                         children: [
                           CustomText(
-                            'The date of purchase:',
+                            'The date of purchase:'.tr(),
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w500,
                           ),
@@ -299,7 +300,7 @@ class OrderDetailsScreen extends StatelessWidget {
                       Row(
                         children: [
                           CustomText(
-                            'Status:',
+                            'Status:'.tr(),
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w500,
                           ),
@@ -307,7 +308,7 @@ class OrderDetailsScreen extends StatelessWidget {
                             width: 87.w,
                           ),
                           CustomText(
-                            'Pending',
+                            'Pending'.tr(),
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w500,
                           ),
@@ -321,7 +322,7 @@ class OrderDetailsScreen extends StatelessWidget {
                 height: 12.h,
               ),
               CustomText(
-                'Buyer data',
+                'Buyer data'.tr(),
                 fontSize: 16.sp,
               ),
               SizedBox(
@@ -344,13 +345,13 @@ class OrderDetailsScreen extends StatelessWidget {
                         child: Row(
                           children: [
                             CustomText(
-                              'User name:',
+                              'User name:'.tr(),
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w500,
                             ),
                             Spacer(),
                             CustomText(
-                              'Mahmoud quaider',
+                              'Mahmoud quaider'.tr(),
                             ),
                           ],
                         ),
@@ -380,7 +381,7 @@ class OrderDetailsScreen extends StatelessWidget {
                         child: Row(
                           children: [
                             CustomText(
-                              'Number phone:',
+                              'Number phone:'.tr(),
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w500,
                             ),
@@ -417,11 +418,11 @@ class OrderDetailsScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             CustomText(
-                              'Address:',
+                              'Address:'.tr(),
                             ),
                             Spacer(),
                             CustomText(
-                              'Orange Suite Apartment\n67277 Stanton Ford Suite\n405, Millerburgh,\nWisconsin, 77810',
+                              'orderT1'.tr(),
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w500,
                             ),

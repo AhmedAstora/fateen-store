@@ -1,4 +1,5 @@
 import 'package:dotted_border/dotted_border.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,7 +37,7 @@ class EditDealsScreen extends StatelessWidget {
           color: Colors.black,
         ),
         title: CustomText(
-          'Edit deals',
+          'Edit deals'.tr(),
           fontSize: 16.sp,
           color: Colors.black,
         ),
@@ -52,7 +53,7 @@ class EditDealsScreen extends StatelessWidget {
                 height: 20.h,
               ),
               Container(
-                height: 62.h,
+                height: 60.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   color: Color(0xffFCEDEB),
@@ -71,7 +72,7 @@ class EditDealsScreen extends StatelessWidget {
                         width: 10.w,
                       ),
                       CustomText(
-                        'Rejected for violating Islamic law and platform\nregulations',
+                        'editT1'.tr(),
                         fontSize: 12.sp,
                         color: mainAppColor,
                       ),
@@ -80,7 +81,7 @@ class EditDealsScreen extends StatelessWidget {
                 ),
               ),
               CustomText(
-                'Photo',
+                'Photo'.tr(),
                 fontSize: 12.sp,
               ),
               SizedBox(
@@ -201,12 +202,12 @@ class EditDealsScreen extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Product name',
+                    'Product name'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -231,12 +232,12 @@ class EditDealsScreen extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'The start date of the transaction',
+                    'The start date of the transaction'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -262,12 +263,12 @@ class EditDealsScreen extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'The expiry date of the deal',
+                    'The expiry date of the deal'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -293,12 +294,12 @@ class EditDealsScreen extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Product price',
+                    'Product price'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -323,12 +324,12 @@ class EditDealsScreen extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Price in the market',
+                    'Price in the market'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -353,12 +354,12 @@ class EditDealsScreen extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Quantity',
+                    'Quantity'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -383,12 +384,12 @@ class EditDealsScreen extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Category',
+                    'Category'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -401,7 +402,7 @@ class EditDealsScreen extends StatelessWidget {
                   paddingH: 15.w,
                   maxLines: 1,
                   onClick: () {},
-                  hintText: 'Other',
+                  hintText: 'Other'.tr(),
                   isPassword: false,
                   suffix: Icon(Icons.keyboard_arrow_down_sharp),
                   fillColor: Color(0xffF4F4F4),
@@ -414,12 +415,12 @@ class EditDealsScreen extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Choice of colors',
+                    'Choice of colors'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -455,7 +456,7 @@ class EditDealsScreen extends StatelessWidget {
                 height: 20.h,
               ),
               CustomText(
-                'Size',
+                'Size'.tr(),
                 fontSize: 12.sp,
               ),
               SizedBox(
@@ -466,7 +467,7 @@ class EditDealsScreen extends StatelessWidget {
                   paddingH: 15.w,
                   maxLines: 1,
                   onClick: () {},
-                  hintText: 'All',
+                  hintText: 'All'.tr(),
                   isPassword: false,
                   suffix: Icon(Icons.keyboard_arrow_down_sharp),
                   fillColor: Color(0xffF4F4F4),
@@ -479,12 +480,12 @@ class EditDealsScreen extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Weight',
+                    'Weight'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -507,7 +508,7 @@ class EditDealsScreen extends StatelessWidget {
                 height: 20.h,
               ),
               CustomText(
-                'Shipping and delivery',
+                'Shipping and delivery'.tr(),
                 fontSize: 12.sp,
               ),
               SizedBox(
@@ -530,7 +531,7 @@ class EditDealsScreen extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Description',
+                    'Description'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
@@ -560,12 +561,12 @@ class EditDealsScreen extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Terms of the deal',
+                    'Terms of the deal'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -590,12 +591,12 @@ class EditDealsScreen extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Branch selection',
+                    'Branch selection'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -609,7 +610,7 @@ class EditDealsScreen extends StatelessWidget {
                   SizedBox(
                     width: 10.w,
                   ),
-                  CustomText('Jeddah branch',),
+                  CustomText('Jeddah branch'.tr(),),
                   SizedBox(
                     width: 20.w,
                   ),
@@ -617,7 +618,7 @@ class EditDealsScreen extends StatelessWidget {
                   SizedBox(
                     width: 10.w,
                   ),
-                  CustomText('Taif branch',),
+                  CustomText('Taif branch'.tr(),),
                 ],
               ),
               SizedBox(
@@ -629,7 +630,7 @@ class EditDealsScreen extends StatelessWidget {
                   SizedBox(
                     width: 10.w,
                   ),
-                  CustomText('Mecca branch',),
+                  CustomText('Mecca branch'.tr(),),
                   SizedBox(
                     width: 20.w,
                   ),
@@ -637,7 +638,7 @@ class EditDealsScreen extends StatelessWidget {
                   SizedBox(
                     width: 10.w,
                   ),
-                  CustomText('Riyadh Branch',),
+                  CustomText('Riyadh Branch'.tr(),),
                 ],
               ),
               SizedBox(
@@ -645,7 +646,7 @@ class EditDealsScreen extends StatelessWidget {
               ),
               Center(
                 child: CustomBottom(
-                  title: "Preview",
+                  title: "Preview".tr(),
                   height: 48.h,
                   width: 309.w,
                   onTap: () {},

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -83,18 +84,18 @@ class AppProvider extends ChangeNotifier {
         body: 'Get paid to provide meeting rooms in your workplace'),
   ];
   List<String> titleProfile = [
-    'Edit_Profile',
-    'Adress',
-    'My cards',
-    'Terms_conditions',
-    'Privacy_Policy',
-    'language',
-    'change_password',
-    'Contact_us',
-    'About_us',
-    'App_Rate',
-    'Delete Account',
-    'Log_out'
+    'Edit_Profile'.tr(),
+    'Address'.tr(),
+    'My cards'.tr(),
+    'Terms_conditions'.tr(),
+    'Privacy_Policy'.tr(),
+    'language'.tr(),
+    'change_password'.tr(),
+    'Contact_us'.tr(),
+    'About_us'.tr(),
+    'App_Rate'.tr(),
+    'Delete Account'.tr(),
+    'Log_out'.tr()
   ];
   List<String> imagesProfile = [
     'assets/images/edit_profile.png',

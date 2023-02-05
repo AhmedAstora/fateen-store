@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,11 +36,11 @@ class SuccessfullyCodeDialogWidget extends StatelessWidget {
               ),
               Wrap(
                 children: [
-                  Center(child: CustomText('Thank you !',fontSize: 16.sp,)),
-                  Center(child: CustomText('Note: You will be notified if the quantity is ',fontSize: 16.sp,color: Colors.grey[500],)),
-                  Center(child: CustomText('sold out.',fontSize: 16.sp,color: Colors.grey[500],)),
-                  Center(child: CustomText('In the event that the sale is not made, the ',fontSize: 16.sp,color: Colors.grey[500],)),
-                  Center(child: CustomText('money paid will be refunded.',fontSize: 16.sp,color: Colors.grey[500],)),
+                  Center(child: CustomText('Thank you !'.tr(),fontSize: 16.sp,)),
+                  Center(child: CustomText('Note: You will be notified if the quantity is '.tr(),fontSize: 16.sp,color: Colors.grey[500],)),
+                  Center(child: CustomText('sold out.'.tr(),fontSize: 16.sp,color: Colors.grey[500],)),
+                  Center(child: CustomText('In the event that the sale is not made, the '.tr(),fontSize: 16.sp,color: Colors.grey[500],)),
+                  Center(child: CustomText('money paid will be refunded.'.tr(),fontSize: 16.sp,color: Colors.grey[500],)),
                 ],
               ),
               SizedBox(
@@ -50,7 +51,7 @@ class SuccessfullyCodeDialogWidget extends StatelessWidget {
                 height: 45.0.sp,
                 width: 213.0.sp,
                 backgroundColor: mainAppColor,
-                title: 'View the invoice',
+                title: 'View the invoice'.tr(),
                 borderRadius: 10,
               ),
             ],

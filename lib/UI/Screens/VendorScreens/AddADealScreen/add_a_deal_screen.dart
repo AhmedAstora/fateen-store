@@ -1,4 +1,5 @@
 import 'package:dotted_border/dotted_border.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,7 +28,7 @@ class AddADealScreen extends StatelessWidget {
           color: Colors.black,
         ),
         title: CustomText(
-          'Add a deal',
+          'Add a deal'.tr(),
           fontSize: 16.sp,
           color: Colors.black,
         ),
@@ -43,7 +44,7 @@ class AddADealScreen extends StatelessWidget {
                 height: 60.h,
               ),
               CustomText(
-                'Photo',
+                'Photo'.tr(),
                 fontSize: 12.sp,
               ),
               SizedBox(
@@ -162,7 +163,7 @@ class AddADealScreen extends StatelessWidget {
                 height: 20.h,
               ),
               CustomText(
-                'Product name',
+                'Product name'.tr(),
                 fontSize: 12.sp,
               ),
               SizedBox(
@@ -183,7 +184,7 @@ class AddADealScreen extends StatelessWidget {
                 height: 20.h,
               ),
               CustomText(
-                'The start date of the transaction',
+                'The start date of the transaction'.tr(),
                 fontSize: 12.sp,
               ),
               SizedBox(
@@ -205,7 +206,7 @@ class AddADealScreen extends StatelessWidget {
                 height: 20.h,
               ),
               CustomText(
-                'The expiry date of the deal',
+                'The expiry date of the deal'.tr(),
                 fontSize: 12.sp,
               ),
               SizedBox(
@@ -228,7 +229,7 @@ class AddADealScreen extends StatelessWidget {
               ),
               Center(
                 child: CustomBottom(
-                  title: "Next",
+                  title: "Next".tr(),
                   height: 48.h,
                   width: 309.w,
                   onTap: () {},

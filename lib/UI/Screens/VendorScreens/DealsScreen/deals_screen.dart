@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,7 +27,7 @@ class DealsScreen extends StatelessWidget {
           backgroundColor: Colors.white,
           leading: BackAppBarWidget(),
           title: CustomText(
-            'Deals ',
+            'Deals'.tr(),
             fontSize: 16.sp,
             color: Colors.black,
           ),
@@ -87,13 +88,13 @@ class DealsScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 CustomText(
-                                  'T-shirt, Turkish cotton material',
+                                  'T-shirt, Turkish cotton material'.tr(),
                                   fontSize: 10.0.sp,
                                 ),
                                 Row(
                                   children: [
                                     CustomText(
-                                      'Quantity:',
+                                      'Quantity:'.tr(),
                                       fontSize: 10.0.sp,
                                     ),
                                     SizedBox(
@@ -108,7 +109,7 @@ class DealsScreen extends StatelessWidget {
                                 Row(
                                   children: [
                                     CustomText(
-                                      'Total price:',
+                                      'Total price:'.tr(),
                                       fontSize: 10.0.sp,
                                     ),
                                     SizedBox(
@@ -134,7 +135,7 @@ class DealsScreen extends StatelessWidget {
                   height: 20.h,
                 ),
                 CustomText(
-                  'Order details',
+                  'Order details'.tr(),
                   fontSize: 16.sp,
                 ),
                 SizedBox(
@@ -153,7 +154,7 @@ class DealsScreen extends StatelessWidget {
                         Row(
                           children: [
                             CustomText(
-                              'Size :',
+                              'Size :'.tr(),
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w500,
                             ),
@@ -161,7 +162,7 @@ class DealsScreen extends StatelessWidget {
                               width: 102.w,
                             ),
                             CustomText(
-                              'S - M - L - XL',
+                              'S - M - L - XL'.tr(),
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w500,
                             ),
@@ -190,7 +191,7 @@ class DealsScreen extends StatelessWidget {
                         Row(
                           children: [
                             CustomText(
-                              'Color:',
+                              'Color:'.tr(),
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w500,
                             ),
@@ -247,7 +248,7 @@ class DealsScreen extends StatelessWidget {
                         Row(
                           children: [
                             CustomText(
-                              'The date of purchase:',
+                              'The date of purchase:'.tr(),
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w500,
                             ),
@@ -284,7 +285,7 @@ class DealsScreen extends StatelessWidget {
                         Row(
                           children: [
                             CustomText(
-                              'Status:',
+                              'Status:'.tr(),
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w500,
                             ),
@@ -292,7 +293,7 @@ class DealsScreen extends StatelessWidget {
                               width: 87.w,
                             ),
                             CustomText(
-                              'Pending',
+                              'Pending'.tr(),
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w500,
                             ),
@@ -308,7 +309,7 @@ class DealsScreen extends StatelessWidget {
                 TabBar(indicatorColor: Colors.black, indicatorWeight: 1, tabs: [
                   Tab(
                     child: CustomText(
-                      'Description',
+                      'Description'.tr(),
                       color: Colors.black,
                       fontSize: 12.0.sp,
                       fontWeight: FontWeight.w500,
@@ -316,7 +317,7 @@ class DealsScreen extends StatelessWidget {
                   ),
                   Tab(
                     child: CustomText(
-                      'Terms of the deal',
+                      'Terms of the deal'.tr(),
                       color: Colors.black,
                       fontSize: 12.0.sp,
                       fontWeight: FontWeight.w500,

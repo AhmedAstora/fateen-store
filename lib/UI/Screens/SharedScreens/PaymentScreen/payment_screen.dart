@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,7 +26,7 @@ class PaymentScreen extends StatelessWidget {
             height: 45.0.sp,
             width: 271.0.sp,
             backgroundColor: mainAppColor,
-            title: 'Confirm',
+            title: 'Confirm'.tr(),
             borderRadius: 10,
           ),
         ),
@@ -36,7 +37,7 @@ class PaymentScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         leading: BackAppBarWidget(),
         title: CustomText(
-          'Price',
+          'Price'.tr(),
           fontSize: 16.sp,
           color: Colors.black,
         ),
@@ -47,7 +48,7 @@ class PaymentScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomText('Choose your payment method'),
+            CustomText('Choose your payment method'.tr()),
             SizedBox(
               height: 20.h,
             ),
@@ -91,7 +92,7 @@ class PaymentScreen extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-            CustomText('Card number'),
+            CustomText('Card number'.tr()),
             SizedBox(
               height: 10.h,
             ),
@@ -107,14 +108,14 @@ class PaymentScreen extends StatelessWidget {
             ),
             Row(
               children: [
-                CustomText('Expiry date'),
+                CustomText('Expiry date'.tr()),
                 SizedBox(
                   width: MediaQuery
                       .of(context)
                       .size
                       .width / 3.32,
                 ),
-                CustomText('CVV'),
+                CustomText('CVV'.tr()),
               ],
             ),
             SizedBox(
@@ -127,7 +128,7 @@ class PaymentScreen extends StatelessWidget {
                     controller: expiryDateController,
                     onClick: () {},
                     fontsize: 14.sp,
-                    hintText: 'YY/MM',
+                    hintText: 'YY/MM'.tr(),
                     isPassword: false,
                   ),
                 ),
@@ -148,7 +149,7 @@ class PaymentScreen extends StatelessWidget {
             SizedBox(
               height: 16.h,
             ),
-            CustomText('Holder name'),
+            CustomText('Holder name'.tr()),
             SizedBox(
               height: 10.h,
             ),
@@ -156,7 +157,7 @@ class PaymentScreen extends StatelessWidget {
               controller: holderNameController,
               onClick: () {},
               fontsize: 14.sp,
-              hintText: 'MATT SUTHERLAND',
+              hintText: 'MATT SUTHERLAND'.tr(),
               isPassword: false,
             ),
           ],

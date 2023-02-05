@@ -80,7 +80,7 @@ class SignInScreen extends StatelessWidget {
                       validationFun: provider.emailValidation,
                       onClick: () {},
                       fontsize: 14.sp,
-                      hintText: 'Email',
+                      hintText: 'Email'.tr(),
                       isPassword: false,
                       controller: provider.emailController),
                   SizedBox(
@@ -158,7 +158,7 @@ class SignInScreen extends StatelessWidget {
                       RouterHelper.routerHelper
                           .routingReplacementUntil(MainNavigationScreen());
                     },
-                    title: 'Sign in',
+                    title: 'Sign in'.tr(),
                   ),
                   SizedBox(
                     height: 130.h,

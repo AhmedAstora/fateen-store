@@ -74,7 +74,7 @@ class SignUpVendorScreen extends StatelessWidget {
                       validationFun: provider.emailValidation,
                       onClick: () {},
                       fontsize: 14.sp,
-                      hintText: 'Business Name',
+                      hintText: 'Business Name'.tr(),
                       isPassword: false,
                       controller: provider.emailController),
                   SizedBox(
@@ -218,7 +218,7 @@ class SignUpVendorScreen extends StatelessWidget {
                       validationFun: provider.emailValidation,
                       onClick: () {},
                       fontsize: 14.sp,
-                      hintText: 'Manager name',
+                      hintText: 'Manager name'.tr(),
                       isPassword: false,
                       controller: provider.emailController),
                   SizedBox(
@@ -342,7 +342,7 @@ class SignUpVendorScreen extends StatelessWidget {
                       validationFun: provider.emailValidation,
                       onClick: () {},
                       fontsize: 14.sp,
-                      hintText: 'Tax Number',
+                      hintText: 'Tax Number'.tr(),
                       isPassword: false,
                       controller: provider.emailController),
                   SizedBox(
@@ -374,7 +374,7 @@ class SignUpVendorScreen extends StatelessWidget {
                               width: 250.w,
                               child: CustomText(
                                 provider.fileController.text == ""
-                                    ? "Upload Document"
+                                    ? "Upload Document".tr()
                                     : provider.fileController.text,
                                 maxLines: 1,
                                 color: provider.fileController.text == ""
@@ -433,7 +433,7 @@ class SignUpVendorScreen extends StatelessWidget {
                       validationFun: provider.emailValidation,
                       onClick: () {},
                       fontsize: 14.sp,
-                      hintText: 'Commercial number',
+                      hintText: 'Commercial number'.tr(),
                       isPassword: false,
                       controller: provider.emailController),
                   SizedBox(
@@ -465,7 +465,7 @@ class SignUpVendorScreen extends StatelessWidget {
                               width: 250.w,
                               child: CustomText(
                                 provider.fileController.text == ""
-                                    ? "Upload Document"
+                                    ? "Upload Document".tr()
                                     : provider.fileController.text,
                                 maxLines: 1,
                                 color: provider.fileController.text == ""
@@ -502,7 +502,7 @@ class SignUpVendorScreen extends StatelessWidget {
                     child: Container(
                       margin: EdgeInsets.symmetric(horizontal: 10.w),
                       child: Text(
-                        'Required Field',
+                        'Required Field'.tr(),
                         style: TextStyle(fontSize: 12.sp, color: Colors.red),
                       ),
                     ),
@@ -524,7 +524,7 @@ class SignUpVendorScreen extends StatelessWidget {
                       validationFun: provider.emailValidation,
                       onClick: () {},
                       fontsize: 14.sp,
-                      hintText: 'IBAN number',
+                      hintText: 'IBAN number'.tr(),
                       isPassword: false,
                       controller: provider.emailController),
                   SizedBox(
@@ -584,7 +584,7 @@ class SignUpVendorScreen extends StatelessWidget {
                           width: 10.w,
                         ),
                         Text(
-                            '${"By clicking \"Sign up\" I agree that I have read and accepted they".tr()}  ',
+                            '${"signUpt2".tr()}  ',
                             style: TextStyle(fontSize: 12.sp)),
                       ],
                     ),
@@ -628,7 +628,7 @@ class SignUpVendorScreen extends StatelessWidget {
                           .routingToSpecificWidgetWithoutPop(
                               VerificationScreen(type: 2,));
                     },
-                    title: 'Sign Up',
+                    title: 'Sign up'.tr(),
                   ),
                   SizedBox(
                     height: 30.h,

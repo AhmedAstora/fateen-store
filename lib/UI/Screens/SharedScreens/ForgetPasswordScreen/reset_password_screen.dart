@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -33,7 +34,7 @@ class ResetPasswordScreen extends StatelessWidget {
           elevation: 0,
           centerTitle: true,
           title: Text(
-            'Reset password',
+            'Reset password'.tr(),
             style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 16.sp,
@@ -55,7 +56,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 40.w),
                   child: Text(
-                    'Your password must be different from the previously used password.',
+                    'Your password must be different from the previously used password.'.tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 14.sp,
@@ -69,7 +70,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 3.w),
                   child: Text(
-                    'Password',
+                    'Password'.tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 12.sp,
@@ -95,7 +96,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 3.w),
                   child: Text(
-                    'Confirm Password',
+                    'Confirm Password'.tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 12.sp,
@@ -131,7 +132,7 @@ class ResetPasswordScreen extends StatelessWidget {
                                   .routingReplacementUntil(SignInScreen())
                             });
                   },
-                  title: 'Reset',
+                  title: 'Reset'.tr(),
                 ),
               ],
             ),

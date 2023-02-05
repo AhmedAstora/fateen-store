@@ -108,8 +108,8 @@ class OnBoardingScreen extends StatelessWidget {
                   child: Text(
                     provider.currentPage !=
                             provider.slideList_welcome.length - 1
-                        ? "Next"
-                        : "Start",
+                        ? "Next".tr()
+                        : "Start".tr(),
                     style: TextStyle(
                         fontSize: 16.sp,
                         color: Colors.white,

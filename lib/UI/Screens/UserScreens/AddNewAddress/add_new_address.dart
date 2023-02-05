@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,7 +21,7 @@ class AddNewAddress extends StatelessWidget {
           size: 25,
         ),
         title: CustomText(
-          'Add new address',
+          'Add new address'.tr(),
           fontSize: 16.sp,
           fontWeight: FontWeight.w500,
         ),
@@ -49,7 +50,7 @@ class AddNewAddress extends StatelessWidget {
                       width: 11.w,
                     ),
                     CustomText(
-                      'Search product here...',
+                      'Search product here...'.tr(),
                       color: Color(0xFF000000).withOpacity(0.5),
                       fontSize: 13.sp,
                     ),
@@ -89,7 +90,7 @@ class AddNewAddress extends StatelessWidget {
                         height: 45.0.sp,
                         width: 271.0.sp,
                         backgroundColor: mainAppColor,
-                        title: 'Checkout',
+                        title: 'Checkout'.tr(),
                         borderRadius: 10,
                       ),
                       SizedBox(

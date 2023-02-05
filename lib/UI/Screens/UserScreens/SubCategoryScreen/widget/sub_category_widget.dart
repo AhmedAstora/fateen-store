@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -40,4 +41,4 @@ class SubCategoryWidget extends StatelessWidget {
   }
 }
 
-List<String> titles = ['All', 'Man', 'Women', 'Children', 'Confusing'];
+List<String> titles = ['All'.tr(), 'Man'.tr(), 'Women'.tr(), 'Children'.tr(), 'Confusing'.tr()];

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -28,7 +29,7 @@ class DiscountCodeDialogWidget extends StatelessWidget {
                 Icons.close,
               )),
               CustomText(
-                'Enter the discount code',
+                'Enter the discount code'.tr(),
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w500,
               ),
@@ -51,7 +52,7 @@ class DiscountCodeDialogWidget extends StatelessWidget {
                 height: 50.0.sp,
                 width: 304.0.sp,
                 backgroundColor: mainAppColor,
-                title: 'Add',
+                title: 'Add'.tr(),
                 borderRadius: 10,
               ),
             ],

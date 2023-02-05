@@ -1,4 +1,5 @@
 import 'package:dotted_border/dotted_border.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -28,7 +29,7 @@ class AddADealScreen1 extends StatelessWidget {
           color: Colors.black,
         ),
         title: CustomText(
-          'Add a deal',
+          'Add a deal'.tr(),
           fontSize: 16.sp,
           color: Colors.black,
         ),
@@ -46,12 +47,12 @@ class AddADealScreen1 extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Product price',
+                    'Product price'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -76,12 +77,12 @@ class AddADealScreen1 extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Price in the market',
+                    'Price in the market'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -106,12 +107,12 @@ class AddADealScreen1 extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Quantity',
+                    'Quantity'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -136,12 +137,12 @@ class AddADealScreen1 extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Category',
+                    'Category'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -154,7 +155,7 @@ class AddADealScreen1 extends StatelessWidget {
                   paddingH: 15.w,
                   maxLines: 1,
                   onClick: () {},
-                  hintText: 'Other',
+                  hintText: 'Other'.tr(),
                   isPassword: false,
                   suffix: Icon(Icons.keyboard_arrow_down_sharp),
                   fillColor: Colors.white,
@@ -166,7 +167,7 @@ class AddADealScreen1 extends StatelessWidget {
               ),
               Center(
                 child: CustomBottom(
-                  title: "Next",
+                  title: "Next".tr(),
                   height: 48.h,
                   width: 309.w,
                   onTap: () {},

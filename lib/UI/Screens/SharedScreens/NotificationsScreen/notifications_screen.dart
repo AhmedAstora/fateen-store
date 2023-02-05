@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,12 +21,12 @@ class data {
 class NotificationsScreen extends StatelessWidget {
   List<data> list = [
     data(
-      title: 'New deals have been added that\nexpire after 14 days',
+      title: 'notificationsT1',
       title1: 'Yesterday 8:49 PM',
       title2: 'New alerts',
     ),
     data(
-      title: 'New deals have been added that\n expire after 14 days',
+      title: 'notificationsT1',
       title1: 'Yesterday 8:49 PM',
       title2: 'All alerts',
     ),
@@ -39,7 +40,7 @@ class NotificationsScreen extends StatelessWidget {
         elevation: 0.0,
         backgroundColor: Colors.white,
         title: CustomText(
-          'notifications',
+          'notifications'.tr(),
           fontSize: 16.sp,
           color: Colors.black,
         ),
@@ -74,7 +75,7 @@ class NotificationsScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomText(
-            '${model.title2}',
+            '${model.title2}'.tr(),
             fontSize: 12.sp,
             height: 1.2,
           ),
@@ -107,9 +108,9 @@ class NotificationsScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomText('${model.title}'),
+                      CustomText('${model.title}'.tr()),
                       CustomText(
-                        '${model.title1}',
+                        '${model.title1}'.tr(),
                         fontSize: 10.0.sp,
                         color: Color(0xff929292),
                       ),

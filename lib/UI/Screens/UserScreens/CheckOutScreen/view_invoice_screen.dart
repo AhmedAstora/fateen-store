@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,15 +30,15 @@ class ViewInvoiceScreen extends StatelessWidget {
     data(
         image: 'assets/images/requests.png',
         title: 'T-shirt, Turkish cotton',
-        title1: 'Quantity:',
-        title2: 'price:',
+        title1: 'Quantity :   ',
+        title2: 'price :   ',
         price: '320\$',
         num: '5'),
     data(
         image: 'assets/images/requests.png',
         title: 'T-shirt, Turkish cotton',
-        title1: 'Quantity:',
-        title2: 'price:',
+        title1: 'Quantity :   ',
+        title2: 'price :   ',
         price: '320\$',
         num: '5'),
   ];
@@ -51,7 +52,7 @@ class ViewInvoiceScreen extends StatelessWidget {
         centerTitle: true,
         elevation: 0.0,
         title: CustomText(
-          'Purchases bill',
+          'Purchases bill'.tr(),
           fontSize: 16.sp,
           color: Colors.black,
         ),
@@ -107,7 +108,7 @@ class ViewInvoiceScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomText(
-                        'Shipping and Payment',
+                        'Shipping and Payment'.tr(),
                         fontSize: 16.sp,
                       ),
                       SizedBox(
@@ -117,7 +118,7 @@ class ViewInvoiceScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CustomText(
-                            'Location :',
+                            'Location :'.tr(),
                             fontWeight: FontWeight.w500,
                           ),
                           SizedBox(
@@ -137,7 +138,7 @@ class ViewInvoiceScreen extends StatelessWidget {
                 height: 10.h,
               ),
               CustomText(
-                'Payment - mada network',
+                'Payment - mada network'.tr(),
               ),
               Container(
                 height: 1,
@@ -152,7 +153,7 @@ class ViewInvoiceScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      CustomText('items (2)', color: Color(0xff999BA9)),
+                      CustomText('items (2)'.tr(), color: Color(0xff999BA9)),
                       Spacer(),
                       CustomText(
                         '\$80.00',
@@ -161,7 +162,7 @@ class ViewInvoiceScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      CustomText('Discount', color: Color(0xff999BA9)),
+                      CustomText('Discount'.tr(), color: Color(0xff999BA9)),
                       Spacer(),
                       CustomText(
                         '\$7.00',
@@ -190,7 +191,7 @@ class ViewInvoiceScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      CustomText('Delivery price',
+                      CustomText('Delivery price'.tr(),
                           color: Color(0xff999BA9)),
                       Spacer(),
                       CustomText(
@@ -221,7 +222,7 @@ class ViewInvoiceScreen extends StatelessWidget {
                   Row(
                     children: [
                       CustomText(
-                        'Total Price',
+                        'Total Price'.tr(),
                         fontWeight: FontWeight.w600,
                         fontSize: 16.sp,
                       ),
@@ -242,7 +243,7 @@ class ViewInvoiceScreen extends StatelessWidget {
                     height: 50.0.sp,
                     width: 271.0.sp,
                     backgroundColor: mainAppColor,
-                    title: 'Home',
+                    title: 'Home'.tr(),
                     borderRadius: 10,
                   ),
                   SizedBox(
@@ -266,7 +267,7 @@ class ViewInvoiceScreen extends StatelessWidget {
         child: Row(
           children: [
             Image.asset(
-              'assets/images/imagevoies.png',
+              '${model.image}',
               height: 60.h,
               width: 60.w,
             ),
@@ -277,19 +278,19 @@ class ViewInvoiceScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomText(
-                  'T-shirt, Turkish cotton',
+                  '${model.title}'.tr(),
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w500,
                 ),
                 Row(
                   children: [
                     CustomText(
-                      'Quantity:   ',
+                      '${model.title1}'.tr(),
                       fontSize: 10.sp,
                       fontWeight: FontWeight.w500,
                     ),
                     CustomText(
-                      '5',
+                      '${model.num}',
                       fontSize: 10.sp,
                       fontWeight: FontWeight.w500,
                     ),
@@ -298,12 +299,12 @@ class ViewInvoiceScreen extends StatelessWidget {
                 Row(
                   children: [
                     CustomText(
-                      'price:  ',
+                      '${model.title2}'.tr(),
                       fontSize: 10.sp,
                       fontWeight: FontWeight.w500,
                     ),
                     CustomText(
-                      '320\$',
+                      '${model.price}',
                       fontSize: 10.sp,
                     ),
                   ],

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,7 +28,7 @@ class CartBuyBottomSheet extends StatelessWidget {
           Row(
             children: [
               CustomText(
-                'Total shipping fee',
+                'Total shipping fee'.tr(),
                 fontWeight: FontWeight.w600,
               ),
               Spacer(),
@@ -62,7 +63,7 @@ class CartBuyBottomSheet extends StatelessWidget {
               child: Wrap(
                 children: [
                   CustomText(
-                    'Shipping fees vary depending on the selle,s location or warehouse',
+                    'Shipping fees vary depending on the selle,s location or warehouse'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -76,7 +77,7 @@ class CartBuyBottomSheet extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomText(
-                'Abu Osama Saleh shipping and \nFatten delivery',
+                'cartT1'.tr(),
                 fontWeight: FontWeight.w700,
                 height: 1.5,
                 fontSize: 12.sp,
@@ -100,7 +101,7 @@ class CartBuyBottomSheet extends StatelessWidget {
             ],
           ),
           CustomText(
-            'Winter cotton blouse of various colors and sizes',
+            'Winter cotton blouse of various colors and sizes'.tr(),
             fontSize: 10.sp,
             color: Colors.grey[500],
           ),
@@ -111,7 +112,7 @@ class CartBuyBottomSheet extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomText(
-                'Abu Osama Saleh shipping and \nFatten delivery',
+                'cartT1'.tr(),
                 fontWeight: FontWeight.w700,
                 height: 1.5,
                 fontSize: 12.sp,
@@ -135,7 +136,7 @@ class CartBuyBottomSheet extends StatelessWidget {
             ],
           ),
           CustomText(
-            'Winter cotton blouse of various colors and sizes',
+            'Winter cotton blouse of various colors and sizes'.tr(),
             fontSize: 10.sp,
             color: Colors.grey[500],
           ),

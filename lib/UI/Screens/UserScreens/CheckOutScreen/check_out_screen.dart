@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +20,7 @@ class CheckOutScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         leading: BackAppBarWidget(),
         title: CustomText(
-          'Checkout',
+          'Checkout'.tr(),
           fontSize: 16.sp,
           color: Colors.black,
         ),
@@ -48,15 +49,12 @@ class CheckOutScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CustomText(
-                            'Note',
+                            'Note'.tr(),
                             fontSize: 16.sp,
                             color: Color(0xff2D2D53),
                           ),
                           CustomText(
-                            'In the event that the sale is not completed -'
-                            ' or\nthe required number is completed, the deal'
-                            ' will\nbe canceled. Accordingly, the paid fees will'
-                            ' be\nrefunded after 24 hours from the date of\ncanceling the deal.',
+                            'checkT1'.tr(),
                             fontSize: 12.sp,
                             color: Color(0xff2D2D53),
                           ),
@@ -88,7 +86,7 @@ class CheckOutScreen extends StatelessWidget {
                           child: Row(
                             children: [
                               CustomText(
-                                'Shipping Address',
+                                'Shipping Address'.tr(),
                                 fontSize: 16.sp,
                                 color: Color(0xff2D2D53),
                               ),
@@ -96,7 +94,7 @@ class CheckOutScreen extends StatelessWidget {
                                 width: 150.w,
                               ),
                               CustomText(
-                                'Change',
+                                'Change'.tr(),
                                 color: mainAppColor,
                               ),
                             ],
@@ -151,7 +149,7 @@ class CheckOutScreen extends StatelessWidget {
                           child: Row(
                             children: [
                               CustomText(
-                                'Payment method',
+                                'Payment method'.tr(),
                                 fontSize: 16.sp,
                                 color: Color(0xff2D2D53),
                               ),
@@ -159,7 +157,7 @@ class CheckOutScreen extends StatelessWidget {
                                 width: 150.w,
                               ),
                               CustomText(
-                                'Change',
+                                'Change'.tr(),
                                 color: mainAppColor,
                               ),
                             ],
@@ -228,7 +226,7 @@ class CheckOutScreen extends StatelessWidget {
                       width: 10.w,
                     ),
                     CustomText(
-                      'Apply voucher for Discount',
+                      'Apply voucher for Discount'.tr(),
                       fontSize: 16.0.sp,
                       color: Color(0xff1D2348),
                     ),
@@ -250,7 +248,7 @@ class CheckOutScreen extends StatelessWidget {
                     color: Color(0xff00D27F),
                   ),
                   CustomText(
-                    'Zain code has been added successfully',
+                    'Zain code has been added successfully'.tr(),
                     fontSize: 10.sp,
                     fontWeight: FontWeight.w500,
                   ),
@@ -260,9 +258,7 @@ class CheckOutScreen extends StatelessWidget {
                 height: 30.h,
               ),
               Container(
-                decoration: BoxDecoration(
-
-                ),
+                decoration: BoxDecoration(),
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Column(
@@ -270,7 +266,7 @@ class CheckOutScreen extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          CustomText('items (2)', color: Color(0xff999BA9)),
+                          CustomText('items (2)'.tr(), color: Color(0xff999BA9)),
                           Spacer(),
                           CustomText(
                             '\$80.00',
@@ -279,7 +275,7 @@ class CheckOutScreen extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          CustomText('Discount', color: Color(0xff999BA9)),
+                          CustomText('Discount'.tr(), color: Color(0xff999BA9)),
                           Spacer(),
                           CustomText(
                             '\$7.00',
@@ -293,14 +289,14 @@ class CheckOutScreen extends StatelessWidget {
                         child: Row(
                           children: List.generate(
                               80 ~/ 1,
-                                  (index) => Expanded(
-                                child: Container(
-                                  color: index % 2 == 0
-                                      ? Colors.transparent
-                                      : Colors.grey.withOpacity(.6),
-                                  height: .6,
-                                ),
-                              )),
+                              (index) => Expanded(
+                                    child: Container(
+                                      color: index % 2 == 0
+                                          ? Colors.transparent
+                                          : Colors.grey.withOpacity(.6),
+                                      height: .6,
+                                    ),
+                                  )),
                         ),
                       ),
                       SizedBox(
@@ -308,7 +304,7 @@ class CheckOutScreen extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          CustomText('Shipping fee', color: Color(0xff999BA9)),
+                          CustomText('Shipping fee'.tr(), color: Color(0xff999BA9)),
                           Spacer(),
                           CustomText(
                             '\$7.00',
@@ -322,14 +318,14 @@ class CheckOutScreen extends StatelessWidget {
                         child: Row(
                           children: List.generate(
                               80 ~/ 1,
-                                  (index) => Expanded(
-                                child: Container(
-                                  color: index % 2 == 0
-                                      ? Colors.transparent
-                                      : Colors.grey.withOpacity(.6),
-                                  height: .6,
-                                ),
-                              )),
+                              (index) => Expanded(
+                                    child: Container(
+                                      color: index % 2 == 0
+                                          ? Colors.transparent
+                                          : Colors.grey.withOpacity(.6),
+                                      height: .6,
+                                    ),
+                                  )),
                         ),
                       ),
                       SizedBox(
@@ -337,7 +333,8 @@ class CheckOutScreen extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          CustomText('Delivery Charge', color: Color(0xff999BA9)),
+                          CustomText('Delivery Charge'.tr(),
+                              color: Color(0xff999BA9)),
                           Spacer(),
                           CustomText(
                             '\$7.00',
@@ -347,14 +344,13 @@ class CheckOutScreen extends StatelessWidget {
                       SizedBox(
                         height: 10.h,
                       ),
-
                       SizedBox(
                         height: 10.h,
                       ),
                       Row(
                         children: [
                           CustomText(
-                            'Total Price',
+                            'Total Price'.tr(),
                             fontWeight: FontWeight.w600,
                             fontSize: 16.sp,
                           ),
@@ -362,7 +358,7 @@ class CheckOutScreen extends StatelessWidget {
                             width: 10.w,
                           ),
                           CustomText(
-                            'Taxes included',
+                            'Taxes included'.tr(),
                             fontSize: 10.sp,
                           ),
                           Spacer(),
@@ -383,8 +379,7 @@ class CheckOutScreen extends StatelessWidget {
               ),
               Center(
                 child: CustomBottom(
-                  onTap: ()
-                  {
+                  onTap: () {
                     showDialog(
                         context: context,
                         builder: (_) => SuccessfullyCodeDialogWidget());
@@ -392,7 +387,7 @@ class CheckOutScreen extends StatelessWidget {
                   height: 45.0.sp,
                   width: 271.0.sp,
                   backgroundColor: mainAppColor,
-                  title: 'Checkout',
+                  title: 'Checkout'.tr(),
                   borderRadius: 10,
                 ),
               ),

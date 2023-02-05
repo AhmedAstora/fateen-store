@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -76,7 +77,7 @@ class DealsSearchScreen extends StatelessWidget {
         elevation: 0.0,
         backgroundColor: Colors.white,
         title: CustomText(
-          'Deals ',
+          'Deals'.tr(),
           fontSize: 16.sp,
           color: Colors.black,
         ),
@@ -104,7 +105,7 @@ class DealsSearchScreen extends StatelessWidget {
                           width: 11.w,
                         ),
                         CustomText(
-                          'Search product here...',
+                          'Search product here...'.tr(),
                           color: Color(0xFF000000).withOpacity(0.5),
                           fontSize: 10.sp,
                         ),
@@ -174,7 +175,7 @@ class DealsSearchScreen extends StatelessWidget {
                       Row(
                         children: [
                           CustomText(
-                            '${model.title}',
+                            '${model.title}'.tr(),
                             fontSize: 10.0.sp,
                           ),
                           Spacer(),
@@ -196,7 +197,7 @@ class DealsSearchScreen extends StatelessWidget {
                       Row(
                         children: [
                           CustomText(
-                            '${model.title1}',
+                            '${model.title1}'.tr(),
                             fontSize: 10.0.sp,
                           ),
                           SizedBox(
@@ -211,7 +212,7 @@ class DealsSearchScreen extends StatelessWidget {
                       Row(
                         children: [
                           CustomText(
-                            '${model.title3}',
+                            '${model.title3}'.tr(),
                             fontSize: 10.0.sp,
                           ),
                           SizedBox(
@@ -229,7 +230,7 @@ class DealsSearchScreen extends StatelessWidget {
                         children: [
                           Spacer(),
                           CustomText(
-                            '${model.title2}',
+                            '${model.title2}'.tr(),
                             fontSize: 13.0.sp,
                             color: Color(0xff008E56),
                             fontWeight: FontWeight.w600,

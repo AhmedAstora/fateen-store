@@ -19,11 +19,18 @@ import 'Helper/Router/router.dart';
 import 'Helper/SharedPreferance/shared_preferance.dart';
 
 import 'UI/Screens/SharedScreens/AddPaymentScreen/add_payment_screen.dart';
+import 'UI/Screens/SharedScreens/AddressScreen/add_address_screen.dart';
 import 'UI/Screens/SharedScreens/AddressScreen/address_screen.dart';
 import 'UI/Screens/SharedScreens/ChooseLanguageScreen/choose_language_screen.dart';
+import 'UI/Screens/SharedScreens/ChooseSignUpScreen/choose_signup_screen.dart';
+import 'UI/Screens/SharedScreens/EmptyPaymentScreen/empty_payment_screen.dart';
+import 'UI/Screens/SharedScreens/ForgetPasswordScreen/forget_password_screen.dart';
 import 'UI/Screens/SharedScreens/ForgetPasswordScreen/reset_password_screen.dart';
 import 'UI/Screens/SharedScreens/NotificationsScreen/notifications_screen.dart';
+import 'UI/Screens/SharedScreens/OnBoardingScreen/onboarding_screen.dart';
 import 'UI/Screens/SharedScreens/SelectLocationScreen/select_location_screen.dart';
+import 'UI/Screens/SharedScreens/SignInScreen/sign_in_screen.dart';
+import 'UI/Screens/SharedScreens/VerificationScreen/verification_screen.dart';
 import 'UI/Screens/UserScreens/AddNewAddress/add_new_address.dart';
 import 'UI/Screens/UserScreens/CartScreen/cart_screen.dart';
 import 'UI/Screens/UserScreens/CategoryScreen/category_screen.dart';
@@ -41,6 +48,9 @@ import 'UI/Screens/UserScreens/ProfileScreen/profile_screen.dart';
 import 'UI/Screens/UserScreens/ProfileScreen/terms_screen.dart';
 import 'UI/Screens/UserScreens/RequestsScreen/requests_screen.dart';
 import 'UI/Screens/UserScreens/SearchHomeScreen/filter_screen.dart';
+import 'UI/Screens/UserScreens/SearchHomeScreen/search_screen.dart';
+import 'UI/Screens/UserScreens/SignUpScreen/sign_up_screen.dart';
+import 'UI/Screens/UserScreens/SubCategoryScreen/sub_category_screen.dart';
 import 'UI/Screens/VendorScreens/AddADealScreen/add_a_deal_screen.dart';
 import 'UI/Screens/VendorScreens/AddADealScreen/add_a_deal_screen1.dart';
 import 'UI/Screens/VendorScreens/AddADealScreen/add_a_deal_screen2.dart';
@@ -241,7 +251,7 @@ class _MyAppsState extends State<MyApps> {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         debugShowCheckedModeBanner: false,
-        home: SplachScreen(),
+        home: SignUpVendorScreen(),
       ),
     );
   }

@@ -75,7 +75,7 @@ class SignUpScreen extends StatelessWidget {
                       validationFun: provider.emailValidation,
                       onClick: () {},
                       fontsize: 14.sp,
-                      hintText: 'User name',
+                      hintText: 'User name'.tr(),
                       isPassword: false,
                       controller: provider.emailController),
                   SizedBox(
@@ -95,7 +95,7 @@ class SignUpScreen extends StatelessWidget {
                       validationFun: provider.emailValidation,
                       onClick: () {},
                       fontsize: 14.sp,
-                      hintText: 'Email',
+                      hintText: 'Email'.tr(),
                       isPassword: false,
                       controller: provider.emailController),
                   SizedBox(
@@ -259,7 +259,7 @@ class SignUpScreen extends StatelessWidget {
                           width: 10.w,
                         ),
                         Text(
-                            '${"By clicking \"Sign up\" I agree that I have read and accepted they".tr()}  ',
+                            '${"SignupT1".tr()}  ',
                             style: TextStyle(fontSize: 12.sp)),
                       ],
                     ),
@@ -277,7 +277,7 @@ class SignUpScreen extends StatelessWidget {
                               TextStyle(color: mainAppColor, fontSize: 13.sp),
                         ),
                       ),
-                      Text('  ${"and".tr()}  ',
+                      Text('  ${"and".tr()}  '.tr(),
                           style: TextStyle(fontSize: 12.sp)),
                       InkWell(
                         onTap: () {
@@ -286,7 +286,7 @@ class SignUpScreen extends StatelessWidget {
                                   PrivacyScreen());
                         },
                         child: Text(
-                          '${"Privacy policy".tr()}.',
+                          '${"Privacy policy".tr()}.'.tr(),
                           style:
                               TextStyle(color: mainAppColor, fontSize: 13.sp),
                         ),
@@ -302,7 +302,7 @@ class SignUpScreen extends StatelessWidget {
                           .routingToSpecificWidgetWithoutPop(
                               VerificationScreen(type: 2,));
                     },
-                    title: 'Sign Up',
+                    title: 'Sign up'.tr(),
                   ),
                   SizedBox(
                     height: 30.h,

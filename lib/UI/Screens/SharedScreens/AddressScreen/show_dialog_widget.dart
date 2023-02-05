@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,15 +24,15 @@ class DeleteDialogWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            CustomText('Edite'),
+            CustomText('Edit'.tr()),
             Divider(
               thickness: 1,
             ),
-            CustomText('Delete'),
+            CustomText('Delete'.tr()),
             Divider(
               thickness: 1,
             ),
-            CustomText('cancel',color: mainAppColor,),
+            CustomText('cancel'.tr(),color: mainAppColor,),
           ],
         ),
       ),

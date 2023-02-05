@@ -66,7 +66,7 @@ class FilterScreen extends StatelessWidget {
                                 width: 11.w,
                               ),
                               CustomText(
-                                'Search product here...',
+                                'Search product here...'.tr(),
                                 color: Color(0xFF000000).withOpacity(0.5),
                                 fontSize: 13.sp,
                               ),
@@ -99,7 +99,7 @@ class FilterScreen extends StatelessWidget {
                         controller: StoteController,
                         onClick: () {},
                         fontsize: 16.sp,
-                        hintText: 'Categories',
+                        hintText: 'Categories'.tr(),
                         isPassword: false,
                       ),
                       SizedBox(
@@ -117,7 +117,7 @@ class FilterScreen extends StatelessWidget {
                             onClick: () {},
                             fontsize: 16.sp,
                             enable: false,
-                            hintText: 'Date',
+                            hintText: 'Date'.tr(),
                             isPassword: false,
                             suffix: Image.asset(
                               'assets/images/calender.png',
@@ -149,7 +149,7 @@ class FilterScreen extends StatelessWidget {
                             width: 5.w,
                           ),
                           CustomText(
-                            'Location',
+                            'Location'.tr(),
                           ),
                           SizedBox(
                             width: 30.w,
@@ -168,7 +168,7 @@ class FilterScreen extends StatelessWidget {
                             width: 5.w,
                           ),
                           CustomText(
-                            'Price Range',
+                            'Price Range'.tr(),
                           ),
                         ],
                       ),
@@ -176,7 +176,7 @@ class FilterScreen extends StatelessWidget {
                         height: 10.h,
                       ),
                       CustomText(
-                        'Price Range',
+                        'Price Range'.tr(),
                       ),
                       SizedBox(
                         height: 10.h,
@@ -218,7 +218,7 @@ class FilterScreen extends StatelessWidget {
                           height: 45.0.sp,
                           width: 271.0.sp,
                           backgroundColor: mainAppColor,
-                          title: 'Apply filters',
+                          title: 'Apply filters'.tr(),
                           borderRadius: 10,
                         ),
                       ),

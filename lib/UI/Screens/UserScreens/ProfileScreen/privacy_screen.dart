@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,7 +22,7 @@ class PrivacyScreen extends StatelessWidget {
           backgroundColor: Colors.white,
           leading: BackAppBarWidget(),
           title: CustomText(
-            'Privacy Policy',
+            'Privacy Policy'.tr(),
             fontSize: 16.sp,
             color: Colors.black,
           ),
@@ -60,14 +61,14 @@ class PrivacyScreen extends StatelessWidget {
                           ],
                         ),
                       )
-                    :                 Text("Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad ms veniam, quis nostrud exercitation ullamco nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur.\n\n Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet,  consectetur  adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \n\nUt enim ad ms veniam, quis nostrud exercitation ullamco nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+                    :                 Text("AboutUsT1".tr()),
 
                 // Text(provider.businessPolicyResponse!.data!.policy ?? ""),
                 SizedBox(
                   height: 50.h,
                 ),
                 CustomBottom(
-                  title: "Done",
+                  title: "Done".tr(),
                   onTap: () {
                     Navigator.pop(context);
                   },

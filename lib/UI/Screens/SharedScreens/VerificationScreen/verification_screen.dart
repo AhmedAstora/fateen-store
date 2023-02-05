@@ -59,7 +59,7 @@ class VerificationScreen extends StatelessWidget {
                   margin: EdgeInsets.symmetric(horizontal: 20.w),
                   child: Center(
                     child: Text(
-                      'Enter your verification code that we sent\nyou through your e-mail',
+                      'VerificationT1'.tr(),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 14.sp,
@@ -118,7 +118,7 @@ class VerificationScreen extends StatelessWidget {
                     visible: provider.wrongCode,
                     child: Center(
                         child: Text(
-                      'Verification code invalid',
+                      'Verification code invalid'.tr(),
                       style: TextStyle(fontSize: 14.sp, color: Colors.red),
                     ))),
                 Visibility(
@@ -128,7 +128,7 @@ class VerificationScreen extends StatelessWidget {
                   ),
                 ),
                 CustomBottom(
-                  title: 'Verification',
+                  title: 'Verification'.tr(),
                   onTap: () {
                     if (provider.pinPutController.text.length < 4) {
                       provider.wrongCode = true;

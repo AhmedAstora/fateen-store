@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +20,7 @@ class AddPaymentScreen extends StatelessWidget {
         leading: BackAppBarWidget(
         ),
         title: CustomText(
-          'Paid',
+          'Paid'.tr(),
           fontSize: 16.sp,
           color: Colors.black,
         ),
@@ -30,7 +31,7 @@ class AddPaymentScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomText('Add payment method'),
+            CustomText('Add payment method'.tr()),
             SizedBox(
               height: 20.h,
             ),

@@ -30,7 +30,7 @@ class AddAddressScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         leading: BackAppBarWidget(),
         title: CustomText(
-          'Add address',
+          'Add address'.tr(),
           fontSize: 16.sp,
           color: Colors.black,
         ),
@@ -52,7 +52,7 @@ class AddAddressScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '${"Stote".tr()}',
+                '${"Store".tr()}',
                 style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w500,
@@ -65,7 +65,7 @@ class AddAddressScreen extends StatelessWidget {
                 controller: StoteController,
                 onClick: () {},
                 fontsize: 16.sp,
-                hintText: 'Saudi Arabia',
+                hintText: 'Saudi Arabia'.tr(),
                 isPassword: false,
               ),
               SizedBox(
@@ -84,7 +84,7 @@ class AddAddressScreen extends StatelessWidget {
               CustomTextField(
                   onClick: () {},
                   fontsize: 16.sp,
-                  hintText: 'Dammam',
+                  hintText: 'Dammam'.tr(),
                   isPassword: false,
                   controller: RegionController),
               SizedBox(
@@ -103,7 +103,7 @@ class AddAddressScreen extends StatelessWidget {
               CustomTextField(
                   onClick: () {},
                   fontsize: 16.sp,
-                  hintText: 'Uhud neighborhood',
+                  hintText: 'Uhud neighborhood'.tr(),
                   isPassword: false,
                   controller: RegionController),
               SizedBox(
@@ -137,7 +137,7 @@ class AddAddressScreen extends StatelessWidget {
                   SizedBox(
                     width: 10.w,
                   ),
-                  CustomText('Set as default',fontSize: 12.0.sp,)
+                  CustomText('Set as default'.tr(),fontSize: 12.0.sp,)
                 ],
               ),
               SizedBox(
@@ -154,7 +154,7 @@ class AddAddressScreen extends StatelessWidget {
                   height: 45.0.sp,
                   width: 271.0.sp,
                   backgroundColor: mainAppColor,
-                  title: 'Save',
+                  title: 'Save'.tr(),
                   borderRadius: 10,
                 ),
               ),

@@ -36,7 +36,7 @@ class SelectLocationScreen extends StatelessWidget {
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
                 child: Text(
-                  "skip".tr(),
+                  "Skip".tr(),
                   style: TextStyle(
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w500,

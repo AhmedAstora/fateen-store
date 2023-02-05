@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -29,7 +30,7 @@ class ContactUsScreen extends StatelessWidget {
           backgroundColor: Colors.white,
           leading: BackAppBarWidget(),
           title: CustomText(
-            'Contact us',
+            'Contact us'.tr(),
             fontSize: 16.sp,
             color: Colors.black,
           ),
@@ -47,7 +48,7 @@ class ContactUsScreen extends StatelessWidget {
                     height: 25.h,
                   ),
                   Text(
-                    'We will respond to you in Email',
+                    'We will respond to you in Email'.tr(),
                     style: TextStyle(fontSize: 12.sp),
                   ),
                   SizedBox(
@@ -60,7 +61,7 @@ class ContactUsScreen extends StatelessWidget {
                       paddingH: 15.w,
                       maxLines: 11,
                       onClick: () {},
-                      hintText: 'Tell us how we can help',
+                      hintText: 'Tell us how we can help'.tr(),
                       isPassword: false,
                       fillColor: Color(0xffF4F4F4),
                       fontsize: 14.sp,
@@ -75,7 +76,7 @@ class ContactUsScreen extends StatelessWidget {
                       SizedBox(
                         width: 20.w,
                       ),
-                      CustomText('Mobile service for suppliers and merchants',fontSize: 12.sp,),
+                      CustomText('Mobile service for suppliers and merchants'.tr(),fontSize: 12.sp,),
                     ],
                   ),
                   SizedBox(
@@ -94,7 +95,7 @@ class ContactUsScreen extends StatelessWidget {
                       SizedBox(
                         width: 20.w,
                       ),
-                      CustomText(' Customer service contact',fontSize: 12.sp,),
+                      CustomText('Customer service contact'.tr(),fontSize: 12.sp,),
                     ],
                   ),
                   SizedBox(
@@ -113,7 +114,7 @@ class ContactUsScreen extends StatelessWidget {
                       SizedBox(
                         width: 20.w,
                       ),
-                      CustomText('Whatsapp customer service',fontSize: 12.sp,),
+                      CustomText('Whatsapp customer service'.tr(),fontSize: 12.sp,),
                     ],
                   ),
                   SizedBox(
@@ -132,7 +133,7 @@ class ContactUsScreen extends StatelessWidget {
                       SizedBox(
                         width: 20.w,
                       ),
-                      CustomText('Whatsapp customer service',fontSize: 12.sp,),
+                      CustomText('Whatsapp customer service'.tr(),fontSize: 12.sp,),
                     ],
                   ),
                   SizedBox(
@@ -147,7 +148,7 @@ class ContactUsScreen extends StatelessWidget {
                   ),
                   Center(
                     child: CustomBottom(
-                      title: "Contact us",
+                      title: "Contact us".tr(),
                       height: 45.h,
                       width: 271.w,
                       onTap: () {

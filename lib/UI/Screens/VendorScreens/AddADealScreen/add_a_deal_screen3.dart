@@ -1,4 +1,5 @@
 import 'package:dotted_border/dotted_border.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,7 +27,7 @@ class AddADealScreen3 extends StatelessWidget {
           color: Colors.black,
         ),
         title: CustomText(
-          'Add a deal',
+          'Add a deal'.tr(),
           fontSize: 16.sp,
           color: Colors.black,
         ),
@@ -45,7 +46,7 @@ class AddADealScreen3 extends StatelessWidget {
                 height: 20.h,
               ),
               CustomText(
-                'Choice of colors',
+                'Choice of colors'.tr(),
                 fontSize: 12.sp,
               ),
               SizedBox(
@@ -79,7 +80,7 @@ class AddADealScreen3 extends StatelessWidget {
                 height: 10.h,
               ),
               CustomText(
-                'Size',
+                'Size'.tr(),
                 fontSize: 12.sp,
               ),
               SizedBox(
@@ -95,7 +96,7 @@ class AddADealScreen3 extends StatelessWidget {
                         border: Border.all(color: greyColor, width: 0.2)),
                     child: Center(
                         child: CustomText(
-                      'Length 50 SM',
+                      'Length 50 SM'.tr(),
                       fontSize: 12.sp,
                           color: Colors.grey[500],
                     )),
@@ -111,7 +112,7 @@ class AddADealScreen3 extends StatelessWidget {
                         border: Border.all(color: greyColor, width: 0.2)),
                     child: Center(
                         child: CustomText(
-                      'width 50 SM',
+                      'width 50 SM'.tr(),
                       fontSize: 12.sp,
                           color: Colors.grey[500],
                     )),
@@ -127,7 +128,7 @@ class AddADealScreen3 extends StatelessWidget {
                         border: Border.all(color: greyColor, width: 0.2)),
                     child: Center(
                         child: CustomText(
-                      'Height 50 SM',
+                      'Height 50 SM'.tr(),
                       fontSize: 12.sp,
                           color: Colors.grey[500],
                     )),
@@ -140,12 +141,12 @@ class AddADealScreen3 extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Weight',
+                    'Weight'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -170,12 +171,12 @@ class AddADealScreen3 extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Description',
+                    'Description'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -200,12 +201,12 @@ class AddADealScreen3 extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Terms of the deal',
+                    'Terms of the deal'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
                   CustomText(
-                    'Edit',
+                    'Edit'.tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -230,7 +231,7 @@ class AddADealScreen3 extends StatelessWidget {
               Row(
                 children: [
                   CustomText(
-                    'Branch selection',
+                    'Branch selection'.tr(),
                     fontSize: 12.sp,
                   ),
                   Spacer(),
@@ -251,7 +252,7 @@ class AddADealScreen3 extends StatelessWidget {
                     width: 10.w,
                   ),
                   CustomText(
-                    'Jeddah branch',
+                    'Jeddah branch'.tr(),
                   ),
                   SizedBox(
                     width: 20.w,
@@ -265,7 +266,7 @@ class AddADealScreen3 extends StatelessWidget {
                     width: 10.w,
                   ),
                   CustomText(
-                    'Taif branch',
+                    'Taif branch'.tr(),
                   ),
                 ],
               ),
@@ -283,7 +284,7 @@ class AddADealScreen3 extends StatelessWidget {
                     width: 10.w,
                   ),
                   CustomText(
-                    'Mecca branch',
+                    'Mecca branch'.tr(),
                   ),
                   SizedBox(
                     width: 20.w,
@@ -297,7 +298,7 @@ class AddADealScreen3 extends StatelessWidget {
                     width: 10.w,
                   ),
                   CustomText(
-                    'Riyadh Branch',
+                    'Riyadh Branch'.tr(),
                   ),
                 ],
               ),
@@ -306,7 +307,7 @@ class AddADealScreen3 extends StatelessWidget {
               ),
               Center(
                 child: CustomBottom(
-                  title: "Next",
+                  title: "Next".tr(),
                   height: 48.h,
                   width: 309.w,
                   onTap: () {},

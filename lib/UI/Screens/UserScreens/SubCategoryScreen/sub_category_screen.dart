@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,7 +25,7 @@ class SubCategoryScreen extends StatelessWidget {
           leading: BackAppBarWidget(),
           centerTitle: true,
           title: CustomText(
-            'Clothing',
+            'Clothing'.tr(),
             fontSize: 16.0.sp,
             color: Colors.black,
           ),
@@ -78,7 +79,7 @@ class SubCategoryScreen extends StatelessWidget {
                             EdgeInsets.symmetric(horizontal: 9, vertical: 6),
                         filled: true,
                         fillColor: Colors.grey[250],
-                        hintText: 'Search product here...',
+                        hintText: 'Search product here...'.tr(),
                         disabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(100),
                             borderSide: BorderSide(
@@ -120,7 +121,7 @@ class SubCategoryScreen extends StatelessWidget {
                 Row(
                   children: [
                     CustomText(
-                      'All Products',
+                      'All Products'.tr(),
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                       color: Color(0XFF545454),
@@ -133,7 +134,7 @@ class SubCategoryScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           CustomText(
-                            'View',
+                            'View'.tr(),
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w500,
                             color: mainAppColor,

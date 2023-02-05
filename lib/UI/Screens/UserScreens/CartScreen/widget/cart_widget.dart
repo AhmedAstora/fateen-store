@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -43,7 +44,7 @@ class CartWidget extends StatelessWidget {
                   Row(
                     children: [
                       CustomText(
-                        '${model!.title}',
+                        '${model!.title}'.tr(),
                         fontWeight: FontWeight.w400,
                         fontSize: 16.0.sp,
                         maxLines: 1,
@@ -57,7 +58,7 @@ class CartWidget extends StatelessWidget {
                     ],
                   ),
                   CustomText(
-                    '${model!.title1}',
+                    '${model!.title1}'.tr(),
                     fontWeight: FontWeight.w400,
                     fontSize: 14.0.sp,
                     color: Color(0xff99969D),

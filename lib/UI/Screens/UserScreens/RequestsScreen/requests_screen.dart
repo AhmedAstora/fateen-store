@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -72,7 +73,7 @@ class RequestsScreen extends StatelessWidget {
             elevation: 0.0,
             backgroundColor: Colors.white,
             title: CustomText(
-              'Requests',
+              'Requests'.tr(),
               fontSize: 16.sp,
               color: Colors.black,
             ),
@@ -98,13 +99,13 @@ class RequestsScreen extends StatelessWidget {
                         tabs: [
                           Tab(
                             child: CustomText(
-                              'New orders',
+                              'New orders'.tr(),
                               color: Colors.black,
                             ),
                           ),
                           Tab(
                             child: CustomText(
-                              'New orders',
+                              'New orders'.tr(),
                               color: Colors.black,
                             ),
                           ),
@@ -161,7 +162,7 @@ class RequestsScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomText(
-                    '${model.title}',
+                    '${model.title}'.tr(),
                     fontWeight: FontWeight.w400,
                     fontSize: 12.0.sp,
                   ),
@@ -185,7 +186,7 @@ class RequestsScreen extends StatelessWidget {
                     ],
                   ),
                   CustomText(
-                    '${model.title1}',
+                    '${model.title1}'.tr(),
                     color: Color(0xff929292),
                     fontSize: 12.0.sp,
                   ),
@@ -194,7 +195,7 @@ class RequestsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       CustomText(
-                        '${model.title2}',
+                        '${model.title2}'.tr(),
                         fontWeight: FontWeight.w500,
                         fontSize: 12.0.sp,
                         color: Color(0xff99969D),
@@ -202,7 +203,7 @@ class RequestsScreen extends StatelessWidget {
                       SizedBox(
                         width: 10.w,
                       ),
-                      CustomText('${model.title3}',
+                      CustomText('${model.title3}'.tr(),
                           fontSize: 14.0.sp,
                            color: Color(0xffE94E1B)),
                     ],

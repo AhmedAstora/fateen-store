@@ -27,7 +27,7 @@ class EditProfileScreen extends StatelessWidget {
           backgroundColor: Colors.white,
           leading: BackAppBarWidget(),
           title: CustomText(
-            'Edit Profile',
+            'Edit Profile'.tr(),
             fontSize: 16.sp,
             color: Colors.black,
           ),
@@ -107,7 +107,7 @@ class EditProfileScreen extends StatelessWidget {
                     validationFun: provider.emailValidation,
                     onClick: () {},
                     fontsize: 14.sp,
-                    hintText: 'User name',
+                    hintText: 'User name'.tr(),
                     isPassword: false,
                     controller: provider.emailController),
                 SizedBox(
@@ -127,7 +127,7 @@ class EditProfileScreen extends StatelessWidget {
                     validationFun: provider.emailValidation,
                     onClick: () {},
                     fontsize: 14.sp,
-                    hintText: 'Email',
+                    hintText: 'Email'.tr(),
                     isPassword: false,
                     controller: provider.emailController),
                 SizedBox(
@@ -237,7 +237,7 @@ class EditProfileScreen extends StatelessWidget {
                   height: 70.h,
                 ),
                 CustomBottom(
-                  title: 'Edit',
+                  title: 'Edit'.tr(),
                   height: 45.h,
                 )
               ],

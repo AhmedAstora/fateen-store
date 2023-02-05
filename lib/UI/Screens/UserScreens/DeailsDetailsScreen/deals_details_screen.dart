@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -67,7 +68,7 @@ class DealsDetailsScreen extends StatelessWidget {
                     child: CustomBottom(
                       height: 50.0.sp,
                       backgroundColor: mainAppColor,
-                      title: 'BUY NOW',
+                      title: 'BUY NOW'.tr(),
                       borderRadius: 100,
                     ),
                   ),
@@ -223,7 +224,7 @@ class DealsDetailsScreen extends StatelessWidget {
                               Row(
                                 children: [
                                   CustomText(
-                                    'Quilted thermal shirt',
+                                    'Quilted thermal shirt'.tr(),
                                     fontSize: 18.0.sp,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -286,7 +287,7 @@ class DealsDetailsScreen extends StatelessWidget {
                               Row(
                                 children: [
                                   CustomText(
-                                    'The remaining quantity :    ',
+                                    'The remaining quantity :    '.tr(),
                                     fontSize: 14.0.sp,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -326,7 +327,7 @@ class DealsDetailsScreen extends StatelessWidget {
                               Row(
                                 children: [
                                   CustomText(
-                                    'Status    :   ',
+                                    'Status    :   '.tr(),
                                     fontSize: 14.0.sp,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -335,7 +336,7 @@ class DealsDetailsScreen extends StatelessWidget {
                                     width: 61.0.w,
                                     backgroundColor: Color(0x2a566cba),
                                     borderRadius: 50.0,
-                                    title: 'NEW',
+                                    title: 'NEW'.tr(),
                                     style: TextStyle(
                                         color: mainAppColor,
                                         fontSize: 12.0.sp,
@@ -349,12 +350,12 @@ class DealsDetailsScreen extends StatelessWidget {
                               Row(
                                 children: [
                                   CustomText(
-                                    'Weight       :  ',
+                                    'Weight       :  '.tr(),
                                     fontSize: 14.0.sp,
                                     fontWeight: FontWeight.w400,
                                   ),
                                   CustomText(
-                                    '250 Grams',
+                                    '250 Grams'.tr(),
                                     fontSize: 14.0.sp,
                                     fontWeight: FontWeight.w500,
                                     color: Color(0x9808151f),
@@ -367,12 +368,12 @@ class DealsDetailsScreen extends StatelessWidget {
                               Row(
                                 children: [
                                   CustomText(
-                                    'Category   :  ',
+                                    'Category   :  '.tr(),
                                     fontSize: 14.0.sp,
                                     fontWeight: FontWeight.w400,
                                   ),
                                   CustomText(
-                                    'Men,s T-shirt',
+                                    'Men,s T-shirt'.tr(),
                                     fontSize: 14.0.sp,
                                     fontWeight: FontWeight.w500,
                                     color: Color(0x9808151f),
@@ -386,7 +387,7 @@ class DealsDetailsScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   CustomText(
-                                    'Size  :',
+                                    'Size  :'.tr(),
                                     fontSize: 14.0.sp,
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -399,7 +400,7 @@ class DealsDetailsScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   CustomText(
-                                    'Colors :  ',
+                                    'Colors :  '.tr(),
                                     fontSize: 14.0.sp,
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -443,12 +444,12 @@ class DealsDetailsScreen extends StatelessWidget {
                                     width: 5.w,
                                   ),
                                   CustomText(
-                                    'By:       ',
+                                    'By:       '.tr(),
                                     fontSize: 14.0.sp,
                                     fontWeight: FontWeight.w500,
                                   ),
                                   CustomText(
-                                    'Mahmoud quaider',
+                                    'Mahmoud quaider'.tr(),
                                     fontSize: 14.0.sp,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -460,7 +461,7 @@ class DealsDetailsScreen extends StatelessWidget {
                                   tabs: [
                                     Tab(
                                       child: CustomText(
-                                        'Description',
+                                        'Description'.tr(),
                                         color: Colors.black,
                                         fontSize: 12.0.sp,
                                         fontWeight: FontWeight.w500,
@@ -468,7 +469,7 @@ class DealsDetailsScreen extends StatelessWidget {
                                     ),
                                     Tab(
                                       child: CustomText(
-                                        'Terms of the deal',
+                                        'Terms of the deal'.tr(),
                                         color: Colors.black,
                                         fontSize: 12.0.sp,
                                         fontWeight: FontWeight.w500,
@@ -489,12 +490,7 @@ class DealsDetailsScreen extends StatelessWidget {
                                         Container(
                                           width: 339.0.w,
                                           child: CustomText(
-                                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus'
-                                            ' placerat, ex non ornare commodo, lectus elit laoreet massa, ac'
-                                            ' congue elit magna eu elit. Fusce suscipit quis mi quis sodales.'
-                                            ' Nulla blandit ut sapien tristique mattis. Nulla ut ultricies velit.'
-                                            ' Pellentesque luctus non ligula at rhoncus. Sed at tincidunt magna.'
-                                            ' Morbi a metus est. Suspendisse vitae feugiat libero.',
+                                            'dealsT1'.tr(),
                                             fontSize: 12.sp,
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -518,7 +514,7 @@ class DealsDetailsScreen extends StatelessWidget {
                                             ' congue elit magna eu elit. Fusce suscipit quis mi quis sodales.'
                                             ' Nulla blandit ut sapien tristique mattis. Nulla ut ultricies velit.'
                                             ' Pellentesque luctus non ligula at rhoncus. Sed at tincidunt magna.'
-                                            ' Morbi a metus est. Suspendisse vitae feugiat libero.',
+                                            ' Morbi a metus est. Suspendisse vitae feugiat libero.'.tr(),
                                             fontSize: 12.sp,
                                             fontWeight: FontWeight.w500,
                                           ),

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +28,7 @@ class ChangePasswordScreen extends StatelessWidget {
           backgroundColor: Colors.white,
           leading: BackAppBarWidget(),
           title: CustomText(
-            'Change password',
+            'Change password'.tr(),
             fontSize: 16.sp,
             color: Colors.black,
           ),
@@ -47,7 +48,7 @@ class ChangePasswordScreen extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 3.w),
                   child: Text(
-                    'Current password',
+                    'Current password'.tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 12.sp,
@@ -73,7 +74,7 @@ class ChangePasswordScreen extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 3.w),
                   child: Text(
-                    'New password',
+                    'New password'.tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 12.sp,
@@ -99,7 +100,7 @@ class ChangePasswordScreen extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 3.w),
                   child: Text(
-                    'Confirm password',
+                    'Confirm password'.tr(),
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 12.sp,
@@ -123,7 +124,7 @@ class ChangePasswordScreen extends StatelessWidget {
                   height: 289.h,
                 ),
                 CustomBottom(
-                  title: "Save",
+                  title: "Save".tr(),
                   onTap: () {
                     if (signupValidate()) {
                       // provider.changePasswrod(context);
