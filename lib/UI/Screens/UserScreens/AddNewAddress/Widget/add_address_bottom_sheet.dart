@@ -11,6 +11,12 @@ import '../../../../Utils/constant.dart';
 import '../../CheckOutScreen/check_out_screen.dart';
 
 class AddAddressBottomSheet extends StatelessWidget {
+  TextEditingController streetNameController = TextEditingController();
+  TextEditingController streetName1Controller = TextEditingController();
+  TextEditingController buildingController = TextEditingController();
+  TextEditingController floorController = TextEditingController();
+  TextEditingController flatNoController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -66,78 +72,48 @@ class AddAddressBottomSheet extends StatelessWidget {
           SizedBox(
             height: 20.h,
           ),
-          Container(
-            height: 61.h,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: Colors.grey, width: 0.5)),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CustomText(
-                    'Street Name*'.tr(),
-                    fontSize: 12.sp,
-                    color: Colors.grey[400],
-                  ),
-                  CustomText(
-                    'Al-Moghrabi St.'.tr(),
-                  ),
-                ],
-              ),
-            ),
+          CustomTextField(
+            controller: streetNameController,
+            onClick: () {},
+            fontsize: 14.sp,
+            hintText: 'Street Name*'.tr(),
+            isPassword: false,
+            height: 20,
+            paddingV: 20.h,
+            paddingH: 15.w,
+
           ),
           SizedBox(
             height: 12.h,
           ),
           Row(
             children: [
-              Container(
-                height: 61.h,
-                width: 162.w,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.grey, width: 0.5)),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomText(
-                        'Street Name*'.tr(),
-                        fontSize: 12.sp,
-                        color: Colors.grey[400],
-                      ),
-                      CustomText(
-                        'Al-Moghrabi St.'.tr(),
-                      ),
-                    ],
-                  ),
+              Expanded(
+                child: CustomTextField(
+                  controller: streetName1Controller,
+                  onClick: () {},
+                  fontsize: 14.sp,
+                  hintText: 'Street Name*'.tr(),
+                  isPassword: false,
+                  height: 20,
+                  paddingV: 20.h,
+
                 ),
               ),
               SizedBox(
                 width: 12.w,
               ),
-              Container(
-                height: 61.h,
-                width: 162.w,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.grey, width: 0.5)),
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 17),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomText(
-                        'Building'.tr(),
-                        color: Colors.grey[500],
-                      ),
-                    ],
-                  ),
+              Expanded(
+                child: CustomTextField(
+                  controller: buildingController,
+                  onClick: () {},
+                  fontsize: 14.sp,
+                  hintText: 'Building'.tr(),
+                  isPassword: false,
+                  height: 20,
+                  paddingV: 20.h,
+                  paddingH: 15.w,
+
                 ),
               ),
             ],
@@ -147,47 +123,32 @@ class AddAddressBottomSheet extends StatelessWidget {
           ),
           Row(
             children: [
-              Container(
-                height: 61.h,
-                width: 162.w,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.grey, width: 0.5)),
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 17),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomText(
-                        'Floor'.tr(),
-                        color: Colors.grey[500],
-                      ),
-                    ],
-                  ),
+              Expanded(
+                child: CustomTextField(
+                  controller: floorController,
+                  onClick: () {},
+                  fontsize: 14.sp,
+                  hintText: 'Floor'.tr(),
+                  isPassword: false,
+                  height: 20,
+                  paddingV: 20.h,
+
                 ),
               ),
               SizedBox(
                 width: 12.w,
               ),
-              Container(
-                height: 61.h,
-                width: 162.w,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.grey, width: 0.5)),
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 17),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomText(
-                        'Flat No.'.tr(),
-                        color: Colors.grey[500],
-                      ),
-                    ],
-                  ),
+              Expanded(
+                child: CustomTextField(
+                  controller: flatNoController,
+                  onClick: () {},
+                  fontsize: 14.sp,
+                  hintText: 'Flat No.'.tr(),
+                  isPassword: false,
+                  height: 20,
+                  paddingV: 20.h,
+                  paddingH: 15.w,
+
                 ),
               ),
             ],
@@ -253,26 +214,16 @@ class AddAddressBottomSheet extends StatelessWidget {
           SizedBox(
             height: 12.h,
           ),
-          Container(
-            height: 48.h,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: Colors.grey, width: 0.5)),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+          CustomTextField(
+            controller: addressController,
+            onClick: () {},
+            fontsize: 14.sp,
+            hintText: 'Address Nickname “Mother’s house”'.tr(),
+            isPassword: false,
+            height: 20,
+            paddingV: 20.h,
+            paddingH: 15.w,
 
-                children: [
-                  CustomText(
-                    'AddressHouse'.tr(),
-                    fontSize: 12.sp,
-                    color: Colors.grey[400],
-                  )
-                ],
-              ),
-            ),
           ),
           SizedBox(
             height: 60.h,
