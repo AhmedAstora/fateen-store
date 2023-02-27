@@ -18,6 +18,7 @@ import 'Helper/Providers/auth_provider.dart';
 import 'Helper/Router/router.dart';
 import 'Helper/SharedPreferance/shared_preferance.dart';
 
+import 'UI/Screens/SharedScreens/AddPaymentMethodScreen/add_payment_method_screen.dart';
 import 'UI/Screens/SharedScreens/AddPaymentScreen/add_payment_screen.dart';
 import 'UI/Screens/SharedScreens/AddressScreen/add_address_screen.dart';
 import 'UI/Screens/SharedScreens/AddressScreen/address_screen.dart';
@@ -251,7 +252,7 @@ class _MyAppsState extends State<MyApps> {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         debugShowCheckedModeBanner: false,
-        home: SignUpVendorScreen(),
+        home: AddPaymentMethodScreen(),
       ),
     );
   }
