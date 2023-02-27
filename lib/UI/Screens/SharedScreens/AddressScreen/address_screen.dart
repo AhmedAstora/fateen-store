@@ -8,6 +8,7 @@ import 'package:twnty2/UI/Utils/constant.dart';
 
 import '../../../CustomWidget/back_appBar_widget.dart';
 import '../../../CustomWidget/custom_text.dart';
+import '../../UserScreens/AddNewAddress/add_new_address.dart';
 import 'add_address_screen.dart';
 
 class data {
@@ -51,7 +52,7 @@ class AddressScreen extends StatelessWidget {
           InkWell(
             onTap: () {
               RouterHelper.routerHelper
-                  .routingToSpecificWidgetWithoutPop(AddAddressScreen());
+                  .routingToSpecificWidgetWithoutPop(AddNewAddress());
             },
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -141,23 +142,25 @@ class AddressScreen extends StatelessWidget {
                     ],
                   ),
                   Spacer(),
-                  Column(
-                    children: [
-                      Container(
-                          alignment: Alignment.topRight,
-                          child: InkWell(
-                            onTap: () {
-                              showDialog(
-                                  context: context,
-                                  builder: (_) => DeleteDialogWidget());
-                            },
-                            child: Icon(
-                              Icons.check,
-                              size: 25.0.sp,
-                              color: Colors.lightGreen,
-                            ),
-                          )),
-                    ],
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Container(
+                            alignment: Alignment.topRight,
+                            child: InkWell(
+                              onTap: () {
+                                showDialog(
+                                    context: context,
+                                    builder: (_) => DeleteDialogWidget());
+                              },
+                              child: Icon(
+                                Icons.check,
+                                size: 25.0.sp,
+                                color: Colors.lightGreen,
+                              ),
+                            )),
+                      ],
+                    ),
                   ),
                 ],
               ),

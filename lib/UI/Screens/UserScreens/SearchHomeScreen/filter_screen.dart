@@ -14,6 +14,7 @@ import '../../../Utils/constant.dart';
 import '../CartScreen/widget/cart_buy_bottom_sheet.dart';
 
 class FilterScreen extends StatelessWidget {
+
   TextEditingController StoteController = TextEditingController();
   TextEditingController RegionController = TextEditingController();
   TextEditingController NeighborhoodController = TextEditingController();

@@ -84,18 +84,18 @@ class AppProvider extends ChangeNotifier {
         body: 'Get paid to provide meeting rooms in your workplace'),
   ];
   List<String> titleProfile = [
-    'Edit_Profile'.tr(),
-    'Address'.tr(),
-    'My cards'.tr(),
-    'Terms_conditions'.tr(),
-    'Privacy_Policy'.tr(),
-    'language'.tr(),
-    'change_password'.tr(),
-    'Contact_us'.tr(),
-    'About_us'.tr(),
-    'App_Rate'.tr(),
-    'Delete Account'.tr(),
-    'Log_out'.tr()
+    'Edit_Profile',
+    'Address',
+    'My cards',
+    'Terms_conditions',
+    'Privacy_Policy',
+    'language',
+    'change_password',
+    'Contact_us',
+    'About_us',
+    'App_Rate',
+    'Delete Account',
+    'Log_out'
   ];
   List<String> imagesProfile = [
     'assets/images/edit_profile.png',
