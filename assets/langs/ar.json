@@ -230,7 +230,6 @@
   "Size": "مقاس",
   "Weight": "وزن",
   "Shipping and delivery": "الشحن والتسليم",
-
   "Branch selection": "اختيار الفرع",
   "Jeddah branch": "فرع جدة",
   "Taif branch": "فرع الطائف",
@@ -289,6 +288,7 @@
   "Commercial number": "الرقم التجاري",
   "Commerical Registeration ": "التسجيل التجاري",
   "IBAN number": "رقم الآيبان",
-  "signUpt2": "بالنقر فوق \"تسجيل\" ، أوافق على أنني قرأت هذه الرسائل وقبلتها"
+  "signUpt2": "بالنقر فوق \"تسجيل\" ، أوافق على أنني قرأت هذه الرسائل وقبلتها",
+  "Favorite": "المفضلة"
 
 }

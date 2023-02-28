@@ -38,6 +38,7 @@ import 'UI/Screens/UserScreens/CategoryScreen/category_screen.dart';
 import 'UI/Screens/UserScreens/CheckOutScreen/check_out_screen.dart';
 import 'UI/Screens/UserScreens/CheckOutScreen/view_invoice_screen.dart';
 import 'UI/Screens/UserScreens/DeailsDetailsScreen/deals_details_screen.dart';
+import 'UI/Screens/UserScreens/FavoriteScreen/favorite_screen.dart';
 import 'UI/Screens/UserScreens/HomeScreen/home_screen.dart';
 import 'UI/Screens/UserScreens/MainNavigationScreen/main_navigation_screen.dart';
 import 'UI/Screens/UserScreens/ProfileScreen/about_screen.dart';
@@ -252,7 +253,7 @@ class _MyAppsState extends State<MyApps> {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         debugShowCheckedModeBanner: false,
-        home: AddNewAddress(),
+        home: FavoriteScreen(),
       ),
     );
   }
