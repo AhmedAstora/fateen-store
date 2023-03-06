@@ -105,18 +105,25 @@ class NotificationsScreen extends StatelessWidget {
                   SizedBox(
                     width: 15.w,
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomText('${model.title}'.tr()),
-                      CustomText(
-                        '${model.title1}'.tr(),
-                        fontSize: 10.0.sp,
-                        color: Color(0xff929292),
-                      ),
-                    ],
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CustomText(
+                          '${model.title}'.tr(),
+                          height: 1.4,
+                        ),
+                        CustomText(
+                          '${model.title1}'.tr(),
+                          fontSize: 10.0.sp,
+                          color: Color(0xff929292),
+                        ),
+                      ],
+                    ),
                   ),
-                  Spacer(),
+                  SizedBox(
+                    width: 10.w,
+                  ),
                   Column(
                     children: [
                       Container(

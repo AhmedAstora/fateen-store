@@ -6,7 +6,6 @@ import 'package:twnty2/Helper/Providers/app_provider.dart';
 import 'package:twnty2/Helper/SharedPreferance/shared_preferance.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
 
-
 class ProfileWidget extends StatelessWidget {
   int? index;
 
@@ -24,25 +23,24 @@ class ProfileWidget extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Row(
               children: [
-                index == 10
-                    ? Image.asset(provider.imagesProfile[index!],
+                index == 11
+                    ? Image.asset(provider.imagesUserProfile[index!],
                         width: 16.w, height: 16.h, color: Colors.red)
                     : Image.asset(
-                        provider.imagesProfile[index!],
+                        provider.imagesUserProfile[index!],
                         width: 16.w,
                         height: 16.h,
-
                       ),
                 SizedBox(
                   width: 10.w,
                 ),
                 Text(
-                  provider.titleProfile[index!].tr(),
+                  provider.titleUserProfile[index!].tr(),
                   style: TextStyle(
                       fontSize: 14.sp,
-                      color: index == 11
+                      color: index == 12
                           ? Colors.red
-                          : index == 10
+                          : index == 11
                               ? Colors.red
                               : Colors.black),
                 ),
@@ -110,7 +108,7 @@ class ProfileWidget extends StatelessWidget {
                             )),
                       )
                     : Visibility(
-                        visible: index == 10 ? false : true,
+                        visible: index == 11 || index == 12 ? false : true,
                         child: Icon(
                           Icons.arrow_forward_ios_rounded,
                           size: 13,
@@ -123,7 +121,7 @@ class ProfileWidget extends StatelessWidget {
             height: 5.h,
           ),
           Visibility(
-            visible: index == 10 ? false : true,
+            visible: true,
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: Divider(

@@ -14,7 +14,9 @@ import 'package:twnty2/UI/Screens/SharedScreens/PaymentScreen/payment_screen.dar
 import 'package:twnty2/UI/Screens/SharedScreens/SplashScreen/splash_screen.dart';
 
 import 'Helper/Providers/app_provider.dart';
+import 'Helper/Providers/app_vendor_provider.dart';
 import 'Helper/Providers/auth_provider.dart';
+import 'Helper/Providers/auth_vendor_provider.dart';
 import 'Helper/Router/router.dart';
 import 'Helper/SharedPreferance/shared_preferance.dart';
 
@@ -38,7 +40,6 @@ import 'UI/Screens/UserScreens/CategoryScreen/category_screen.dart';
 import 'UI/Screens/UserScreens/CheckOutScreen/check_out_screen.dart';
 import 'UI/Screens/UserScreens/CheckOutScreen/view_invoice_screen.dart';
 import 'UI/Screens/UserScreens/DeailsDetailsScreen/deals_details_screen.dart';
-import 'UI/Screens/UserScreens/FavoriteScreen/favorite_screen.dart';
 import 'UI/Screens/UserScreens/HomeScreen/home_screen.dart';
 import 'UI/Screens/UserScreens/MainNavigationScreen/main_navigation_screen.dart';
 import 'UI/Screens/UserScreens/ProfileScreen/about_screen.dart';
@@ -131,6 +132,16 @@ void main() async {
         ChangeNotifierProvider<AppProvider>(
           create: (context) {
             return AppProvider();
+          },
+        ),
+        ChangeNotifierProvider<AppVendorProvider>(
+          create: (context) {
+            return AppVendorProvider();
+          },
+        ),
+        ChangeNotifierProvider<AuthVendorProvider>(
+          create: (context) {
+            return AuthVendorProvider();
           },
         ),
       ],
@@ -253,7 +264,7 @@ class _MyAppsState extends State<MyApps> {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         debugShowCheckedModeBanner: false,
-        home: FavoriteScreen(),
+        home: SplachScreen(),
       ),
     );
   }

@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twnty2/UI/CustomWidget/back_appBar_widget.dart';
 import 'package:twnty2/UI/CustomWidget/custom_text.dart';
-import 'package:twnty2/UI/Screens/UserScreens/CheckOutScreen/successfully_show_dialog_widget.dart';
+import 'package:twnty2/UI/Screens/UserScreens/CheckOutScreen/widgets/successfully_show_dialog_widget.dart';
 
 import '../../../CustomWidget/custom_bottom.dart';
 import '../../../Utils/constant.dart';
-import 'discount_show_dialog_widget.dart';
+import 'widgets/discount_show_dialog_widget.dart';
 
 class CheckOutScreen extends StatelessWidget {
   @override

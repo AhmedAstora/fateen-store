@@ -19,8 +19,11 @@ class CartBuyBottomSheet extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            Icons.close,
+          InkWell(
+            onTap: () => Navigator.pop(context),
+            child: Icon(
+              Icons.close,
+            ),
           ),
           SizedBox(
             height: 10.h,
@@ -63,7 +66,8 @@ class CartBuyBottomSheet extends StatelessWidget {
               child: Wrap(
                 children: [
                   CustomText(
-                    'Shipping fees vary depending on the selle,s location or warehouse'.tr(),
+                    'Shipping fees vary depending on the selle,s location or warehouse'
+                        .tr(),
                     fontSize: 12.sp,
                   ),
                 ],
@@ -73,37 +77,48 @@ class CartBuyBottomSheet extends StatelessWidget {
           SizedBox(
             height: 10.h,
           ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CustomText(
-                'cartT1'.tr(),
-                fontWeight: FontWeight.w700,
-                height: 1.5,
-                fontSize: 12.sp,
-              ),
-              Spacer(),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  CustomText(
-                    'SAR',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  CustomText(
-                    '22.00',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ],
-              ),
-            ],
-          ),
-          CustomText(
-            'Winter cotton blouse of various colors and sizes'.tr(),
-            fontSize: 10.sp,
-            color: Colors.grey[500],
+          InkWell(
+            onTap: () {
+              RouterHelper.routerHelper
+                  .routingToSpecificWidgetWithoutPop(CheckOutScreen());
+            },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomText(
+                      'cartT1'.tr(),
+                      fontWeight: FontWeight.w700,
+                      height: 1.5,
+                      fontSize: 12.sp,
+                    ),
+                    Spacer(),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        CustomText(
+                          'SAR',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        CustomText(
+                          '22.00',
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                CustomText(
+                  'Winter cotton blouse of various colors and sizes'.tr(),
+                  fontSize: 10.sp,
+                  color: Colors.grey[500],
+                ),
+              ],
+            ),
           ),
           SizedBox(
             height: 10.h,

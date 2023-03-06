@@ -5,43 +5,99 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:twnty2/UI/Screens/VendorScreens/HomeSellerScreen/widget/home_seller_widget.dart';
 
+import '../../../../Helper/Model/chart_model.dart';
 import '../../../CustomWidget/custom_text.dart';
 import '../../../Utils/constant.dart';
 
-class _ChartData {
-  _ChartData(this.x, this.y1, this.y2, this.y3, this.y4);
-
-  final String x;
-  final num y1;
-  final num y2;
-  final num y3;
-  final num y4;
-}
-
 class HomeSellerScreen extends StatelessWidget {
-  List<_ChartData>? chartData = <_ChartData>[
-    _ChartData('Q1', 50, 55, 72, 65),
-    _ChartData('Q2', 80, 75, 70, 60),
-    _ChartData('Q3', 35, 45, 55, 52),
-    _ChartData('Q4', 65, 50, 70, 65),
+  List<ChartData>? chartData = <ChartData>[
+    ChartData('Q1', 10, 55, 32, 65),
+    ChartData('Q2', 20, 15, 70, 10),
+    ChartData('Q3', 30, 55, 22, 65),
+    ChartData('Q4', 80, 715, 70, 20),
+    ChartData('Q4', 80, 715, 70, 20),
   ];
 
   TooltipBehavior? _tooltipBehavior;
+  List<ChartSampleData> chartData2 = [];
 
-  List<ChartSeries<_ChartData, String>> _getStackedColumnSeries() {
-    return <ChartSeries<_ChartData, String>>[
-      StackedColumn100Series<_ChartData, String>(
+  List<StackedLineSeries<ChartSampleData, String>> _getStackedLineSeries() {
+    return <StackedLineSeries<ChartSampleData, String>>[
+      StackedLineSeries<ChartSampleData, String>(
+          dataSource: chartData2,
+          xValueMapper: (ChartSampleData sales, _) => sales.x as String,
+          yValueMapper: (ChartSampleData sales, _) => sales.secondSeriesYValue,
+          name: 'Apr',
+          markerSettings: const MarkerSettings(isVisible: true))
+    ];
+  }
+
+  List<ChartSeries<ChartData, String>> _getStackedColumnSeries() {
+    return <ChartSeries<ChartData, String>>[
+      StackedColumn100Series<ChartData, String>(
           color: mainAppColor,
+          width: .5,
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(10), topLeft: Radius.circular(10)),
           dataSource: chartData!,
           dataLabelSettings: const DataLabelSettings(isVisible: false),
-          xValueMapper: (_ChartData sales, _) => sales.x,
-          yValueMapper: (_ChartData sales, _) => sales.y4,
-          name: 'Product D')
+          xValueMapper: (ChartData sales, _) => sales.x,
+          yValueMapper: (ChartData sales, _) => sales.y1,
+          name: 'Product D'),
+      StackedColumn100Series<ChartData, String>(
+          color: Colors.transparent,
+          width: .5,
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(10), topLeft: Radius.circular(10)),
+          dataSource: chartData!,
+          dataLabelSettings: const DataLabelSettings(isVisible: false),
+          xValueMapper: (ChartData sales, _) => sales.x,
+          yValueMapper: (ChartData sales, _) => sales.y4,
+          name: 'Product D'),
     ];
   }
 
   @override
   Widget build(BuildContext context) {
+    chartData2.clear();
+    chartData2 = <ChartSampleData>[
+      ChartSampleData(
+          x: 'Mar',
+          y: 55,
+          yValue: 40,
+          secondSeriesYValue: 145,
+          thirdSeriesYValue: 48),
+      ChartSampleData(
+          x: 'Apr',
+          y: 33,
+          yValue: 45,
+          secondSeriesYValue: 154,
+          thirdSeriesYValue: 28),
+      ChartSampleData(
+          x: 'May',
+          y: 43,
+          yValue: 23,
+          secondSeriesYValue: 120,
+          thirdSeriesYValue: 34),
+      ChartSampleData(
+          x: 'Jun',
+          y: 32,
+          yValue: 54,
+          secondSeriesYValue: 123,
+          thirdSeriesYValue: 54),
+      ChartSampleData(
+          x: 'Jul',
+          y: 56,
+          yValue: 18,
+          secondSeriesYValue: 143,
+          thirdSeriesYValue: 55),
+      ChartSampleData(
+          x: 'Aug',
+          y: 23,
+          yValue: 54,
+          secondSeriesYValue: 133,
+          thirdSeriesYValue: 56),
+    ];
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -156,20 +212,58 @@ class HomeSellerScreen extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              Container(
-                height: 310,
-                child: GridView.builder(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w),
-                  physics: NeverScrollableScrollPhysics(),
-                  itemBuilder: (_, index) => HomeSellerWidget(index: index),
-                  itemCount: 4,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisExtent: 135.h,
-                    crossAxisSpacing: 8,
-                    mainAxisSpacing: 12.0,
+              Row(
+                children: [
+                  SizedBox(
+                    width: 16.w,
                   ),
-                ),
+                  HomeSellerWidget(
+                    title: '\$850',
+                    color: Color(0xff44B66B),
+                    subTitle: 'Total earnings',
+                    progress: .4,
+                  ),
+                  SizedBox(
+                    width: 8.w,
+                  ),
+                  HomeSellerWidget(
+                    title: '20',
+                    color: Color(0xff3479D1),
+                    subTitle: 'The number of \nongoing deals',
+                    progress: .7,
+                  ),
+                  SizedBox(
+                    width: 16.w,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 16.w,
+                  ),
+                  HomeSellerWidget(
+                    title: '20',
+                    color: Color(0xffE94528),
+                    subTitle: 'The number of\ncompleted transactions',
+                    progress: .6,
+                  ),
+                  SizedBox(
+                    width: 8.w,
+                  ),
+                  HomeSellerWidget(
+                    title: '\$1200',
+                    color: Color(0xffEDBE46),
+                    subTitle: 'Total sales',
+                    progress: .4,
+                  ),
+                  SizedBox(
+                    width: 16.w,
+                  ),
+                ],
               ),
               SizedBox(
                 height: 20.h,
@@ -218,32 +312,59 @@ class HomeSellerScreen extends StatelessWidget {
                 child: TabBarView(children: [
                   Column(
                     children: [
-                      SfCartesianChart(
-                        plotAreaBorderWidth: 0,
-                        title: ChartTitle(
-                            text: 'Quarterly wise sales of products'.tr()),
-                        legend: Legend(isVisible: false),
-                        primaryXAxis: CategoryAxis(
-                          majorGridLines: const MajorGridLines(width: 0),
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 16.w),
+                        height: 300.h,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey, width: .5),
+                            borderRadius: BorderRadius.circular(10)),
+                        child: SfCartesianChart(
+                          plotAreaBorderWidth: 0,
+                          title: ChartTitle(
+                              text: 'Quarterly wise sales of products'.tr()),
+                          legend: Legend(isVisible: false),
+                          primaryXAxis: CategoryAxis(
+                            majorGridLines: const MajorGridLines(width: 0),
+                          ),
+                          primaryYAxis: NumericAxis(
+                              rangePadding: ChartRangePadding.none,
+                              axisLine: const AxisLine(width: 0),
+                              majorTickLines: const MajorTickLines(size: 0)),
+                          series: _getStackedColumnSeries(),
+                          tooltipBehavior: _tooltipBehavior,
                         ),
-                        primaryYAxis: NumericAxis(
-                            rangePadding: ChartRangePadding.none,
-                            axisLine: const AxisLine(width: 0),
-                            majorTickLines: const MajorTickLines(size: 0)),
-                        series: _getStackedColumnSeries(),
-                        tooltipBehavior: _tooltipBehavior,
                       ),
                       SizedBox(
                         height: 30.h,
                       ),
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: SfCartesianChart(
+                          plotAreaBorderWidth: 0,
+                          title:
+                              ChartTitle(text: 'Monthly expense of a family'),
+                          legend: Legend(isVisible: false),
+                          primaryXAxis: CategoryAxis(
+                            majorGridLines: const MajorGridLines(width: 0),
+                          ),
+                          primaryYAxis: NumericAxis(
+                              maximum: 200,
+                              axisLine: const AxisLine(width: 0),
+                              labelFormat: r'${value}',
+                              majorTickLines: const MajorTickLines(size: 0)),
+                          series: _getStackedLineSeries(),
+                          // trackballBehavior: _trackballBehavior,
+                        ),
+                      )
                     ],
                   ),
                   Column(
                     children: [
                       Container(
+                        margin: EdgeInsets.symmetric(horizontal: 16.w),
                         height: 300.h,
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey),
+                            border: Border.all(color: Colors.grey, width: .5),
                             borderRadius: BorderRadius.circular(10)),
                         child: SfCartesianChart(
                           plotAreaBorderWidth: 0,
@@ -268,6 +389,25 @@ class HomeSellerScreen extends StatelessWidget {
                       SizedBox(
                         height: 30.h,
                       ),
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: SfCartesianChart(
+                          plotAreaBorderWidth: 0,
+                          title:
+                              ChartTitle(text: 'Average number of sales'),
+                          legend: Legend(isVisible: false),
+                          primaryXAxis: CategoryAxis(
+                            majorGridLines: const MajorGridLines(width: 0),
+                          ),
+                          primaryYAxis: NumericAxis(
+                              maximum: 200,
+                              axisLine: const AxisLine(width: 0),
+                              labelFormat: r'${value}',
+                              majorTickLines: const MajorTickLines(size: 0)),
+                          series: _getStackedLineSeries(),
+                          // trackballBehavior: _trackballBehavior,
+                        ),
+                      )
                     ],
                   ),
                 ]),

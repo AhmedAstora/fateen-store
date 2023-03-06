@@ -9,6 +9,7 @@ import '../../../CustomWidget/custom_text.dart';
 import '../../../CustomWidget/linear_progress_widget.dart';
 import '../../../Utils/constant.dart';
 import '../OrderDetailsScreen/order_details_screen.dart';
+import '../OrderDetailsScreen1/order_details_screen1.dart';
 
 class data {
   String? image;
@@ -210,7 +211,7 @@ class RequestsSellerScreen extends StatelessWidget {
     return InkWell(
       onTap: () {
         RouterHelper.routerHelper
-            .routingToSpecificWidgetWithoutPop(OrderDetailsScreen());
+            .routingToSpecificWidgetWithoutPop(OrderDetailsScreen1());
       },
       child: Container(
         decoration: BoxDecoration(
@@ -336,7 +337,7 @@ class RequestsSellerScreen extends StatelessWidget {
     return InkWell(
       onTap: () {
         RouterHelper.routerHelper
-            .routingToSpecificWidgetWithoutPop(OrderDetailsScreen());
+            .routingToSpecificWidgetWithoutPop(OrderDetailsScreen1());
       },
       child: Container(
 
@@ -464,6 +465,7 @@ class RequestsSellerScreen extends StatelessWidget {
                       Align(
                         alignment: Alignment.bottomRight,
                         child: CustomText(
+
                           '${model1.title5}'.tr(),
                           fontSize: 10.0.sp,
                         ),

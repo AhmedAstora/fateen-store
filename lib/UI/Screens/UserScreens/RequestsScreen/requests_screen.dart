@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:provider/provider.dart';
+import 'package:twnty2/UI/Screens/UserScreens/RequestsScreen/widgets/request_user_widget.dart';
 
 import '../../../../Helper/Providers/app_provider.dart';
 import '../../../CustomWidget/custom_text.dart';
@@ -114,18 +115,28 @@ class RequestsScreen extends StatelessWidget {
                 ),
                 Expanded(
                   child: TabBarView(children: [
-                    ListView.builder(
-                        padding: EdgeInsets.symmetric(vertical: 40),
-                        itemCount: list.length,
-                        itemBuilder: (context, index) {
-                          return buildItem(list[index]);
-                        }),
-                    ListView.builder(
-                        padding: EdgeInsets.symmetric(vertical: 40),
-                        itemCount: list.length,
-                        itemBuilder: (context, index) {
-                          return buildItem(list[index]);
-                        }),
+                    ListView.separated(
+                      padding: EdgeInsets.symmetric(vertical: 40),
+                      itemCount: list.length,
+                      itemBuilder: (context, index) {
+                        return RequestUserWidget();
+                      },
+                      separatorBuilder: (BuildContext context, int index) =>
+                          SizedBox(
+                        height: 10.h,
+                      ),
+                    ),
+                    ListView.separated(
+                      padding: EdgeInsets.symmetric(vertical: 40),
+                      itemCount: list.length,
+                      itemBuilder: (context, index) {
+                        return RequestUserWidget();
+                      },
+                      separatorBuilder: (BuildContext context, int index) =>
+                          SizedBox(
+                        height: 10.h,
+                      ),
+                    ),
                   ]),
                 ),
               ],
@@ -134,86 +145,5 @@ class RequestsScreen extends StatelessWidget {
         ),
       );
     });
-  }
-
-  Widget buildItem(data model) {
-    return Container(
-      height: 115.h,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10), color: Color(0xadf8f8f8)),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                '${model.image}',
-                fit: BoxFit.cover,
-                height: 108.h,
-                width: 108.w,
-              ),
-            ),
-            SizedBox(
-              width: 10.w,
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CustomText(
-                    '${model.title}'.tr(),
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12.0.sp,
-                  ),
-                  Row(
-                    children: [
-                      CustomText(
-                        '${model.price}',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12.0.sp,
-                        color: mainAppColor,
-                      ),
-                      SizedBox(
-                        width: 5.w,
-                      ),
-                      CustomText(
-                        '${model.oldPrice}',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12.0.sp,
-                        color: Color(0xff929292),
-                      ),
-                    ],
-                  ),
-                  CustomText(
-                    '${model.title1}'.tr(),
-                    color: Color(0xff929292),
-                    fontSize: 12.0.sp,
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CustomText(
-                        '${model.title2}'.tr(),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12.0.sp,
-                        color: Color(0xff99969D),
-                      ),
-                      SizedBox(
-                        width: 10.w,
-                      ),
-                      CustomText('${model.title3}'.tr(),
-                          fontSize: 14.0.sp,
-                           color: Color(0xffE94E1B)),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }

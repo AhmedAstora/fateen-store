@@ -2,7 +2,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:twnty2/Helper/Router/router.dart';
 import 'package:twnty2/UI/CustomWidget/custom_text.dart';
+import 'package:twnty2/UI/Screens/UserScreens/MainNavigationScreen/main_navigation_screen.dart';
+import 'package:twnty2/UI/Screens/VendorScreens/MainSellerNavigationScreen/main_seller_navigation_screen.dart';
 
 import '../../../CustomWidget/custom_bottom.dart';
 import '../../../Utils/constant.dart';
@@ -239,7 +242,10 @@ class ViewInvoiceScreen extends StatelessWidget {
                     height: 90.h,
                   ),
                   CustomBottom(
-                    onTap: () {},
+                    onTap: () {
+                      RouterHelper.routerHelper
+                          .routingReplacementUntil(MainNavigationScreen());
+                    },
                     height: 50.0.sp,
                     width: 271.0.sp,
                     backgroundColor: mainAppColor,

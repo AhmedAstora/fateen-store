@@ -83,28 +83,31 @@ class AppProvider extends ChangeNotifier {
         title: 'Pay via the mesa',
         body: 'Get paid to provide meeting rooms in your workplace'),
   ];
-  List<String> titleProfile = [
+  List<String> titleUserProfile = [
     'Edit_Profile',
+    'Favorite',
     'Address',
-    'My cards',
+    'payment cards',
+    'change_password',
+    'language',
     'Terms_conditions',
     'Privacy_Policy',
-    'language',
-    'change_password',
     'Contact_us',
     'About_us',
     'App_Rate',
     'Delete Account',
     'Log_out'
   ];
-  List<String> imagesProfile = [
+
+  List<String> imagesUserProfile = [
     'assets/images/edit_profile.png',
+    'assets/images/fav.png',
     'assets/images/info.png',
-    'assets/images/info.png',
+    'assets/images/credit.png',
+    'assets/images/password.png',
+    'assets/images/lang.png',
     'assets/images/terms.png',
     'assets/images/privacy.png',
-    'assets/images/lang.png',
-    'assets/images/password.png',
     'assets/images/contact_us.png',
     'assets/images/info.png',
     'assets/images/rate_app.png',
