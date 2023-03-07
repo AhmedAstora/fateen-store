@@ -8,15 +8,12 @@ import 'package:provider/provider.dart';
 import 'package:twnty2/Helper/Providers/app_provider.dart';
 import 'package:twnty2/UI/CustomWidget/custom_bottom.dart';
 import 'package:twnty2/UI/CustomWidget/custom_text.dart';
-import 'package:twnty2/UI/Screens/UserScreens/DeailsDetailsScreen/widget/size_product_widget.dart';
-import 'package:twnty2/UI/Screens/UserScreens/DeailsDetailsScreen/widget/timear_widget.dart';
+import 'package:twnty2/UI/Screens/UserScreens/ProductDetailsScreen/widget/timear_widget.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
-
 import '../../../CustomWidget/custom_image_network.dart';
 import '../../../CustomWidget/linear_progress_widget.dart';
 import '../../../CustomWidget/slider/slide_width_dots.dart';
-
-class DealsDetailsScreen extends StatelessWidget {
+class ProductDetailsScreen extends StatelessWidget {
   List<String> images = [
     "S : 68cm x 70cm",
     "M : 72cm x 74cm",

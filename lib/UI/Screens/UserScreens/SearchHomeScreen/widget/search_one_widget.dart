@@ -4,12 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twnty2/Helper/Router/router.dart';
 import 'package:twnty2/UI/CustomWidget/custom_image_network.dart';
 import 'package:twnty2/UI/CustomWidget/custom_text.dart';
-import 'package:twnty2/UI/Screens/UserScreens/DeailsDetailsScreen/deals_details_screen.dart';
 import 'package:twnty2/UI/Screens/UserScreens/HomeScreen/widget/timear_widget_home.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
-
 import '../../../../CustomWidget/linear_progress_widget.dart';
-import '../../DeailsDetailsScreen/widget/timear_widget.dart';
+import '../../ProductDetailsScreen/product_details_screen.dart';
+
 
 class SearchOneWidget extends StatelessWidget {
   @override
@@ -18,7 +17,7 @@ class SearchOneWidget extends StatelessWidget {
     return InkWell(
       onTap: () {
         RouterHelper.routerHelper
-            .routingToSpecificWidgetWithoutPop(DealsDetailsScreen());
+            .routingToSpecificWidgetWithoutPop(ProductDetailsScreen());
       },
       child: Container(
         decoration: BoxDecoration(boxShadow: [

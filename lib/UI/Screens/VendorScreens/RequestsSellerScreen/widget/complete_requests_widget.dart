@@ -6,7 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../Helper/Router/router.dart';
 import '../../../../CustomWidget/custom_text.dart';
 import '../../../../Utils/constant.dart';
-import '../../OrderDetailsScreen1/order_details_screen1.dart';
+import '../../OrderDetailsScreen/order_details_screen.dart';
+
 
 class CompleteRequestsWidget extends StatelessWidget {
 
@@ -16,7 +17,7 @@ class CompleteRequestsWidget extends StatelessWidget {
     return InkWell(
       onTap: () {
         RouterHelper.routerHelper
-            .routingToSpecificWidgetWithoutPop(OrderDetailsScreen1());
+            .routingToSpecificWidgetWithoutPop(OrderDetailsScreen());
       },
       child: Container(
         decoration: BoxDecoration(

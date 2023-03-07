@@ -5,22 +5,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../Helper/Router/router.dart';
 import '../../../../CustomWidget/custom_text.dart';
-import '../../../../CustomWidget/linear_progress_widget.dart';
 import '../../../../Utils/constant.dart';
 import '../../OrderDetailsScreen/order_details_screen.dart';
 
-class OpenOrdersWidget extends StatelessWidget {
-
-
+class AllDealsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        RouterHelper.routerHelper
-            .routingToSpecificWidgetWithoutPop(OrderDetailsScreen());
-      },
+      onTap: () {},
       child: Container(
-
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
@@ -39,11 +32,31 @@ class OpenOrdersWidget extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.asset(
-                  'assets/images/mycart.png',
-                  fit: BoxFit.cover,
-                  height: 120.h,
-                  width: 117.w,
+                child: Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [
+                    Image.asset(
+                      'assets/images/mycart.png',
+                      fit: BoxFit.cover,
+                      height: 120.h,
+                      width: 117.w,
+                    ),
+                    Container(
+                      height: 21.h,
+                      width: 117.w,
+                      child: Center(
+                          child: CustomText(
+                        'Rejected',
+                        fontSize: 10.sp,
+                        color: Colors.white,
+                      )),
+                      decoration: BoxDecoration(
+                          color: mainAppColor,
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(10),
+                              bottomRight: Radius.circular(10))),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(
@@ -61,7 +74,7 @@ class OpenOrdersWidget extends StatelessWidget {
                         fontSize: 10.0.sp,
                       ),
                       SizedBox(
-                        height: 3.h,
+                        height: 4.h,
                       ),
                       CustomText(
                         '#NSUD525632'.tr(),
@@ -69,7 +82,7 @@ class OpenOrdersWidget extends StatelessWidget {
                         fontSize: 10.0.sp,
                       ),
                       SizedBox(
-                        height: 3.h,
+                        height: 4.h,
                       ),
                       Row(
                         children: [
@@ -88,7 +101,7 @@ class OpenOrdersWidget extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: 3.h,
+                        height: 4.h,
                       ),
                       Row(
                         children: [
@@ -108,46 +121,38 @@ class OpenOrdersWidget extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: 3.h,
+                        height: 4.h,
                       ),
                       Row(
                         children: [
                           CustomText(
-                            'Remaining quantity:'.tr(),
+                            'Date: '.tr(),
                             fontSize: 10.0.sp,
                           ),
                           CustomText(
-                            ' 200',
+                            '20-12-2022'.tr(),
                             fontSize: 10.0.sp,
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 3.h,
-                      ),
-                      Row(
-                        children: [
-                          CustomLienarProgressWidget(
-                            value: .6,
-                            width: 106.w,
-                            height: 10.h,
-                          ),
-                          SizedBox(
-                            width: 10.w,
-                          ),
-                          CustomText(
-                            '78%',
-                            fontSize: 10.sp,
-                            height: 1,
                           ),
                         ],
                       ),
                       Align(
                         alignment: Alignment.bottomRight,
-                        child: CustomText(
-
-                          'View details'.tr(),
-                          fontSize: 10.0.sp,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            CustomText(
+                              'Delete'.tr(),
+                              fontSize: 10.0.sp,
+                              color: mainAppColor,
+                            ),
+                            SizedBox(
+                              width: 10.w,
+                            ),
+                            CustomText(
+                              'View Requests'.tr(),
+                              fontSize: 10.0.sp,
+                            ),
+                          ],
                         ),
                       ),
                     ],

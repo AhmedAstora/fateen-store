@@ -7,7 +7,8 @@ import 'package:twnty2/UI/Screens/UserScreens/HomeScreen/widget/timear_widget_ho
 import '../../../../CustomWidget/custom_text.dart';
 import '../../../../CustomWidget/linear_progress_widget.dart';
 import '../../../../Utils/constant.dart';
-import '../../DeailsDetailsScreen/widget/timear_widget.dart';
+import '../../ProductDetailsScreen/widget/timear_widget.dart';
+
 
 class AllDealsViewTwoWidget extends StatelessWidget {
   @override

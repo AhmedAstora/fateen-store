@@ -2,16 +2,17 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:twnty2/Helper/Router/router.dart';
-import 'package:twnty2/UI/Screens/VendorScreens/RequestsSellerScreen/widget/complete_requests_widget.dart';
-import 'package:twnty2/UI/Screens/VendorScreens/RequestsSellerScreen/widget/open_orders_widget.dart';
+import 'package:twnty2/UI/Screens/VendorScreens/DealsScreen1/widget/All_deals_widget.dart';
+import 'package:twnty2/UI/Screens/VendorScreens/DealsScreen1/widget/complete_deals_widget.dart';
 
+import '../../../CustomWidget/back_appBar_widget.dart';
 import '../../../CustomWidget/custom_text.dart';
-import '../../../CustomWidget/linear_progress_widget.dart';
 import '../../../Utils/constant.dart';
+import '../RequestsSellerScreen/widget/complete_requests_widget.dart';
+import '../RequestsSellerScreen/widget/open_orders_widget.dart';
 
-class RequestsSellerScreen extends StatelessWidget {
+class DealsScreen1 extends StatelessWidget {
+
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +23,21 @@ class RequestsSellerScreen extends StatelessWidget {
         appBar: AppBar(
           elevation: 0.0,
           backgroundColor: Colors.white,
+          leading: BackAppBarWidget(),
           title: CustomText(
-            'Requests'.tr(),
+            'Deals'.tr(),
             fontSize: 16.sp,
             color: Colors.black,
           ),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: InkWell(
+                onTap: () {},
+                child: Image.asset('assets/images/icon_categorys.png',height: 16.h,width: 16.w,),
+              ),
+            )
+          ],
           centerTitle: true,
         ),
         body: Padding(
@@ -49,13 +60,13 @@ class RequestsSellerScreen extends StatelessWidget {
                       tabs: [
                         Tab(
                           child: CustomText(
-                            'Complete requests'.tr(),
+                            'Completed deals'.tr(),
                             color: Colors.black,
                           ),
                         ),
                         Tab(
                           child: CustomText(
-                            'Open orders'.tr(),
+                            'All deals'.tr(),
                             color: Colors.black,
                           ),
                         ),
@@ -67,20 +78,20 @@ class RequestsSellerScreen extends StatelessWidget {
                   ListView.separated(
                       padding: EdgeInsets.symmetric(vertical: 40),
                       separatorBuilder: (context, index) => SizedBox(
-                            height: 12.h,
-                          ),
-                      itemCount: 3,
+                        height: 12.h,
+                      ),
+                      itemCount: 6,
                       itemBuilder: (context, index) {
-                        return CompleteRequestsWidget();
+                        return CompleteDealsWidget();
                       }),
                   ListView.separated(
                       padding: EdgeInsets.symmetric(vertical: 40),
                       separatorBuilder: (context, index) => SizedBox(
-                            height: 12.h,
-                          ),
-                      itemCount: 2,
+                        height: 12.h,
+                      ),
+                      itemCount: 6,
                       itemBuilder: (context, index) {
-                        return OpenOrdersWidget();
+                        return AllDealsWidget();
                       }),
                 ]),
               ),

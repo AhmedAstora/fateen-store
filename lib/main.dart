@@ -39,9 +39,9 @@ import 'UI/Screens/UserScreens/CartScreen/cart_screen.dart';
 import 'UI/Screens/UserScreens/CategoryScreen/category_screen.dart';
 import 'UI/Screens/UserScreens/CheckOutScreen/check_out_screen.dart';
 import 'UI/Screens/UserScreens/CheckOutScreen/view_invoice_screen.dart';
-import 'UI/Screens/UserScreens/DeailsDetailsScreen/deals_details_screen.dart';
 import 'UI/Screens/UserScreens/HomeScreen/home_screen.dart';
 import 'UI/Screens/UserScreens/MainNavigationScreen/main_navigation_screen.dart';
+import 'UI/Screens/UserScreens/ProductDetailsScreen/product_details_screen.dart';
 import 'UI/Screens/UserScreens/ProfileScreen/about_screen.dart';
 import 'UI/Screens/UserScreens/ProfileScreen/change_password_screen.dart';
 import 'UI/Screens/UserScreens/ProfileScreen/contact_us_screen.dart';
@@ -62,12 +62,12 @@ import 'UI/Screens/VendorScreens/AddBranchesScreen/add_branches_screen.dart';
 import 'UI/Screens/VendorScreens/BalanceVendorScreen/balance_vendorScreen.dart';
 import 'UI/Screens/VendorScreens/BranchesScreen/branches_screen.dart';
 import 'UI/Screens/VendorScreens/DealsScreen/deals_screen.dart';
+import 'UI/Screens/VendorScreens/DealsScreen1/dealsScreen1.dart';
 import 'UI/Screens/VendorScreens/DealsSearchScreen/deals_search_screen.dart';
 import 'UI/Screens/VendorScreens/EditDealsScreen/edit_deals_screen.dart';
 import 'UI/Screens/VendorScreens/HomeSellerScreen/home_seller_screen.dart';
 import 'UI/Screens/VendorScreens/MainSellerNavigationScreen/main_seller_navigation_screen.dart';
 import 'UI/Screens/VendorScreens/OrderDetailsScreen/order_details_screen.dart';
-import 'UI/Screens/VendorScreens/OrderDetailsScreen1/order_details_screen1.dart';
 import 'UI/Screens/VendorScreens/RegistrationDataScreen/registration_data_screen.dart';
 import 'UI/Screens/VendorScreens/RequestsSellerScreen/requests_seller_screen.dart';
 import 'UI/Screens/VendorScreens/SignUpVendorScreen/sign_up_vendor_screen.dart';
@@ -268,7 +268,7 @@ class _MyAppsState extends State<MyApps> {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         debugShowCheckedModeBanner: false,
-        home: RegistrationDataScreen(),
+        home: DealsScreen1(),
       ),
     );
   }
