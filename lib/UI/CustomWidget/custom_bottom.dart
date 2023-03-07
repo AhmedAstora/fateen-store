@@ -12,6 +12,7 @@ class CustomBottom extends StatelessWidget {
   String? title;
   TextStyle? style;
   double? borderRadius;
+  Color? border;
   EdgeInsetsGeometry? margin;
 
   CustomBottom(
@@ -22,6 +23,7 @@ class CustomBottom extends StatelessWidget {
       this.backgroundColor = mainAppColor,
       this.title,
       this.style,
+        this.border=mainAppColor,
       this.borderRadius = 10});
 
   @override
@@ -36,7 +38,9 @@ class CustomBottom extends StatelessWidget {
         width: width!.w,
         decoration: BoxDecoration(
             color: backgroundColor,
-            borderRadius: BorderRadius.circular(borderRadius!)),
+            borderRadius: BorderRadius.circular(borderRadius!),
+          border: Border.all(color: border!)
+        ),
         child:   Text(
           title!.tr(),
           style: style ??

@@ -212,31 +212,7 @@ class HomeSellerScreen extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              Row(
-                children: [
-                  SizedBox(
-                    width: 16.w,
-                  ),
-                  HomeSellerWidget(
-                    title: '\$850',
-                    color: Color(0xff44B66B),
-                    subTitle: 'Total earnings',
-                    progress: .4,
-                  ),
-                  SizedBox(
-                    width: 8.w,
-                  ),
-                  HomeSellerWidget(
-                    title: '20',
-                    color: Color(0xff3479D1),
-                    subTitle: 'The number of \nongoing deals',
-                    progress: .7,
-                  ),
-                  SizedBox(
-                    width: 16.w,
-                  ),
-                ],
-              ),
+
               SizedBox(
                 height: 10.h,
               ),

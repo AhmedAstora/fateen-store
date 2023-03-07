@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:twnty2/Helper/Providers/app_provider.dart';
 import 'package:twnty2/Helper/SharedPreferance/shared_preferance.dart';
 
-class DefaultTextField extends StatelessWidget {
+class CustomSearchField extends StatelessWidget {
   final bool isPassword;
   final String hintText;
   VoidCallback onClick;
@@ -26,27 +26,27 @@ class DefaultTextField extends StatelessWidget {
   String? Function(String? val)? validationFun;
   TextInputType textInputType;
 
-  DefaultTextField(
+  CustomSearchField(
       {required this.onClick,
-      this.onChange,
-      required this.hintText,
-      required this.isPassword,
-      required this.controller,
-      this.fillColor,
-      this.textColor,
-      this.filled,
-      this.suffix,
-      this.prefix,
-      this.enable,
-      this.autofocus = false,
-      this.fontsize,
-      this.paddingH = 9,
-      this.paddingV = 1,
-      this.height = 50,
-      this.maxLines = 1,
-      this.maxLength,
-      this.validationFun,
-      this.textInputType = TextInputType.text});
+        this.onChange,
+        required this.hintText,
+        required this.isPassword,
+        required this.controller,
+        this.fillColor,
+        this.textColor,
+        this.filled,
+        this.suffix,
+        this.prefix,
+        this.enable,
+        this.autofocus = false,
+        this.fontsize,
+        this.paddingH = 9,
+        this.paddingV = 1,
+        this.height = 50,
+        this.maxLines = 1,
+        this.maxLength,
+        this.validationFun,
+        this.textInputType = TextInputType.text});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,6 @@ class DefaultTextField extends StatelessWidget {
           onTap: onClick,
           onChanged: onChange,
           autofocus: autofocus!,
-
           // autovalidateMode: AutovalidateMode.onUserInteraction,
           keyboardType: textInputType,
           validator: validationFun,
@@ -67,7 +66,7 @@ class DefaultTextField extends StatelessWidget {
           maxLines: maxLines!,
           controller: controller,
           decoration: InputDecoration(
-              filled: filled,
+              filled: true,
               fillColor: fillColor,
               contentPadding: EdgeInsets.symmetric(
                   horizontal: paddingH!, vertical: paddingV!),
@@ -76,30 +75,30 @@ class DefaultTextField extends StatelessWidget {
                 padding: const EdgeInsetsDirectional.only(end: 12.0),
                 child: suffix,
               ),
-               prefixIcon: Padding(
-                  padding: const EdgeInsetsDirectional.only(start: 12.0),
-                  child: prefix,),
+              prefixIcon: Padding(
+                padding: const EdgeInsetsDirectional.only(start: 12.0),
+                child: Icon(Icons.search,size: 30,color: Colors.black,),),
               suffixIconConstraints:
-                  BoxConstraints(maxWidth: 30.w, maxHeight: 25.h),
+              BoxConstraints(maxWidth: 30.w, maxHeight: 25.h),
               border: OutlineInputBorder(),
               focusedErrorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
                   borderSide: BorderSide(
-                      color: Colors.red.withOpacity(0.6), width: .8.w)),
+                      color: Colors.red.withOpacity(0.6), width: .1.w)),
               errorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
                   borderSide: BorderSide(
-                      color: Colors.red.withOpacity(0.6), width: .8.w)),
+                      color: Colors.red.withOpacity(0.6), width: .1.w)),
               disabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
                   borderSide: BorderSide(
-                      color: Colors.grey.withOpacity(0.6), width: .8.w)),
+                      color: Colors.grey.withOpacity(0.6), width: .1.w)),
               enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(50),
                   borderSide: BorderSide(
-                      color: Colors.grey.withOpacity(0.6), width: .8.w)),
+                      color: Colors.grey.withOpacity(0.6), width: .1.w)),
               focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(50),
                   borderSide: BorderSide(
                       color: Colors.grey.withOpacity(0.6), width: .8.w)),
               hintText: hintText,
@@ -110,8 +109,8 @@ class DefaultTextField extends StatelessWidget {
 
           obscureText: isPassword
               ? provider.isHiden
-                  ? false
-                  : true
+              ? false
+              : true
               : isPassword,
 
           //  onChanged: (value){},
