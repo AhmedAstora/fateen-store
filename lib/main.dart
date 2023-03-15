@@ -50,6 +50,7 @@ import 'UI/Screens/UserScreens/ProfileScreen/privacy_screen.dart';
 import 'UI/Screens/UserScreens/ProfileScreen/profile_screen.dart';
 import 'UI/Screens/UserScreens/ProfileScreen/terms_screen.dart';
 import 'UI/Screens/UserScreens/RequestsScreen/requests_screen.dart';
+import 'UI/Screens/UserScreens/RequestsUserScreen/requests_user_screen.dart';
 import 'UI/Screens/UserScreens/SearchHomeScreen/filter_screen.dart';
 import 'UI/Screens/UserScreens/SearchHomeScreen/search_screen.dart';
 import 'UI/Screens/UserScreens/SignUpScreen/sign_up_screen.dart';
@@ -268,7 +269,7 @@ class _MyAppsState extends State<MyApps> {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         debugShowCheckedModeBanner: false,
-        home: DealsScreen1(),
+        home: RequestsUserScreen(),
       ),
     );
   }
