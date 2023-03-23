@@ -294,5 +294,9 @@
   "Required Field ": "Required Field ",
   "IBAN number": "IBAN number",
   "signUpt2": "By clicking \"Sign up\" I agree that I have read and accepted they",
-  "Favorite": "Favorite"
+  "Favorite": "Favorite",
+  "Balance": "Balance",
+  "Registration_data": "Registration data",
+  "Branches": "Branches"
+
 }

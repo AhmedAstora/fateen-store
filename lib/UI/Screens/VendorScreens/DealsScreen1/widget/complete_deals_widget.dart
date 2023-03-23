@@ -6,7 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../Helper/Router/router.dart';
 import '../../../../CustomWidget/custom_text.dart';
 import '../../../../Utils/constant.dart';
-import '../../OrderDetailsScreen/order_details_screen.dart';
+import '../../EditDealsScreen/edit_deals_screen.dart';
+
 
 class CompleteDealsWidget extends StatelessWidget {
   @override
@@ -140,6 +141,11 @@ class CompleteDealsWidget extends StatelessWidget {
                         child: CustomText(
                           'View Requests'.tr(),
                           fontSize: 10.0.sp,
+                          onTap: (){
+                            RouterHelper.routerHelper
+                                .routingToSpecificWidgetWithoutPop(
+                                EditDealsScreen());
+                          },
                         ),
                       ),
                     ],

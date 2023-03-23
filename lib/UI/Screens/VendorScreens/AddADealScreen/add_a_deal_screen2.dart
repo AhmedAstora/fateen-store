@@ -3,6 +3,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:twnty2/Helper/Providers/app_provider.dart';
 
 import '../../../CustomWidget/custom_bottom.dart';
 import '../../../CustomWidget/custom_text.dart';
@@ -19,226 +21,209 @@ class AddADealScreen2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.0,
-        leading: Icon(
-          Icons.keyboard_arrow_left_rounded,
-          size: 30,
-          color: Colors.black,
-        ),
-        title: CustomText(
-          'Add a deal'.tr(),
-          fontSize: 16.sp,
-          color: Colors.black,
-        ),
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 60.h,
-              ),
-              Row(
+    return  Consumer<AppProvider>(
+      builder: (context,provider,_) {
+        return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomText(
-                    'Product price'.tr(),
-                    fontSize: 12.sp,
+                  Row(
+                    children: [
+                      CustomText(
+                        'Product price'.tr(),
+                        fontSize: 12.sp,
+                      ),
+                      Spacer(),
+                      CustomText(
+                        'Edit'.tr(),
+                        fontSize: 12.sp,
+                      ),
+                    ],
                   ),
-                  Spacer(),
-                  CustomText(
-                    'Edit'.tr(),
-                    fontSize: 12.sp,
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
-                  maxLines: 1,
-                  onClick: () {},
-                  hintText: '',
-                  isPassword: false,
-                  fillColor: Colors.white,
-                  fontsize: 14.sp,
-                  filled: true,
-                  controller: priceController),
-              SizedBox(
-                height: 20.h,
-              ),
-              Row(
-                children: [
-                  CustomText(
-                    'Price after platform commission and tax'.tr(),
-                    fontSize: 12.sp,
-                  ),
-                  Spacer(),
-                  CustomText(
-                    'Edit'.tr(),
-                    fontSize: 12.sp,
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
-                  maxLines: 1,
-                  onClick: () {},
-                  hintText: '',
-                  isPassword: false,
-                  fillColor: Colors.white,
-                  fontsize: 14.sp,
-                  filled: true,
-                  controller: priceAfterController),
-              SizedBox(
-                height: 20.h,
-              ),
-              Row(
-                children: [
-                  CustomText(
-                    'Price in the market'.tr(),
-                    fontSize: 12.sp,
-                  ),
-                  Spacer(),
-                  CustomText(
-                    'Edit'.tr(),
-                    fontSize: 12.sp,
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
-                  maxLines: 1,
-                  onClick: () {},
-                  hintText: '',
-                  isPassword: false,
-                  fillColor: Colors.white,
-                  fontsize: 14.sp,
-                  filled: true,
-                  controller: priceMarketController),
-              SizedBox(
-                height: 20.h,
-              ),
-              Row(
-                children: [
-                  CustomText(
-                    'Quantity'.tr(),
-                    fontSize: 12.sp,
-                  ),
-                  Spacer(),
-                  CustomText(
-                    'Edit'.tr(),
-                    fontSize: 12.sp,
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
-                  maxLines: 1,
-                  onClick: () {},
-                  hintText: '',
-                  isPassword: false,
-                  fillColor: Colors.white,
-                  fontsize: 14.sp,
-                  filled: true,
-                  controller: quantityController),
-              SizedBox(
-                height: 20.h,
-              ),
-              Row(
-                children: [
-                  CustomText(
-                    'Category'.tr(),
-                    fontSize: 12.sp,
-                  ),
-                  Spacer(),
-                  CustomText(
-                    'Edit'.tr(),
-                    fontSize: 12.sp,
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
-                  maxLines: 1,
-                  onClick: () {},
-                  hintText: 'Other'.tr(),
-                  isPassword: false,
-                  suffix: Icon(Icons.keyboard_arrow_down_sharp),
-                  fillColor: Colors.white,
-                  fontsize: 14.sp,
-                  filled: true,
-                  controller: categoryController),
-              SizedBox(
-                height: 20.h,
-              ),
-              Row(
-                children: [
-                  Image.asset('assets/images/box.png',height: 24.h,width: 24.w,),
                   SizedBox(
-                    width: 10.w,
+                    height: 10.h,
                   ),
-                  CustomText('Man'.tr(),),
+                  DefaultTextField(
+                      paddingV: 20.h,
+                      paddingH: 15.w,
+                      maxLines: 1,
+                      onClick: () {},
+                      hintText: '',
+                      isPassword: false,
+                      fillColor: Colors.white,
+                      fontsize: 14.sp,
+                      filled: true,
+                      controller: priceController),
                   SizedBox(
-                    width: 20.w,
+                    height: 20.h,
                   ),
-                  Image.asset('assets/images/box.png',height: 24.h,width: 24.w,),
+                  Row(
+                    children: [
+                      CustomText(
+                        'Price after platform commission and tax'.tr(),
+                        fontSize: 12.sp,
+                      ),
+                      Spacer(),
+                      CustomText(
+                        'Edit'.tr(),
+                        fontSize: 12.sp,
+                      ),
+                    ],
+                  ),
                   SizedBox(
-                    width: 10.w,
+                    height: 10.h,
                   ),
-                  CustomText('Women'.tr(),),
+                  DefaultTextField(
+                      paddingV: 20.h,
+                      paddingH: 15.w,
+                      maxLines: 1,
+                      onClick: () {},
+                      hintText: '',
+                      isPassword: false,
+                      fillColor: Colors.white,
+                      fontsize: 14.sp,
+                      filled: true,
+                      controller: priceAfterController),
                   SizedBox(
-                    width: 20.w,
+                    height: 20.h,
                   ),
-                  Image.asset('assets/images/box.png',height: 24.h,width: 24.w,),
+                  Row(
+                    children: [
+                      CustomText(
+                        'Price in the market'.tr(),
+                        fontSize: 12.sp,
+                      ),
+                      Spacer(),
+                      CustomText(
+                        'Edit'.tr(),
+                        fontSize: 12.sp,
+                      ),
+                    ],
+                  ),
                   SizedBox(
-                    width: 10.w,
+                    height: 10.h,
                   ),
-                  CustomText('Children'.tr(),),
+                  DefaultTextField(
+                      paddingV: 20.h,
+                      paddingH: 15.w,
+                      maxLines: 1,
+                      onClick: () {},
+                      hintText: '',
+                      isPassword: false,
+                      fillColor: Colors.white,
+                      fontsize: 14.sp,
+                      filled: true,
+                      controller: priceMarketController),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Row(
+                    children: [
+                      CustomText(
+                        'Quantity'.tr(),
+                        fontSize: 12.sp,
+                      ),
+                      Spacer(),
+                      CustomText(
+                        'Edit'.tr(),
+                        fontSize: 12.sp,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  DefaultTextField(
+                      paddingV: 20.h,
+                      paddingH: 15.w,
+                      maxLines: 1,
+                      onClick: () {},
+                      hintText: '',
+                      isPassword: false,
+                      fillColor: Colors.white,
+                      fontsize: 14.sp,
+                      filled: true,
+                      controller: quantityController),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Row(
+                    children: [
+                      CustomText(
+                        'Category'.tr(),
+                        fontSize: 12.sp,
+                      ),
+                      Spacer(),
+                      CustomText(
+                        'Edit'.tr(),
+                        fontSize: 12.sp,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  DefaultTextField(
+                      paddingV: 20.h,
+                      paddingH: 15.w,
+                      maxLines: 1,
+                      onClick: () {},
+                      hintText: 'Other'.tr(),
+                      isPassword: false,
+                      suffix: Icon(Icons.keyboard_arrow_down_sharp),
+                      fillColor: Colors.white,
+                      fontsize: 14.sp,
+                      filled: true,
+                      controller: categoryController),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Row(
+                    children: [
+                      Image.asset('assets/images/box.png',height: 24.h,width: 24.w,),
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      CustomText('Man'.tr(),),
+                      SizedBox(
+                        width: 20.w,
+                      ),
+                      Image.asset('assets/images/box.png',height: 24.h,width: 24.w,),
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      CustomText('Women'.tr(),),
+                      SizedBox(
+                        width: 20.w,
+                      ),
+                      Image.asset('assets/images/box.png',height: 24.h,width: 24.w,),
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      CustomText('Children'.tr(),),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 50.h,
+                  ),
+                  Center(
+                    child: CustomBottom(
+                      title: "Next".tr(),
+                      height: 48.h,
+                      width: 309.w,
+                      onTap: () {
+                        provider.cureentStep++;
+                        provider.notifyListeners();
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    height: 120.h,
+                  ),
                 ],
-              ),
-              SizedBox(
-                height: 50.h,
-              ),
-              Center(
-                child: CustomBottom(
-                  title: "Next".tr(),
-                  height: 48.h,
-                  width: 309.w,
-                  onTap: () {},
-                ),
-              ),
-              SizedBox(
-                height: 120.h,
-              ),
-            ],
-          ),
-        ),
-      ),
+
+
+        );
+      }
     );
   }
 }

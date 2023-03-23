@@ -13,7 +13,12 @@ import 'package:twnty2/UI/Utils/constant.dart';
 import '../../../CustomWidget/custom_image_network.dart';
 import '../../../CustomWidget/linear_progress_widget.dart';
 import '../../../CustomWidget/slider/slide_width_dots.dart';
+
 class ProductDetailsScreen extends StatelessWidget {
+  int? type;
+
+  ProductDetailsScreen({this.type});
+
   List<String> images = [
     "S : 68cm x 70cm",
     "M : 72cm x 74cm",
@@ -56,35 +61,36 @@ class ProductDetailsScreen extends StatelessWidget {
       child: Consumer<AppProvider>(builder: (context, provider, _) {
         return Scaffold(
             persistentFooterButtons: [
-              Row(
-                children: [
-                  SizedBox(
-                    width: 8.w,
-                  ),
-                  Expanded(
-                    child: CustomBottom(
-                      height: 50.0.sp,
-                      backgroundColor: mainAppColor,
-                      title: 'BUY NOW'.tr(),
-                      borderRadius: 100,
+              if (type != 1)
+                Row(
+                  children: [
+                    SizedBox(
+                      width: 8.w,
                     ),
-                  ),
-                  SizedBox(
-                    width: 12.w,
-                  ),
-                  CircleAvatar(
-                      radius: 25,
-                      backgroundColor: Color(0xff15172E),
-                      child: Image.asset(
-                        'assets/images/CartIcon.png',
-                        height: 22.h,
-                        width: 26.w,
-                      )),
-                  SizedBox(
-                    width: 8.w,
-                  ),
-                ],
-              ),
+                    Expanded(
+                      child: CustomBottom(
+                        height: 50.0.sp,
+                        backgroundColor: mainAppColor,
+                        title: 'BUY NOW'.tr(),
+                        borderRadius: 100,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 12.w,
+                    ),
+                    CircleAvatar(
+                        radius: 25,
+                        backgroundColor: Color(0xff15172E),
+                        child: Image.asset(
+                          'assets/images/CartIcon.png',
+                          height: 22.h,
+                          width: 26.w,
+                        )),
+                    SizedBox(
+                      width: 8.w,
+                    ),
+                  ],
+                ),
             ],
             body: CustomScrollView(
               slivers: [
@@ -133,7 +139,6 @@ class ProductDetailsScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-
                         ],
                       ),
                     ),
@@ -178,14 +183,12 @@ class ProductDetailsScreen extends StatelessWidget {
                                 Icons.keyboard_arrow_left_outlined,
                                 size: 30,
                               ),
-                                  Spacer(),
-                                  Icon(Icons.favorite_border),
-                                  Icon(Icons.share_outlined),
-
+                              Spacer(),
+                              Icon(Icons.favorite_border),
+                              Icon(Icons.share_outlined),
                             ],
                           ),
                         ),
-
                       ],
                     ),
                   ),
@@ -238,7 +241,7 @@ class ProductDetailsScreen extends StatelessWidget {
                                           ),
                                           Row(
                                             mainAxisAlignment:
-                                            MainAxisAlignment.end,
+                                                MainAxisAlignment.end,
                                             children: [
                                               CustomText(
                                                 '${currency}',
@@ -507,11 +510,12 @@ class ProductDetailsScreen extends StatelessWidget {
                                           width: 339.0.w,
                                           child: CustomText(
                                             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus'
-                                            ' placerat, ex non ornare commodo, lectus elit laoreet massa, ac'
-                                            ' congue elit magna eu elit. Fusce suscipit quis mi quis sodales.'
-                                            ' Nulla blandit ut sapien tristique mattis. Nulla ut ultricies velit.'
-                                            ' Pellentesque luctus non ligula at rhoncus. Sed at tincidunt magna.'
-                                            ' Morbi a metus est. Suspendisse vitae feugiat libero.'.tr(),
+                                                    ' placerat, ex non ornare commodo, lectus elit laoreet massa, ac'
+                                                    ' congue elit magna eu elit. Fusce suscipit quis mi quis sodales.'
+                                                    ' Nulla blandit ut sapien tristique mattis. Nulla ut ultricies velit.'
+                                                    ' Pellentesque luctus non ligula at rhoncus. Sed at tincidunt magna.'
+                                                    ' Morbi a metus est. Suspendisse vitae feugiat libero.'
+                                                .tr(),
                                             fontSize: 12.sp,
                                             fontWeight: FontWeight.w500,
                                           ),

@@ -3,245 +3,120 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:twnty2/Helper/Providers/app_provider.dart';
 
+import '../../../../Helper/SharedPreferance/shared_preferance.dart';
 import '../../../CustomWidget/custom_bottom.dart';
 import '../../../CustomWidget/custom_text.dart';
 import '../../../CustomWidget/slider/defult_form_filed.dart';
 import '../../../Utils/constant.dart';
 
 class AddADealScreen extends StatelessWidget {
-
   TextEditingController nameController = TextEditingController();
   TextEditingController transactionDateController = TextEditingController();
   TextEditingController dealController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
+    return Consumer<AppProvider>(builder: (context, provider, _) {
+      return Scaffold(
         backgroundColor: Colors.white,
-        elevation: 0.0,
-        leading: Icon(
-          Icons.keyboard_arrow_left_rounded,
-          size: 30,
-          color: Colors.black,
-        ),
-        title: CustomText(
-          'Add a deal'.tr(),
-          fontSize: 16.sp,
-          color: Colors.black,
-        ),
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 60.h,
-              ),
-              CustomText(
-                'Photo'.tr(),
-                fontSize: 12.sp,
-              ),
-              SizedBox(
-                height: 7.h,
-              ),
-              Row(
-                children: [
-                  Container(
-                    height: 71.h,
-                    width: 70.w,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/images/mycart.png',
-                          height: 75,
-                          width: 75,
-                          fit: BoxFit.cover,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 30, bottom: 35),
-                          child: CircleAvatar(
-                            radius: 12,
-                            backgroundColor: Color(0x90e0dfdf),
-                            child: Icon(
-                              Icons.delete,
-                              size: 18,
-                              color: Color(0xff595959),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20.w,
-                  ),
-                  DottedBorder(
-                    color: Colors.grey,
-                    radius: Radius.circular(5),
-                    borderType: BorderType.RRect,
-                    child: Container(
-                      height: 65.h,
-                      width: 65.w,
-                      child: Stack(
-                        alignment: Alignment.topRight,
-                        children: [
-                          Center(
-                            child: Image.asset(
-                              'assets/images/addimage.png',
-                              height: 26.h,
-                              width: 26.w,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20.w,
-                  ),
-                  DottedBorder(
-                    color: Colors.grey,
-                    radius: Radius.circular(5),
-                    borderType: BorderType.RRect,
-                    child: Container(
-                      height: 65.h,
-                      width: 65.w,
-                      child: Stack(
-                        alignment: Alignment.topRight,
-                        children: [
-                          Center(
-                            child: Image.asset(
-                              'assets/images/addimage.png',
-                              height: 26.h,
-                              width: 26.w,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20.w,
-                  ),
-                  DottedBorder(
-                    color: Colors.grey,
-                    radius: Radius.circular(5),
-                    borderType: BorderType.RRect,
-                    child: Container(
-                      height: 65.h,
-                      width: 65.w,
-                      child: Stack(
-                        alignment: Alignment.topRight,
-                        children: [
-                          Center(
-                            child: Image.asset(
-                              'assets/images/addimage.png',
-                              height: 26.h,
-                              width: 26.w,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              CustomText(
-                'Product name'.tr(),
-                fontSize: 12.sp,
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
-                  maxLines: 1,
-                  onClick: () {},
-                  hintText: '',
-                  isPassword: false,
-                  fillColor: Colors.white,
-                  fontsize: 14.sp,
-                  filled: true,
-                  controller: nameController),
-              SizedBox(
-                height: 20.h,
-              ),
-              CustomText(
-                'The start date of the transaction'.tr(),
-                fontSize: 12.sp,
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
-                  maxLines: 1,
-                  onClick: () {},
-                  hintText: '',
-                  suffix: Icon(Icons.wallet_travel),
-                  isPassword: false,
-                  fillColor: Colors.white,
-                  fontsize: 14.sp,
-                  filled: true,
-                  controller: transactionDateController),
-              SizedBox(
-                height: 20.h,
-              ),
-              CustomText(
-                'The expiry date of the deal'.tr(),
-                fontSize: 12.sp,
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
-                  maxLines: 1,
-                  onClick: () {},
-                  hintText: '',
-                  isPassword: false,
-                  suffix: Icon(Icons.wallet_travel),
-                  fillColor: Colors.white,
-                  fontsize: 14.sp,
-                  filled: true,
-                  controller: dealController),
-              SizedBox(
-                height: 70.h,
-              ),
-              Center(
-                child: CustomBottom(
-                  title: "Next".tr(),
-                  height: 48.h,
-                  width: 309.w,
-                  onTap: () {},
-                ),
-              ),
-              SizedBox(
-                height: 120.h,
-              ),
-            ],
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0.0,
+          leading: InkWell(
+            onTap: () {
+              if (provider.cureentStep == 0) {
+                Navigator.pop(context);
+              } else {
+                provider.cureentStep--;
+                provider.notifyListeners();
+              }
+            },
+            child: Icon(
+              Icons.arrow_back_ios_rounded,
+              color: Colors.black,
+              size: 20,
+            ),
           ),
+          title: CustomText(
+            'Add a deal'.tr(),
+            fontSize: 16.sp,
+            color: Colors.black,
+          ),
+          centerTitle: true,
         ),
-      ),
-    );
+        body: Container(
+            margin: EdgeInsets.only(top: 15.h),
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            padding: EdgeInsets.symmetric(horizontal: 0.w),
+            decoration: BoxDecoration(
+              color: SpHelper.spHelper.getTheme()! ? Colors.white : Colors.grey,
+            ),
+            child: Theme(
+              data: ThemeData(
+                  canvasColor: SpHelper.spHelper.getTheme()!
+                      ? Colors.white
+                      : Colors.grey,
+
+                  colorScheme: Theme.of(context).colorScheme.copyWith(
+                        primary: Colors.black,
+                        background: Colors.black,
+                        secondary: Colors.grey[300],
+                      )),
+              child: Stepper(
+                  controlsBuilder:
+                      (BuildContext context, ControlsDetails details) {
+                    return provider.addServiceWidgets[provider.cureentStep];
+                  },
+                  onStepTapped: (step) {
+                    // provider.cureentStep = step;
+                    // provider.notifyListeners();
+                  },
+                  onStepContinue: () {
+                    if (provider.cureentStep != 3) {
+                      provider.cureentStep++;
+                      provider.notifyListeners();
+                    }
+                  },
+                  onStepCancel: () {
+                    if (provider.cureentStep != 0) {
+                      provider.cureentStep--;
+                      provider.notifyListeners();
+                    }
+                  },
+                  elevation: 0,
+
+                  type: StepperType.horizontal,
+                  currentStep: provider.cureentStep,
+                  steps: [
+                    Step(
+                      state: provider.cureentStep > 0
+                          ? StepState.complete
+                          : StepState.indexed,
+                      isActive: provider.cureentStep >= 0,
+                      title: Text(''),
+                      content: Text(''),
+                    ),
+                    Step(
+                        state: provider.cureentStep > 1
+                            ? StepState.complete
+                            : StepState.indexed,
+                        isActive: provider.cureentStep >= 1,
+                        title: Text(''),
+                        content: Text('')),
+                    Step(
+                        state: provider.cureentStep > 2
+                            ? StepState.complete
+                            : StepState.indexed,
+                        isActive: provider.cureentStep >= 2,
+                        title: Text(''),
+                        content: Text('')),
+                  ]),
+            )),
+      );
+    });
   }
 }

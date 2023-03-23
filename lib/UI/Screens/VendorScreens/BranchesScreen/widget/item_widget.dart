@@ -24,13 +24,12 @@ class ItemWidget extends StatelessWidget {
               width: 10.w,
             ),
             Container(
-              height: 18.h,
-              width: 59.w,
+              padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 1.h),
               child: Center(
                   child: CustomText(
-                    'Storehouse',
-                    fontSize: 8.sp,
-                  )),
+                'Storehouse',
+                fontSize: 9.sp,
+              )),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(color: Colors.black)),
@@ -50,19 +49,35 @@ class ItemWidget extends StatelessWidget {
         ),
         Row(
           children: [
-            Image.asset('assets/images/farm.png',height: 12.h,width: 12.w,),
+            Image.asset(
+              'assets/images/farm.png',
+              height: 12.h,
+              width: 12.w,
+            ),
             SizedBox(
               width: 5.w,
             ),
-            CustomText('Storehouse',fontSize: 8.sp,),
+            CustomText(
+              'Storehouse',
+              fontSize: 10.sp,
+            ),
             SizedBox(
               width: 20.w,
             ),
-            Image.asset('assets/images/badge-check.png',height: 12.h,width: 12.w,),
+            Image.asset(
+              'assets/images/badge-check.png',
+              height: 12.h,
+              width: 12.w,
+              color: Colors.green,
+            ),
             SizedBox(
               width: 5.w,
             ),
-            CustomText('Default',fontSize: 8.sp,),
+            CustomText(
+              'Default',
+              fontSize: 10.sp,
+              color: Colors.green,
+            ),
           ],
         ),
       ],

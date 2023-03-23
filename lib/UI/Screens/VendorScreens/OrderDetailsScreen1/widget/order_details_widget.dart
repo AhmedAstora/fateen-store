@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:twnty2/UI/Screens/VendorScreens/OrderDetailsScreen/order_details.dart';
 import 'package:twnty2/UI/Screens/VendorScreens/OrderDetailsScreen/order_details_screen.dart';
 
 import '../../../../../Helper/Router/router.dart';
@@ -9,13 +8,16 @@ import '../../../../CustomWidget/custom_text.dart';
 import '../../../../Utils/constant.dart';
 import '../../BuyerDataScreen/buyer_data_screen.dart';
 
+
 class OrderSellerDetailsWidget extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         RouterHelper.routerHelper
-            .routingToSpecificWidgetWithoutPop(OrderDetails());
+            .routingToSpecificWidgetWithoutPop(OrderDetailsScreen1());
       },
       child: Container(
         decoration: BoxDecoration(

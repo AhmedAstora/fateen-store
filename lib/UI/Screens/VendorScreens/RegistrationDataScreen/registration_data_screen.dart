@@ -6,7 +6,7 @@ import 'package:twnty2/UI/CustomWidget/custom_bottom.dart';
 
 import '../../../CustomWidget/back_appBar_widget.dart';
 import '../../../CustomWidget/custom_text.dart';
-import '../AddBranchesScreen/widget/text_field_widget.dart';
+import '../BranchesScreen/widget/text_field_widget.dart';
 
 class RegistrationDataScreen extends StatelessWidget {
   TextEditingController taxNumberController = TextEditingController();

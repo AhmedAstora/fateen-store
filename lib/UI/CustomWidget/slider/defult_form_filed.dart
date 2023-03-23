@@ -52,7 +52,7 @@ class DefaultTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<AppProvider>(builder: (context, provider, _) {
       return Container(
-        // height: height!.h,
+        height: height!,
         child: TextFormField(
           onTap: onClick,
           onChanged: onChange,
@@ -76,9 +76,7 @@ class DefaultTextField extends StatelessWidget {
                 padding: const EdgeInsetsDirectional.only(end: 12.0),
                 child: suffix,
               ),
-               prefixIcon: Padding(
-                  padding: const EdgeInsetsDirectional.only(start: 12.0),
-                  child: prefix,),
+
               suffixIconConstraints:
                   BoxConstraints(maxWidth: 30.w, maxHeight: 25.h),
               border: OutlineInputBorder(),

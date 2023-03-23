@@ -8,9 +8,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twnty2/UI/CustomWidget/custom_bottom.dart';
 import 'package:twnty2/UI/CustomWidget/custom_branch_field.dart';
 import 'package:twnty2/UI/CustomWidget/custom_text_field.dart';
-import 'package:twnty2/UI/Screens/VendorScreens/AddBranchesScreen/widget/container_widget.dart';
-import 'package:twnty2/UI/Screens/VendorScreens/AddBranchesScreen/widget/switsh_widget.dart';
-import 'package:twnty2/UI/Screens/VendorScreens/AddBranchesScreen/widget/text_field_widget.dart';
+import 'package:twnty2/UI/Screens/VendorScreens/BranchesScreen/widget/container_widget.dart';
+import 'package:twnty2/UI/Screens/VendorScreens/BranchesScreen/widget/switsh_widget.dart';
+import 'package:twnty2/UI/Screens/VendorScreens/BranchesScreen/widget/text_field_widget.dart';
 
 import '../../../CustomWidget/back_appBar_widget.dart';
 import '../../../CustomWidget/custom_search_field.dart';

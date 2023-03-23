@@ -7,7 +7,8 @@ import '../../../../../Helper/Router/router.dart';
 import '../../../../CustomWidget/custom_text.dart';
 import '../../../../CustomWidget/linear_progress_widget.dart';
 import '../../../../Utils/constant.dart';
-import '../../OrderDetailsScreen/order_details_screen.dart';
+import '../../OrderDetailsScreen1/order_details_screen.dart';
+
 
 class OpenOrdersWidget extends StatelessWidget {
 
@@ -17,7 +18,7 @@ class OpenOrdersWidget extends StatelessWidget {
     return InkWell(
       onTap: () {
         RouterHelper.routerHelper
-            .routingToSpecificWidgetWithoutPop(OrderDetailsScreen());
+            .routingToSpecificWidgetWithoutPop(OrderDetailsScreen1());
       },
       child: Container(
 

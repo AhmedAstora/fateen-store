@@ -3,8 +3,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:twnty2/Helper/Router/router.dart';
+import 'package:twnty2/UI/CustomWidget/back_appBar_widget.dart';
 import 'package:twnty2/UI/CustomWidget/custom_text.dart';
 import 'package:twnty2/UI/CustomWidget/custom_text_field.dart';
+import 'package:twnty2/UI/Screens/UserScreens/ProductDetailsScreen/product_details_screen.dart';
 import 'package:twnty2/UI/Utils/constant.dart';
 
 import '../../../CustomWidget/custom_bottom.dart';
@@ -31,11 +34,7 @@ class EditDealsScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
-        leading: Icon(
-          Icons.keyboard_arrow_left_rounded,
-          size: 30,
-          color: Colors.black,
-        ),
+        leading: BackAppBarWidget(),
         title: CustomText(
           'Edit deals'.tr(),
           fontSize: 16.sp,
@@ -89,55 +88,32 @@ class EditDealsScreen extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Container(
-                    height: 71.h,
-                    width: 70.w,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/images/mycart.png',
-                          height: 75,
-                          width: 75,
-                          fit: BoxFit.cover,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 30, bottom: 35),
-                          child: CircleAvatar(
-                            radius: 12,
-                            backgroundColor: Color(0x90e0dfdf),
-                            child: Icon(
-                              Icons.delete,
-                              size: 18,
-                              color: Color(0xff595959),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20.w,
-                  ),
-                  DottedBorder(
-                    color: Colors.grey,
-                    radius: Radius.circular(5),
-                    borderType: BorderType.RRect,
+                  Expanded(
                     child: Container(
-                      height: 65.h,
-                      width: 65.w,
+                      height: 71.h,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
                       child: Stack(
-                        alignment: Alignment.topRight,
+                        alignment: Alignment.center,
                         children: [
-                          Center(
-                            child: Image.asset(
-                              'assets/images/addimage.png',
-                              height: 26.h,
-                              width: 26.w,
-                              fit: BoxFit.cover,
+                          Image.asset(
+                            'assets/images/mycart.png',
+                            height: 75,
+                            width: 75,
+                            fit: BoxFit.cover,
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(left: 30, bottom: 35),
+                            child: CircleAvatar(
+                              radius: 12,
+                              backgroundColor: Color(0x90e0dfdf),
+                              child: Icon(
+                                Icons.delete,
+                                size: 18,
+                                color: Color(0xff595959),
+                              ),
                             ),
                           ),
                         ],
@@ -145,52 +121,80 @@ class EditDealsScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 20.w,
+                    width: 15.w,
                   ),
-                  DottedBorder(
-                    color: Colors.grey,
-                    radius: Radius.circular(5),
-                    borderType: BorderType.RRect,
-                    child: Container(
-                      height: 65.h,
-                      width: 65.w,
-                      child: Stack(
-                        alignment: Alignment.topRight,
-                        children: [
-                          Center(
-                            child: Image.asset(
-                              'assets/images/addimage.png',
-                              height: 26.h,
-                              width: 26.w,
-                              fit: BoxFit.cover,
+                  Expanded(
+                    child: DottedBorder(
+                      color: Colors.grey,
+                      radius: Radius.circular(5),
+                      borderType: BorderType.RRect,
+                      child: Container(
+                        height: 65.h,
+                        child: Stack(
+                          alignment: Alignment.topRight,
+                          children: [
+                            Center(
+                              child: Image.asset(
+                                'assets/images/addimage.png',
+                                height: 26.h,
+                                width: 26.w,
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
                   SizedBox(
-                    width: 20.w,
+                    width: 15.w,
                   ),
-                  DottedBorder(
-                    color: Colors.grey,
-                    radius: Radius.circular(5),
-                    borderType: BorderType.RRect,
-                    child: Container(
-                      height: 65.h,
-                      width: 65.w,
-                      child: Stack(
-                        alignment: Alignment.topRight,
-                        children: [
-                          Center(
-                            child: Image.asset(
-                              'assets/images/addimage.png',
-                              height: 26.h,
-                              width: 26.w,
-                              fit: BoxFit.cover,
+                  Expanded(
+                    child: DottedBorder(
+                      color: Colors.grey,
+                      radius: Radius.circular(5),
+                      borderType: BorderType.RRect,
+                      child: Container(
+                        height: 65.h,
+                        child: Stack(
+                          alignment: Alignment.topRight,
+                          children: [
+                            Center(
+                              child: Image.asset(
+                                'assets/images/addimage.png',
+                                height: 26.h,
+                                width: 26.w,
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 15.w,
+                  ),
+                  Expanded(
+                    child: DottedBorder(
+                      color: Colors.grey,
+                      radius: Radius.circular(5),
+                      borderType: BorderType.RRect,
+                      child: Container(
+                        height: 65.h,
+                        child: Stack(
+                          alignment: Alignment.topRight,
+                          children: [
+                            Center(
+                              child: Image.asset(
+                                'assets/images/addimage.png',
+                                height: 26.h,
+                                width: 26.w,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -216,8 +220,6 @@ class EditDealsScreen extends StatelessWidget {
                 height: 10.h,
               ),
               DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
                   maxLines: 1,
                   onClick: () {},
                   hintText: '',
@@ -246,8 +248,6 @@ class EditDealsScreen extends StatelessWidget {
                 height: 10.h,
               ),
               DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
                   maxLines: 1,
                   onClick: () {},
                   hintText: '',
@@ -277,8 +277,6 @@ class EditDealsScreen extends StatelessWidget {
                 height: 10.h,
               ),
               DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
                   maxLines: 1,
                   onClick: () {},
                   hintText: '',
@@ -308,8 +306,6 @@ class EditDealsScreen extends StatelessWidget {
                 height: 10.h,
               ),
               DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
                   maxLines: 1,
                   onClick: () {},
                   hintText: '',
@@ -338,8 +334,6 @@ class EditDealsScreen extends StatelessWidget {
                 height: 10.h,
               ),
               DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
                   maxLines: 1,
                   onClick: () {},
                   hintText: '',
@@ -368,8 +362,6 @@ class EditDealsScreen extends StatelessWidget {
                 height: 10.h,
               ),
               DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
                   maxLines: 1,
                   onClick: () {},
                   hintText: '',
@@ -398,8 +390,6 @@ class EditDealsScreen extends StatelessWidget {
                 height: 10.h,
               ),
               DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
                   maxLines: 1,
                   onClick: () {},
                   hintText: 'Other'.tr(),
@@ -463,8 +453,6 @@ class EditDealsScreen extends StatelessWidget {
                 height: 10.h,
               ),
               DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
                   maxLines: 1,
                   onClick: () {},
                   hintText: 'All'.tr(),
@@ -494,8 +482,6 @@ class EditDealsScreen extends StatelessWidget {
                 height: 10.h,
               ),
               DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
                   maxLines: 1,
                   onClick: () {},
                   hintText: '',
@@ -515,8 +501,6 @@ class EditDealsScreen extends StatelessWidget {
                 height: 10.h,
               ),
               DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
                   maxLines: 1,
                   onClick: () {},
                   hintText: '',
@@ -545,8 +529,9 @@ class EditDealsScreen extends StatelessWidget {
                 height: 10.h,
               ),
               DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
+                  paddingV: 10.h,
+                  paddingH: 10.h,
+                  height: 100.h,
                   maxLines: 3,
                   onClick: () {},
                   hintText: '',
@@ -575,8 +560,9 @@ class EditDealsScreen extends StatelessWidget {
                 height: 10.h,
               ),
               DefaultTextField(
-                  paddingV: 20.h,
-                  paddingH: 15.w,
+                  paddingV: 10.h,
+                  paddingH: 10.h,
+                  height: 100.h,
                   maxLines: 3,
                   onClick: () {},
                   hintText: '',
@@ -606,19 +592,31 @@ class EditDealsScreen extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Image.asset('assets/images/box.png',height: 24.h,width: 24.w,),
+                  Image.asset(
+                    'assets/images/box.png',
+                    height: 24.h,
+                    width: 24.w,
+                  ),
                   SizedBox(
                     width: 10.w,
                   ),
-                  CustomText('Jeddah branch'.tr(),),
+                  CustomText(
+                    'Jeddah branch'.tr(),
+                  ),
                   SizedBox(
                     width: 20.w,
                   ),
-                  Image.asset('assets/images/box.png',height: 24.h,width: 24.w,),
+                  Image.asset(
+                    'assets/images/box.png',
+                    height: 24.h,
+                    width: 24.w,
+                  ),
                   SizedBox(
                     width: 10.w,
                   ),
-                  CustomText('Taif branch'.tr(),),
+                  CustomText(
+                    'Taif branch'.tr(),
+                  ),
                 ],
               ),
               SizedBox(
@@ -626,19 +624,31 @@ class EditDealsScreen extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Image.asset('assets/images/box.png',height: 24.h,width: 24.w,),
+                  Image.asset(
+                    'assets/images/box.png',
+                    height: 24.h,
+                    width: 24.w,
+                  ),
                   SizedBox(
                     width: 10.w,
                   ),
-                  CustomText('Mecca branch'.tr(),),
+                  CustomText(
+                    'Mecca branch'.tr(),
+                  ),
                   SizedBox(
                     width: 20.w,
                   ),
-                  Image.asset('assets/images/box.png',height: 24.h,width: 24.w,),
+                  Image.asset(
+                    'assets/images/box.png',
+                    height: 24.h,
+                    width: 24.w,
+                  ),
                   SizedBox(
                     width: 10.w,
                   ),
-                  CustomText('Riyadh Branch'.tr(),),
+                  CustomText(
+                    'Riyadh Branch'.tr(),
+                  ),
                 ],
               ),
               SizedBox(
@@ -649,7 +659,10 @@ class EditDealsScreen extends StatelessWidget {
                   title: "Preview".tr(),
                   height: 48.h,
                   width: 309.w,
-                  onTap: () {},
+                  onTap: () {
+                    RouterHelper.routerHelper.routingToSpecificWidgetWithoutPop(
+                        ProductDetailsScreen(type: 1));
+                  },
                 ),
               ),
               SizedBox(

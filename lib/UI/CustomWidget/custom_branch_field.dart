@@ -28,25 +28,25 @@ class CustomBranchField extends StatelessWidget {
 
   CustomBranchField(
       {required this.onClick,
-        this.onChange,
-        required this.hintText,
-        required this.isPassword,
-        required this.controller,
-        this.fillColor,
-        this.textColor,
-        this.filled,
-        this.suffix,
-        this.prefix,
-        this.enable,
-        this.autofocus = false,
-        this.fontsize,
-        this.paddingH = 9,
-        this.paddingV = 1,
-        this.height = 50,
-        this.maxLines = 1,
-        this.maxLength,
-        this.validationFun,
-        this.textInputType = TextInputType.text});
+      this.onChange,
+      required this.hintText,
+      required this.isPassword,
+      required this.controller,
+      this.fillColor,
+      this.textColor,
+      this.filled,
+      this.suffix,
+      this.prefix,
+      this.enable,
+      this.autofocus = false,
+      this.fontsize,
+      this.paddingH = 9,
+      this.paddingV = 1,
+      this.height = 50,
+      this.maxLines = 1,
+      this.maxLength,
+      this.validationFun,
+      this.textInputType = TextInputType.text});
 
   @override
   Widget build(BuildContext context) {
@@ -70,17 +70,15 @@ class CustomBranchField extends StatelessWidget {
               fillColor: fillColor,
               contentPadding: EdgeInsets.symmetric(
                   horizontal: paddingH!, vertical: paddingV!),
-
               suffixIcon: Padding(
                 padding: const EdgeInsetsDirectional.only(end: 12.0),
                 child: suffix,
               ),
-
               prefixIcon: Padding(
-                padding: const EdgeInsetsDirectional.only(start: 12.0),
-                child: prefix),
+                  padding: const EdgeInsetsDirectional.only(start: 12.0),
+                  child: prefix),
               suffixIconConstraints:
-              BoxConstraints(maxWidth: 50.w, maxHeight: 45.h),
+                  BoxConstraints(maxWidth: 50.w, maxHeight: 45.h),
               border: OutlineInputBorder(),
               focusedErrorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
@@ -110,8 +108,8 @@ class CustomBranchField extends StatelessWidget {
 
           obscureText: isPassword
               ? provider.isHiden
-              ? false
-              : true
+                  ? false
+                  : true
               : isPassword,
 
           //  onChanged: (value){},

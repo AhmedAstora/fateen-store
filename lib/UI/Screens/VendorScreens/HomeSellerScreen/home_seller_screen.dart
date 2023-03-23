@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:twnty2/Helper/Router/router.dart';
+import 'package:twnty2/UI/Screens/SharedScreens/NotificationsScreen/notifications_screen.dart';
 import 'package:twnty2/UI/Screens/VendorScreens/HomeSellerScreen/widget/home_seller_widget.dart';
 
 import '../../../../Helper/Model/chart_model.dart';
@@ -114,7 +116,10 @@ class HomeSellerScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  RouterHelper.routerHelper
+                      .routingToSpecificWidgetWithoutPop(NotificationsScreen());
+                },
                 child: Container(
                   alignment: Alignment.center,
                   child: Stack(
@@ -212,7 +217,31 @@ class HomeSellerScreen extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-
+              Row(
+                children: [
+                  SizedBox(
+                    width: 16.w,
+                  ),
+                  HomeSellerWidget(
+                    title: '\$850',
+                    color: Color(0xff44B66B),
+                    subTitle: 'Total earnings',
+                    progress: .4,
+                  ),
+                  SizedBox(
+                    width: 8.w,
+                  ),
+                  HomeSellerWidget(
+                    title: '20',
+                    color: Color(0xff3479D1),
+                    subTitle: 'The number of \nongoing deals',
+                    progress: .7,
+                  ),
+                  SizedBox(
+                    width: 16.w,
+                  ),
+                ],
+              ),
               SizedBox(
                 height: 10.h,
               ),
@@ -318,7 +347,7 @@ class HomeSellerScreen extends StatelessWidget {
                         child: SfCartesianChart(
                           plotAreaBorderWidth: 0,
                           title:
-                              ChartTitle(text: 'Monthly expense of a family'),
+                          ChartTitle(text: 'Monthly expense of a family'),
                           legend: Legend(isVisible: false),
                           primaryXAxis: CategoryAxis(
                             majorGridLines: const MajorGridLines(width: 0),
@@ -369,8 +398,7 @@ class HomeSellerScreen extends StatelessWidget {
                         margin: EdgeInsets.symmetric(horizontal: 16.w),
                         child: SfCartesianChart(
                           plotAreaBorderWidth: 0,
-                          title:
-                              ChartTitle(text: 'Average number of sales'),
+                          title: ChartTitle(text: 'Average number of sales'),
                           legend: Legend(isVisible: false),
                           primaryXAxis: CategoryAxis(
                             majorGridLines: const MajorGridLines(width: 0),

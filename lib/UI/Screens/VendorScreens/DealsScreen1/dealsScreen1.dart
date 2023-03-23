@@ -23,7 +23,7 @@ class DealsScreen1 extends StatelessWidget {
         appBar: AppBar(
           elevation: 0.0,
           backgroundColor: Colors.white,
-          leading: BackAppBarWidget(),
+
           title: CustomText(
             'Deals'.tr(),
             fontSize: 16.sp,

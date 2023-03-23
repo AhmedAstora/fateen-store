@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:twnty2/Helper/Router/router.dart';
 import 'package:twnty2/UI/CustomWidget/custom_bottom.dart';
 import 'package:twnty2/UI/CustomWidget/custom_search_field.dart';
 import 'package:twnty2/UI/CustomWidget/custom_text_field.dart';
@@ -10,6 +11,7 @@ import 'package:twnty2/UI/Screens/VendorScreens/BranchesScreen/widget/item_widge
 import 'package:twnty2/UI/Utils/constant.dart';
 import '../../../CustomWidget/back_appBar_widget.dart';
 import '../../../CustomWidget/custom_text.dart';
+import 'add_branches_screen.dart';
 
 class BranchesScreen extends StatelessWidget {
   TextEditingController filterController = TextEditingController();
@@ -30,10 +32,16 @@ class BranchesScreen extends StatelessWidget {
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Icon(
-              Icons.add_location_outlined,
-              size: 30.0,
-              color: Colors.black,
+            child: InkWell(
+              onTap: () {
+                RouterHelper.routerHelper
+                    .routingToSpecificWidgetWithoutPop(AddBranchesScreen());
+              },
+              child: Icon(
+                Icons.add_location_outlined,
+                size: 30.0,
+                color: Colors.black,
+              ),
             ),
           ),
         ],
@@ -106,20 +114,20 @@ class BranchesScreen extends StatelessWidget {
             Expanded(
               child: ListView.separated(
                   padding: EdgeInsets.symmetric(vertical: 10),
-                  separatorBuilder: (context, index) =>  Column(
-                    children: [
-                      SizedBox(
-                        height: 10.h,
+                  separatorBuilder: (context, index) => Column(
+                        children: [
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          Container(
+                            height: 1,
+                            color: Colors.grey.shade300,
+                          ),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                        ],
                       ),
-                      Container(
-                        height: 1,
-                        color: Colors.grey.shade300,
-                      ),
-                      SizedBox(
-                        height: 10.h,
-                      ),
-                    ],
-                  ),
                   itemCount: 2,
                   itemBuilder: (context, index) {
                     return ItemWidget();

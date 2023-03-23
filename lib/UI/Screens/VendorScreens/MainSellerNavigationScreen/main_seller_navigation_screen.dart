@@ -3,11 +3,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:twnty2/Helper/Router/router.dart';
+import 'package:twnty2/UI/Screens/VendorScreens/ProfileVendorScreen/profile_vendor_screen.dart';
 
 import 'package:twnty2/UI/Utils/constant.dart';
 
 import '../../../../Helper/Providers/app_provider.dart';
 import '../../UserScreens/ProfileScreen/profile_screen.dart';
+import '../AddADealScreen/add_a_deal_screen.dart';
+import '../DealsScreen1/dealsScreen1.dart';
 import '../DealsSearchScreen/deals_search_screen.dart';
 import '../HomeSellerScreen/home_seller_screen.dart';
 import '../RequestsSellerScreen/requests_seller_screen.dart';
@@ -15,9 +19,9 @@ import '../RequestsSellerScreen/requests_seller_screen.dart';
 class MainSellerNavigationScreen extends StatelessWidget {
   List<Widget>? navgationWidget = [
     HomeSellerScreen(),
-    DealsSearchScreen(),
+    DealsScreen1(),
     RequestsSellerScreen(),
-    ProfileScreen(),
+    ProfileVendorScreen(),
   ];
 
   @override
@@ -27,7 +31,10 @@ class MainSellerNavigationScreen extends StatelessWidget {
       return Scaffold(
           floatingActionButton: FloatingActionButton(
             backgroundColor: mainAppColor,
-            onPressed: () {},
+            onPressed: () {
+              RouterHelper.routerHelper
+                  .routingToSpecificWidgetWithoutPop(AddADealScreen());
+            },
             child: Icon(
               Icons.add_rounded,
               size: 35,
